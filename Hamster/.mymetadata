@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="Hamster"
+  id="myeclipse.1509370903060"
+  context-root="/Hamster"
+  j2ee-spec="5.0"
+  archive="Hamster.war">
+  <attributes>
+    <attribute name="webrootdir" value="/WebRoot" />
+  </attributes>
+</project-module>
+
