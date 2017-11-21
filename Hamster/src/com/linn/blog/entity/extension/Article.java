@@ -73,20 +73,21 @@ public class Article implements Serializable{
 		this.lastTime = lastTime;
 	}
 
-	public String getIntro() {
+
+	public String getDescription() {
 		return description;
 	}
 
-	public void setIntro(String intro) {
-		this.description = intro;
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
-	public String getIntroPicName() {
+	public String getDescriptionPic() {
 		return descriptionPic;
 	}
 
-	public void setIntroPicName(String introPicName) {
-		this.descriptionPic = introPicName;
+	public void setDescriptionPic(String descriptionPic) {
+		this.descriptionPic = descriptionPic;
 	}
 
 	public Integer getIsDraft() {

@@ -1682,3 +1682,1181 @@ org.eclipse.core.internal.resources.ResourceException: Marker id 3306 not found.
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
 !SUBENTRY 1 org.eclipse.core.resources 4 376 2017-11-21 00:28:19.975
 !MESSAGE Marker id 3306 not found.
+!SESSION 2017-11-21 09:58:15.947 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.6.0_13
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=zh_CN
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.jface 2 0 2017-11-21 09:58:23.499
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2017-11-21 09:58:23.499
+!MESSAGE A conflict occurred for SHIFT+DEL:
+Binding(SHIFT+DEL,
+	ParameterizedCommand(Command(org.eclipse.datatools.sqltools.result.removeAllInstances,Remove All Visible Results,
+		,
+		Category(org.eclipse.datatools.sqltools.result.category,SQL Results View,null,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(SHIFT+DEL,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.cut,Cut,
+		Cut the selection to the clipboard,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		org.eclipse.ui.internal.handlers.WidgetMethodHandler@f50caf,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.dialogAndWindow,,,system)
+Binding(SHIFT+DEL,
+	ParameterizedCommand(Command(org.topcased.modeler.deleteModelObject,Delete From Model,
+		Allows the user to delete the selected graph element and its associated model element in a Topcased editor.,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY com.genuitec.eclipse.core.common 1 0 2017-11-21 09:58:24.334
+!MESSAGE ClasspathContainer requery for classpath-string: com.genuitec.eclipse.j2eedt.core
+
+!ENTRY com.genuitec.eclipse.core.common 1 0 2017-11-21 09:58:24.654
+!MESSAGE ClasspathContainer requery for classpath-string: com.genuitec.eclipse.j2eedt.core
+
+!ENTRY org.eclipse.osgi 2 1 2017-11-21 09:58:24.663
+!MESSAGE NLS unused message: prompt.optclasspath in: com.genuitec.eclipse.easie.core.configuration
+
+!ENTRY org.eclipse.osgi 2 1 2017-11-21 09:58:24.663
+!MESSAGE NLS unused message: prompt.preclasspath in: com.genuitec.eclipse.easie.core.configuration
+
+!ENTRY org.eclipse.osgi 2 1 2017-11-21 09:58:24.664
+!MESSAGE NLS unused message: prompt.optlibrarypath in: com.genuitec.eclipse.easie.core.configuration
+
+!ENTRY org.eclipse.core.resources 4 274 2017-11-21 09:58:29.803
+!MESSAGE Resource is out of sync with the file system: '/Hamster/WebRoot/admin/articleManager/categoryList.jsp'.
+
+!ENTRY org.eclipse.core.resources 4 274 2017-11-21 09:58:29.902
+!MESSAGE Resource is out of sync with the file system: '/Hamster/WebRoot/admin/index.jsp'.
+
+!ENTRY org.eclipse.core.resources 4 274 2017-11-21 09:58:29.992
+!MESSAGE Resource is out of sync with the file system: '/Hamster/WebRoot/index.jsp'.
+
+!ENTRY org.eclipse.core.resources 4 274 2017-11-21 09:58:32.598
+!MESSAGE Resource is out of sync with the file system: '/Hamster/WebRoot/js/editor/plugins/baidumap/map.html'.
+
+!ENTRY org.eclipse.core.resources 4 274 2017-11-21 09:58:32.637
+!MESSAGE Resource is out of sync with the file system: '/Hamster/WebRoot/js/editor/plugins/template/html/3.html'.
+
+!ENTRY org.maven.ide.eclipse 4 0 2017-11-21 09:58:32.641
+!MESSAGE Unable to update index for central|http://repo1.maven.org/maven2
+!STACK 0
+java.io.IOException: Authorization exception retrieving nexus-maven-repository-index.properties
+	at org.sonatype.nexus.index.updater.DefaultIndexUpdater$WagonFetcher.retrieve(DefaultIndexUpdater.java:681)
+	at org.sonatype.nexus.index.updater.AbstractResourceFetcher.retrieve(AbstractResourceFetcher.java:22)
+	at org.sonatype.nexus.index.updater.DefaultIndexUpdater.downloadIndexProperties(DefaultIndexUpdater.java:493)
+	at org.sonatype.nexus.index.updater.DefaultIndexUpdater.access$100(DefaultIndexUpdater.java:74)
+	at org.sonatype.nexus.index.updater.DefaultIndexUpdater$IndexAdaptor.setProperties(DefaultIndexUpdater.java:780)
+	at org.sonatype.nexus.index.updater.DefaultIndexUpdater.fetchAndUpdateIndex(DefaultIndexUpdater.java:954)
+	at org.sonatype.nexus.index.updater.DefaultIndexUpdater.fetchAndUpdateIndex(DefaultIndexUpdater.java:138)
+	at org.maven.ide.eclipse.internal.index.NexusIndexManager.updateRemoteIndex(NexusIndexManager.java:1060)
+	at org.maven.ide.eclipse.internal.index.NexusIndexManager.updateIndex(NexusIndexManager.java:1013)
+	at org.maven.ide.eclipse.internal.index.NexusIndexManager$1.run(NexusIndexManager.java:624)
+	at org.maven.ide.eclipse.internal.index.IndexUpdaterJob.run(IndexUpdaterJob.java:71)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.eclipse.core.resources 4 274 2017-11-21 09:58:32.717
+!MESSAGE Resource is out of sync with the file system: '/Hamster/WebRoot/article.jsp'.
+
+!ENTRY org.eclipse.core.resources 4 274 2017-11-21 09:58:32.720
+!MESSAGE Resource is out of sync with the file system: '/Hamster/WebRoot/common/error.jsp'.
+
+!ENTRY org.eclipse.core.resources 4 274 2017-11-21 09:58:32.739
+!MESSAGE Resource is out of sync with the file system: '/Hamster/WebRoot/saved_resource.html'.
+
+!ENTRY org.eclipse.core.resources 4 274 2017-11-21 09:58:33.520
+!MESSAGE Resource is out of sync with the file system: '/Hamster/WebRoot/admin/articleManager/addArticle.jsp'.
+
+!ENTRY org.eclipse.core.resources 4 274 2017-11-21 09:58:33.543
+!MESSAGE Resource is out of sync with the file system: '/Hamster/WebRoot/admin/login.jsp'.
+
+!ENTRY org.eclipse.core.resources 4 274 2017-11-21 09:58:37.096
+!MESSAGE Resource is out of sync with the file system: '/Hamster/WebRoot/js/editor/plugins/baidumap/index.html'.
+
+!ENTRY org.eclipse.core.resources 4 274 2017-11-21 09:58:37.101
+!MESSAGE Resource is out of sync with the file system: '/Hamster/WebRoot/partial/header.jsp'.
+
+!ENTRY org.eclipse.core.resources 4 274 2017-11-21 09:58:37.106
+!MESSAGE Resource is out of sync with the file system: '/Hamster/WebRoot/partial/footer.jsp'.
+
+!ENTRY org.eclipse.core.resources 4 274 2017-11-21 09:58:37.119
+!MESSAGE Resource is out of sync with the file system: '/Hamster/WebRoot/js/editor/plugins/template/html/2.html'.
+
+!ENTRY org.eclipse.core.resources 4 274 2017-11-21 09:58:37.766
+!MESSAGE Resource is out of sync with the file system: '/Hamster/WebRoot/admin/index.jsp'.
+
+!ENTRY org.eclipse.core.resources 4 274 2017-11-21 09:58:37.769
+!MESSAGE Resource is out of sync with the file system: '/Hamster/WebRoot/js/editor/plugins/map/map.html'.
+
+!ENTRY org.eclipse.core.resources 4 274 2017-11-21 09:58:37.771
+!MESSAGE Resource is out of sync with the file system: '/Hamster/WebRoot/admin/articleManager/categoryList.jsp'.
+
+!ENTRY org.eclipse.core.resources 4 274 2017-11-21 09:58:37.786
+!MESSAGE Resource is out of sync with the file system: '/Hamster/WebRoot/admin/articleManager/articleList.jsp'.
+
+!ENTRY org.eclipse.core.resources 4 274 2017-11-21 09:58:37.790
+!MESSAGE Resource is out of sync with the file system: '/Hamster/WebRoot/common/common.jsp'.
+
+!ENTRY org.eclipse.core.resources 4 274 2017-11-21 09:58:37.792
+!MESSAGE Resource is out of sync with the file system: '/Hamster/WebRoot/js/editor/plugins/template/html/1.html'.
+
+!ENTRY org.eclipse.dltk.core 4 0 2017-11-21 09:58:38.351
+!MESSAGE error saving index
+!STACK 0
+java.io.UTFDataFormatException
+	at org.eclipse.dltk.internal.core.util.Util.writeUTF(Util.java:1430)
+	at org.eclipse.dltk.core.search.index.DiskIndex.writeCategoryTable(DiskIndex.java:1177)
+	at org.eclipse.dltk.core.search.index.DiskIndex.writeCategories(DiskIndex.java:1133)
+	at org.eclipse.dltk.core.search.index.DiskIndex.mergeWith(DiskIndex.java:724)
+	at org.eclipse.dltk.core.search.index.Index.save(Index.java:243)
+	at org.eclipse.dltk.core.search.indexing.core.SourceModulesRequest.run(SourceModulesRequest.java:85)
+	at org.eclipse.dltk.core.search.indexing.AbstractJob.execute(AbstractJob.java:77)
+	at org.eclipse.dltk.internal.core.search.processing.JobManager.run(JobManager.java:452)
+	at java.lang.Thread.run(Thread.java:619)
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2017-11-21 10:18:44.768
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [Unknown javadoc format for HttpServletResponse {key=Ljavax/servlet/http/HttpServletResponse;} [in HttpServletResponse.class [in javax.servlet.http [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]]
+	at org.eclipse.jdt.internal.core.JavadocContents.getTypeDoc(JavadocContents.java:86)
+	at org.eclipse.jdt.internal.core.BinaryType.getAttachedJavadoc(BinaryType.java:996)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:462)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:555)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:512)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:495)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:129)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:82)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1009 2017-11-21 10:18:44.768
+!MESSAGE Unknown javadoc format for HttpServletResponse {key=Ljavax/servlet/http/HttpServletResponse;} [in HttpServletResponse.class [in javax.servlet.http [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]
+
+!ENTRY org.eclipse.osgi 2 1 2017-11-21 10:19:46.164
+!MESSAGE NLS missing message: BrowseToTLDAttributeNameDeclaration in: org.jboss.tools.common.text.ext.hyperlink.xpl.Messages
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2017-11-21 10:26:09.057
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [Unknown javadoc format for Servlet {key=Ljavax/servlet/Servlet;} [in Servlet.class [in javax.servlet [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]]
+	at org.eclipse.jdt.internal.core.JavadocContents.getTypeDoc(JavadocContents.java:86)
+	at org.eclipse.jdt.internal.core.BinaryType.getAttachedJavadoc(BinaryType.java:996)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:462)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:555)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:512)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:495)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:129)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:82)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1009 2017-11-21 10:26:09.057
+!MESSAGE Unknown javadoc format for Servlet {key=Ljavax/servlet/Servlet;} [in Servlet.class [in javax.servlet [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2017-11-21 10:27:59.287
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [Unknown javadoc format for ServletContext {key=Ljavax/servlet/ServletContext;} [in ServletContext.class [in javax.servlet [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]]
+	at org.eclipse.jdt.internal.core.JavadocContents.getTypeDoc(JavadocContents.java:86)
+	at org.eclipse.jdt.internal.core.BinaryType.getAttachedJavadoc(BinaryType.java:996)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:462)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:555)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:512)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:495)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:129)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:82)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1009 2017-11-21 10:27:59.287
+!MESSAGE Unknown javadoc format for ServletContext {key=Ljavax/servlet/ServletContext;} [in ServletContext.class [in javax.servlet [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2017-11-21 10:44:02.974
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [Unknown javadoc format for ServletException {key=Ljavax/servlet/ServletException;} [in ServletException.class [in javax.servlet [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]]
+	at org.eclipse.jdt.internal.core.JavadocContents.getTypeDoc(JavadocContents.java:86)
+	at org.eclipse.jdt.internal.core.BinaryType.getAttachedJavadoc(BinaryType.java:996)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:462)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:555)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:512)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:495)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:129)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:82)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1009 2017-11-21 10:44:02.975
+!MESSAGE Unknown javadoc format for ServletException {key=Ljavax/servlet/ServletException;} [in ServletException.class [in javax.servlet [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]
+
+!ENTRY org.eclipse.osgi 2 1 2017-11-21 10:46:52.062
+!MESSAGE NLS unused message: ContentAssistProposal_label in: org.hibernate.eclipse.console.HibernateConsoleMessages
+
+!ENTRY org.eclipse.osgi 2 1 2017-11-21 10:46:52.062
+!MESSAGE NLS unused message: ContentAssistProposal_tooltip in: org.hibernate.eclipse.console.HibernateConsoleMessages
+
+!ENTRY org.eclipse.osgi 2 1 2017-11-21 10:46:52.063
+!MESSAGE NLS unused message: ContentAssistProposal_image in: org.hibernate.eclipse.console.HibernateConsoleMessages
+
+!ENTRY org.eclipse.osgi 2 1 2017-11-21 10:46:52.064
+!MESSAGE NLS unused message: ContentAssistProposal_description in: org.hibernate.eclipse.console.HibernateConsoleMessages
+
+!ENTRY org.eclipse.osgi 2 1 2017-11-21 10:46:52.064
+!MESSAGE NLS unused message: ContentAssistTip_label in: org.hibernate.eclipse.console.HibernateConsoleMessages
+
+!ENTRY org.eclipse.osgi 2 1 2017-11-21 10:46:52.065
+!MESSAGE NLS unused message: ContentAssistTip_tooltip in: org.hibernate.eclipse.console.HibernateConsoleMessages
+
+!ENTRY org.eclipse.osgi 2 1 2017-11-21 10:46:52.066
+!MESSAGE NLS unused message: ContentAssistTip_image in: org.hibernate.eclipse.console.HibernateConsoleMessages
+
+!ENTRY org.eclipse.osgi 2 1 2017-11-21 10:46:52.066
+!MESSAGE NLS unused message: ContentAssistTip_description in: org.hibernate.eclipse.console.HibernateConsoleMessages
+
+!ENTRY org.eclipse.osgi 2 1 2017-11-21 10:46:52.067
+!MESSAGE NLS unused message: ContentFormat_label in: org.hibernate.eclipse.console.HibernateConsoleMessages
+
+!ENTRY org.eclipse.osgi 2 1 2017-11-21 10:46:52.068
+!MESSAGE NLS unused message: ContentFormat_tooltip in: org.hibernate.eclipse.console.HibernateConsoleMessages
+
+!ENTRY org.eclipse.osgi 2 1 2017-11-21 10:46:52.068
+!MESSAGE NLS unused message: ContentFormat_image in: org.hibernate.eclipse.console.HibernateConsoleMessages
+
+!ENTRY org.eclipse.osgi 2 1 2017-11-21 10:46:52.069
+!MESSAGE NLS unused message: ContentFormat_description in: org.hibernate.eclipse.console.HibernateConsoleMessages
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2017-11-21 10:49:12.898
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [Unknown javadoc format for ServletException {key=Ljavax/servlet/ServletException;} [in ServletException.class [in javax.servlet [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]]
+	at org.eclipse.jdt.internal.core.JavadocContents.getTypeDoc(JavadocContents.java:86)
+	at org.eclipse.jdt.internal.core.BinaryType.getAttachedJavadoc(BinaryType.java:996)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:462)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:555)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:512)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:495)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:129)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:82)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1009 2017-11-21 10:49:12.898
+!MESSAGE Unknown javadoc format for ServletException {key=Ljavax/servlet/ServletException;} [in ServletException.class [in javax.servlet [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2017-11-21 10:56:26.627
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [Unknown javadoc format for HttpServletResponse {key=Ljavax/servlet/http/HttpServletResponse;} [in HttpServletResponse.class [in javax.servlet.http [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]]
+	at org.eclipse.jdt.internal.core.JavadocContents.getTypeDoc(JavadocContents.java:86)
+	at org.eclipse.jdt.internal.core.BinaryType.getAttachedJavadoc(BinaryType.java:996)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:462)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:555)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:512)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:495)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:129)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:82)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1009 2017-11-21 10:56:26.627
+!MESSAGE Unknown javadoc format for HttpServletResponse {key=Ljavax/servlet/http/HttpServletResponse;} [in HttpServletResponse.class [in javax.servlet.http [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2017-11-21 10:58:12.553
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [Unknown javadoc format for ServletException {key=Ljavax/servlet/ServletException;} [in ServletException.class [in javax.servlet [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]]
+	at org.eclipse.jdt.internal.core.JavadocContents.getTypeDoc(JavadocContents.java:86)
+	at org.eclipse.jdt.internal.core.BinaryType.getAttachedJavadoc(BinaryType.java:996)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:462)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:555)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:512)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:495)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:129)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:82)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1009 2017-11-21 10:58:12.553
+!MESSAGE Unknown javadoc format for ServletException {key=Ljavax/servlet/ServletException;} [in ServletException.class [in javax.servlet [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2017-11-21 10:59:02.582
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [Unknown javadoc format for ServletException {key=Ljavax/servlet/ServletException;} [in ServletException.class [in javax.servlet [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]]
+	at org.eclipse.jdt.internal.core.JavadocContents.getTypeDoc(JavadocContents.java:86)
+	at org.eclipse.jdt.internal.core.BinaryType.getAttachedJavadoc(BinaryType.java:996)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:462)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:555)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:512)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:495)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:129)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:82)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1009 2017-11-21 10:59:02.582
+!MESSAGE Unknown javadoc format for ServletException {key=Ljavax/servlet/ServletException;} [in ServletException.class [in javax.servlet [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2017-11-21 11:01:07.521
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [Unknown javadoc format for HttpServletResponse {key=Ljavax/servlet/http/HttpServletResponse;} [in HttpServletResponse.class [in javax.servlet.http [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]]
+	at org.eclipse.jdt.internal.core.JavadocContents.getTypeDoc(JavadocContents.java:86)
+	at org.eclipse.jdt.internal.core.BinaryType.getAttachedJavadoc(BinaryType.java:996)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:462)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:555)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:512)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:495)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:129)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:82)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1009 2017-11-21 11:01:07.522
+!MESSAGE Unknown javadoc format for HttpServletResponse {key=Ljavax/servlet/http/HttpServletResponse;} [in HttpServletResponse.class [in javax.servlet.http [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2017-11-21 11:02:06.898
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [Unknown javadoc format for HttpServletResponse {key=Ljavax/servlet/http/HttpServletResponse;} [in HttpServletResponse.class [in javax.servlet.http [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]]
+	at org.eclipse.jdt.internal.core.JavadocContents.getTypeDoc(JavadocContents.java:86)
+	at org.eclipse.jdt.internal.core.BinaryType.getAttachedJavadoc(BinaryType.java:996)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:462)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:555)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:512)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:495)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:129)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:82)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1009 2017-11-21 11:02:06.898
+!MESSAGE Unknown javadoc format for HttpServletResponse {key=Ljavax/servlet/http/HttpServletResponse;} [in HttpServletResponse.class [in javax.servlet.http [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2017-11-21 11:03:21.312
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [Unknown javadoc format for HttpServletResponse {key=Ljavax/servlet/http/HttpServletResponse;} [in HttpServletResponse.class [in javax.servlet.http [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]]
+	at org.eclipse.jdt.internal.core.JavadocContents.getTypeDoc(JavadocContents.java:86)
+	at org.eclipse.jdt.internal.core.BinaryType.getAttachedJavadoc(BinaryType.java:996)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:462)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:555)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:512)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:495)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:129)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:82)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1009 2017-11-21 11:03:21.312
+!MESSAGE Unknown javadoc format for HttpServletResponse {key=Ljavax/servlet/http/HttpServletResponse;} [in HttpServletResponse.class [in javax.servlet.http [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2017-11-21 11:05:19.270
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [Unknown javadoc format for HttpServletResponse {key=Ljavax/servlet/http/HttpServletResponse;} [in HttpServletResponse.class [in javax.servlet.http [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]]
+	at org.eclipse.jdt.internal.core.JavadocContents.getTypeDoc(JavadocContents.java:86)
+	at org.eclipse.jdt.internal.core.BinaryType.getAttachedJavadoc(BinaryType.java:996)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:462)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:555)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:512)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:495)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:129)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:82)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1009 2017-11-21 11:05:19.270
+!MESSAGE Unknown javadoc format for HttpServletResponse {key=Ljavax/servlet/http/HttpServletResponse;} [in HttpServletResponse.class [in javax.servlet.http [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2017-11-21 11:08:04.296
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [Unknown javadoc format for HttpServletResponse {key=Ljavax/servlet/http/HttpServletResponse;} [in HttpServletResponse.class [in javax.servlet.http [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]]
+	at org.eclipse.jdt.internal.core.JavadocContents.getTypeDoc(JavadocContents.java:86)
+	at org.eclipse.jdt.internal.core.BinaryType.getAttachedJavadoc(BinaryType.java:996)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:462)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:555)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:512)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:495)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:129)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:82)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1009 2017-11-21 11:08:04.296
+!MESSAGE Unknown javadoc format for HttpServletResponse {key=Ljavax/servlet/http/HttpServletResponse;} [in HttpServletResponse.class [in javax.servlet.http [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2017-11-21 11:14:04.159
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [Unknown javadoc format for HttpServletResponse {key=Ljavax/servlet/http/HttpServletResponse;} [in HttpServletResponse.class [in javax.servlet.http [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]]
+	at org.eclipse.jdt.internal.core.JavadocContents.getTypeDoc(JavadocContents.java:86)
+	at org.eclipse.jdt.internal.core.BinaryType.getAttachedJavadoc(BinaryType.java:996)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:462)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:555)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:512)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:495)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:129)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:82)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1009 2017-11-21 11:14:04.159
+!MESSAGE Unknown javadoc format for HttpServletResponse {key=Ljavax/servlet/http/HttpServletResponse;} [in HttpServletResponse.class [in javax.servlet.http [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2017-11-21 11:14:09.884
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [Unknown javadoc format for HttpServletResponse {key=Ljavax/servlet/http/HttpServletResponse;} [in HttpServletResponse.class [in javax.servlet.http [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]]
+	at org.eclipse.jdt.internal.core.JavadocContents.getTypeDoc(JavadocContents.java:86)
+	at org.eclipse.jdt.internal.core.BinaryType.getAttachedJavadoc(BinaryType.java:996)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:462)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:555)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:512)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:495)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:129)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:82)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1009 2017-11-21 11:14:09.885
+!MESSAGE Unknown javadoc format for HttpServletResponse {key=Ljavax/servlet/http/HttpServletResponse;} [in HttpServletResponse.class [in javax.servlet.http [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2017-11-21 11:14:53.029
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [Unknown javadoc format for HttpServletResponse {key=Ljavax/servlet/http/HttpServletResponse;} [in HttpServletResponse.class [in javax.servlet.http [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]]
+	at org.eclipse.jdt.internal.core.JavadocContents.getTypeDoc(JavadocContents.java:86)
+	at org.eclipse.jdt.internal.core.BinaryType.getAttachedJavadoc(BinaryType.java:996)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:462)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:555)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:512)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:495)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:129)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:82)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1009 2017-11-21 11:14:53.029
+!MESSAGE Unknown javadoc format for HttpServletResponse {key=Ljavax/servlet/http/HttpServletResponse;} [in HttpServletResponse.class [in javax.servlet.http [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2017-11-21 11:16:50.565
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [Unknown javadoc format for HttpServletResponse {key=Ljavax/servlet/http/HttpServletResponse;} [in HttpServletResponse.class [in javax.servlet.http [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]]
+	at org.eclipse.jdt.internal.core.JavadocContents.getTypeDoc(JavadocContents.java:86)
+	at org.eclipse.jdt.internal.core.BinaryType.getAttachedJavadoc(BinaryType.java:996)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:462)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:555)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:512)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:495)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:129)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:82)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1009 2017-11-21 11:16:50.565
+!MESSAGE Unknown javadoc format for HttpServletResponse {key=Ljavax/servlet/http/HttpServletResponse;} [in HttpServletResponse.class [in javax.servlet.http [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2017-11-21 11:17:27.973
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [Unknown javadoc format for HttpServletResponse {key=Ljavax/servlet/http/HttpServletResponse;} [in HttpServletResponse.class [in javax.servlet.http [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]]
+	at org.eclipse.jdt.internal.core.JavadocContents.getTypeDoc(JavadocContents.java:86)
+	at org.eclipse.jdt.internal.core.BinaryType.getAttachedJavadoc(BinaryType.java:996)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:462)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:555)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:512)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:495)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:129)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:82)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1009 2017-11-21 11:17:27.974
+!MESSAGE Unknown javadoc format for HttpServletResponse {key=Ljavax/servlet/http/HttpServletResponse;} [in HttpServletResponse.class [in javax.servlet.http [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2017-11-21 11:29:24.439
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [Unknown javadoc format for HttpServletResponse {key=Ljavax/servlet/http/HttpServletResponse;} [in HttpServletResponse.class [in javax.servlet.http [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]]
+	at org.eclipse.jdt.internal.core.JavadocContents.getTypeDoc(JavadocContents.java:86)
+	at org.eclipse.jdt.internal.core.BinaryType.getAttachedJavadoc(BinaryType.java:996)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:462)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:555)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:512)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:495)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:129)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:82)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1009 2017-11-21 11:29:24.439
+!MESSAGE Unknown javadoc format for HttpServletResponse {key=Ljavax/servlet/http/HttpServletResponse;} [in HttpServletResponse.class [in javax.servlet.http [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2017-11-21 11:35:50.726
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [Unknown javadoc format for HttpServletResponse {key=Ljavax/servlet/http/HttpServletResponse;} [in HttpServletResponse.class [in javax.servlet.http [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]]
+	at org.eclipse.jdt.internal.core.JavadocContents.getTypeDoc(JavadocContents.java:86)
+	at org.eclipse.jdt.internal.core.BinaryType.getAttachedJavadoc(BinaryType.java:996)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:462)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:555)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:512)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:495)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:129)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:82)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1009 2017-11-21 11:35:50.727
+!MESSAGE Unknown javadoc format for HttpServletResponse {key=Ljavax/servlet/http/HttpServletResponse;} [in HttpServletResponse.class [in javax.servlet.http [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2017-11-21 11:42:02.683
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [Unknown javadoc format for ServletException {key=Ljavax/servlet/ServletException;} [in ServletException.class [in javax.servlet [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]]
+	at org.eclipse.jdt.internal.core.JavadocContents.getTypeDoc(JavadocContents.java:86)
+	at org.eclipse.jdt.internal.core.BinaryType.getAttachedJavadoc(BinaryType.java:996)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:462)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:555)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:512)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:495)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:129)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:82)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1009 2017-11-21 11:42:02.683
+!MESSAGE Unknown javadoc format for ServletException {key=Ljavax/servlet/ServletException;} [in ServletException.class [in javax.servlet [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2017-11-21 11:42:04.634
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [Unknown javadoc format for HttpServlet {key=Ljavax/servlet/http/HttpServlet;} [in HttpServlet.class [in javax.servlet.http [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]]
+	at org.eclipse.jdt.internal.core.JavadocContents.getTypeDoc(JavadocContents.java:86)
+	at org.eclipse.jdt.internal.core.BinaryType.getAttachedJavadoc(BinaryType.java:996)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:462)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:555)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:512)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:495)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:129)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:82)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1009 2017-11-21 11:42:04.635
+!MESSAGE Unknown javadoc format for HttpServlet {key=Ljavax/servlet/http/HttpServlet;} [in HttpServlet.class [in javax.servlet.http [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2017-11-21 11:42:30.559
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [Unknown javadoc format for HttpServletResponse {key=Ljavax/servlet/http/HttpServletResponse;} [in HttpServletResponse.class [in javax.servlet.http [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]]
+	at org.eclipse.jdt.internal.core.JavadocContents.getTypeDoc(JavadocContents.java:86)
+	at org.eclipse.jdt.internal.core.BinaryType.getAttachedJavadoc(BinaryType.java:996)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:462)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:555)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:512)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:495)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:129)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:82)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1009 2017-11-21 11:42:30.560
+!MESSAGE Unknown javadoc format for HttpServletResponse {key=Ljavax/servlet/http/HttpServletResponse;} [in HttpServletResponse.class [in javax.servlet.http [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2017-11-21 11:42:45.628
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [Unknown javadoc format for HttpServletResponse {key=Ljavax/servlet/http/HttpServletResponse;} [in HttpServletResponse.class [in javax.servlet.http [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]]
+	at org.eclipse.jdt.internal.core.JavadocContents.getTypeDoc(JavadocContents.java:86)
+	at org.eclipse.jdt.internal.core.BinaryType.getAttachedJavadoc(BinaryType.java:996)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:462)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:555)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:512)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:495)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:129)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:82)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1009 2017-11-21 11:42:45.629
+!MESSAGE Unknown javadoc format for HttpServletResponse {key=Ljavax/servlet/http/HttpServletResponse;} [in HttpServletResponse.class [in javax.servlet.http [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2017-11-21 11:43:37.051
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [Unknown javadoc format for ServletConfig [in ServletConfig.class [in javax.servlet [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]]
+	at org.eclipse.jdt.internal.core.JavadocContents.getTypeDoc(JavadocContents.java:86)
+	at org.eclipse.jdt.internal.core.BinaryType.getAttachedJavadoc(BinaryType.java:996)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:462)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:555)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:512)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:495)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:129)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:82)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1009 2017-11-21 11:43:37.051
+!MESSAGE Unknown javadoc format for ServletConfig [in ServletConfig.class [in javax.servlet [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2017-11-21 11:50:46.103
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [Unknown javadoc format for ServletException {key=Ljavax/servlet/ServletException;} [in ServletException.class [in javax.servlet [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]]
+	at org.eclipse.jdt.internal.core.JavadocContents.getTypeDoc(JavadocContents.java:86)
+	at org.eclipse.jdt.internal.core.BinaryType.getAttachedJavadoc(BinaryType.java:996)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:462)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:555)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:512)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:495)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:129)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:82)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1009 2017-11-21 11:50:46.103
+!MESSAGE Unknown javadoc format for ServletException {key=Ljavax/servlet/ServletException;} [in ServletException.class [in javax.servlet [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2017-11-21 11:52:01.761
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [Unknown javadoc format for HttpServletResponse {key=Ljavax/servlet/http/HttpServletResponse;} [in HttpServletResponse.class [in javax.servlet.http [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]]
+	at org.eclipse.jdt.internal.core.JavadocContents.getTypeDoc(JavadocContents.java:86)
+	at org.eclipse.jdt.internal.core.BinaryType.getAttachedJavadoc(BinaryType.java:996)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:462)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:555)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:512)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:495)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:129)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:82)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1009 2017-11-21 11:52:01.761
+!MESSAGE Unknown javadoc format for HttpServletResponse {key=Ljavax/servlet/http/HttpServletResponse;} [in HttpServletResponse.class [in javax.servlet.http [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2017-11-21 11:53:01.880
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [Unknown javadoc format for HttpServletResponse {key=Ljavax/servlet/http/HttpServletResponse;} [in HttpServletResponse.class [in javax.servlet.http [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]]
+	at org.eclipse.jdt.internal.core.JavadocContents.getTypeDoc(JavadocContents.java:86)
+	at org.eclipse.jdt.internal.core.BinaryType.getAttachedJavadoc(BinaryType.java:996)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:462)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:555)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:512)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:495)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:129)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:82)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1009 2017-11-21 11:53:01.880
+!MESSAGE Unknown javadoc format for HttpServletResponse {key=Ljavax/servlet/http/HttpServletResponse;} [in HttpServletResponse.class [in javax.servlet.http [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2017-11-21 11:53:55.438
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [Unknown javadoc format for HttpServletResponse {key=Ljavax/servlet/http/HttpServletResponse;} [in HttpServletResponse.class [in javax.servlet.http [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]]
+	at org.eclipse.jdt.internal.core.JavadocContents.getTypeDoc(JavadocContents.java:86)
+	at org.eclipse.jdt.internal.core.BinaryType.getAttachedJavadoc(BinaryType.java:996)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:462)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:555)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:512)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:495)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:129)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:82)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1009 2017-11-21 11:53:55.439
+!MESSAGE Unknown javadoc format for HttpServletResponse {key=Ljavax/servlet/http/HttpServletResponse;} [in HttpServletResponse.class [in javax.servlet.http [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2017-11-21 11:53:56.076
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [Unknown javadoc format for HttpServletResponse {key=Ljavax/servlet/http/HttpServletResponse;} [in HttpServletResponse.class [in javax.servlet.http [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]]
+	at org.eclipse.jdt.internal.core.JavadocContents.getTypeDoc(JavadocContents.java:86)
+	at org.eclipse.jdt.internal.core.BinaryType.getAttachedJavadoc(BinaryType.java:996)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:462)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:555)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:512)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:495)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:129)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:82)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1009 2017-11-21 11:53:56.076
+!MESSAGE Unknown javadoc format for HttpServletResponse {key=Ljavax/servlet/http/HttpServletResponse;} [in HttpServletResponse.class [in javax.servlet.http [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2017-11-21 11:54:00.647
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [Unknown javadoc format for HttpServletResponse {key=Ljavax/servlet/http/HttpServletResponse;} [in HttpServletResponse.class [in javax.servlet.http [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]]
+	at org.eclipse.jdt.internal.core.JavadocContents.getTypeDoc(JavadocContents.java:86)
+	at org.eclipse.jdt.internal.core.BinaryType.getAttachedJavadoc(BinaryType.java:996)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:462)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:555)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:512)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:495)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:129)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:82)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1009 2017-11-21 11:54:00.647
+!MESSAGE Unknown javadoc format for HttpServletResponse {key=Ljavax/servlet/http/HttpServletResponse;} [in HttpServletResponse.class [in javax.servlet.http [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2017-11-21 12:39:32.101
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [Unknown javadoc format for HttpServletResponse {key=Ljavax/servlet/http/HttpServletResponse;} [in HttpServletResponse.class [in javax.servlet.http [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]]
+	at org.eclipse.jdt.internal.core.JavadocContents.getTypeDoc(JavadocContents.java:86)
+	at org.eclipse.jdt.internal.core.BinaryType.getAttachedJavadoc(BinaryType.java:996)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:462)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:555)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:512)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:495)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:129)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:82)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1009 2017-11-21 12:39:32.102
+!MESSAGE Unknown javadoc format for HttpServletResponse {key=Ljavax/servlet/http/HttpServletResponse;} [in HttpServletResponse.class [in javax.servlet.http [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2017-11-21 12:44:16.213
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [Unknown javadoc format for ServletException {key=Ljavax/servlet/ServletException;} [in ServletException.class [in javax.servlet [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]]
+	at org.eclipse.jdt.internal.core.JavadocContents.getTypeDoc(JavadocContents.java:86)
+	at org.eclipse.jdt.internal.core.BinaryType.getAttachedJavadoc(BinaryType.java:996)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:462)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:555)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:512)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:495)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:129)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:82)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1009 2017-11-21 12:44:16.213
+!MESSAGE Unknown javadoc format for ServletException {key=Ljavax/servlet/ServletException;} [in ServletException.class [in javax.servlet [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2017-11-21 12:44:45.147
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [Unknown javadoc format for HttpServletResponse {key=Ljavax/servlet/http/HttpServletResponse;} [in HttpServletResponse.class [in javax.servlet.http [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]]
+	at org.eclipse.jdt.internal.core.JavadocContents.getTypeDoc(JavadocContents.java:86)
+	at org.eclipse.jdt.internal.core.BinaryType.getAttachedJavadoc(BinaryType.java:996)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:462)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:555)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:512)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:495)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:129)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:82)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1009 2017-11-21 12:44:45.147
+!MESSAGE Unknown javadoc format for HttpServletResponse {key=Ljavax/servlet/http/HttpServletResponse;} [in HttpServletResponse.class [in javax.servlet.http [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2017-11-21 12:44:56.972
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [Unknown javadoc format for HttpServletResponse {key=Ljavax/servlet/http/HttpServletResponse;} [in HttpServletResponse.class [in javax.servlet.http [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]]
+	at org.eclipse.jdt.internal.core.JavadocContents.getTypeDoc(JavadocContents.java:86)
+	at org.eclipse.jdt.internal.core.BinaryType.getAttachedJavadoc(BinaryType.java:996)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:462)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:555)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:512)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:495)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:129)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:82)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1009 2017-11-21 12:44:56.972
+!MESSAGE Unknown javadoc format for HttpServletResponse {key=Ljavax/servlet/http/HttpServletResponse;} [in HttpServletResponse.class [in javax.servlet.http [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2017-11-21 12:46:44.913
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [Unknown javadoc format for ServletException {key=Ljavax/servlet/ServletException;} [in ServletException.class [in javax.servlet [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]]
+	at org.eclipse.jdt.internal.core.JavadocContents.getTypeDoc(JavadocContents.java:86)
+	at org.eclipse.jdt.internal.core.BinaryType.getAttachedJavadoc(BinaryType.java:996)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:462)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:555)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:512)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:495)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:129)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:82)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1009 2017-11-21 12:46:44.913
+!MESSAGE Unknown javadoc format for ServletException {key=Ljavax/servlet/ServletException;} [in ServletException.class [in javax.servlet [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2017-11-21 12:47:43.739
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [Unknown javadoc format for HttpServlet {key=Ljavax/servlet/http/HttpServlet;} [in HttpServlet.class [in javax.servlet.http [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]]
+	at org.eclipse.jdt.internal.core.JavadocContents.getTypeDoc(JavadocContents.java:86)
+	at org.eclipse.jdt.internal.core.BinaryType.getAttachedJavadoc(BinaryType.java:996)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:462)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:555)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:512)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:495)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:129)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:82)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1009 2017-11-21 12:47:43.740
+!MESSAGE Unknown javadoc format for HttpServlet {key=Ljavax/servlet/http/HttpServlet;} [in HttpServlet.class [in javax.servlet.http [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2017-11-21 12:51:41.719
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [Unknown javadoc format for HttpServletResponse {key=Ljavax/servlet/http/HttpServletResponse;} [in HttpServletResponse.class [in javax.servlet.http [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]]
+	at org.eclipse.jdt.internal.core.JavadocContents.getTypeDoc(JavadocContents.java:86)
+	at org.eclipse.jdt.internal.core.BinaryType.getAttachedJavadoc(BinaryType.java:996)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:462)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:555)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:512)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:495)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:129)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:82)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1009 2017-11-21 12:51:41.719
+!MESSAGE Unknown javadoc format for HttpServletResponse {key=Ljavax/servlet/http/HttpServletResponse;} [in HttpServletResponse.class [in javax.servlet.http [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2017-11-21 12:55:54.621
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [Unknown javadoc format for HttpServletResponse {key=Ljavax/servlet/http/HttpServletResponse;} [in HttpServletResponse.class [in javax.servlet.http [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]]
+	at org.eclipse.jdt.internal.core.JavadocContents.getTypeDoc(JavadocContents.java:86)
+	at org.eclipse.jdt.internal.core.BinaryType.getAttachedJavadoc(BinaryType.java:996)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:462)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:555)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:512)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:495)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:129)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:82)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1009 2017-11-21 12:55:54.621
+!MESSAGE Unknown javadoc format for HttpServletResponse {key=Ljavax/servlet/http/HttpServletResponse;} [in HttpServletResponse.class [in javax.servlet.http [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2017-11-21 13:13:36.067
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [Unknown javadoc format for ServletException {key=Ljavax/servlet/ServletException;} [in ServletException.class [in javax.servlet [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]]
+	at org.eclipse.jdt.internal.core.JavadocContents.getTypeDoc(JavadocContents.java:86)
+	at org.eclipse.jdt.internal.core.BinaryType.getAttachedJavadoc(BinaryType.java:996)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:462)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:555)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:512)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:495)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:129)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:82)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1009 2017-11-21 13:13:36.068
+!MESSAGE Unknown javadoc format for ServletException {key=Ljavax/servlet/ServletException;} [in ServletException.class [in javax.servlet [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2017-11-21 13:25:23.290
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [Unknown javadoc format for HttpServletResponse {key=Ljavax/servlet/http/HttpServletResponse;} [in HttpServletResponse.class [in javax.servlet.http [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]]
+	at org.eclipse.jdt.internal.core.JavadocContents.getTypeDoc(JavadocContents.java:86)
+	at org.eclipse.jdt.internal.core.BinaryType.getAttachedJavadoc(BinaryType.java:996)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:462)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:555)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:512)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:495)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:129)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:82)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1009 2017-11-21 13:25:23.291
+!MESSAGE Unknown javadoc format for HttpServletResponse {key=Ljavax/servlet/http/HttpServletResponse;} [in HttpServletResponse.class [in javax.servlet.http [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2017-11-21 13:25:41.507
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [Unknown javadoc format for ServletException {key=Ljavax/servlet/ServletException;} [in ServletException.class [in javax.servlet [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]]
+	at org.eclipse.jdt.internal.core.JavadocContents.getTypeDoc(JavadocContents.java:86)
+	at org.eclipse.jdt.internal.core.BinaryType.getAttachedJavadoc(BinaryType.java:996)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:462)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:555)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:512)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:495)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:129)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:82)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1009 2017-11-21 13:25:41.507
+!MESSAGE Unknown javadoc format for ServletException {key=Ljavax/servlet/ServletException;} [in ServletException.class [in javax.servlet [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2017-11-21 13:26:30.695
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [Unknown javadoc format for ServletException {key=Ljavax/servlet/ServletException;} [in ServletException.class [in javax.servlet [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]]
+	at org.eclipse.jdt.internal.core.JavadocContents.getTypeDoc(JavadocContents.java:86)
+	at org.eclipse.jdt.internal.core.BinaryType.getAttachedJavadoc(BinaryType.java:996)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:462)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:555)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:512)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:495)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:129)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:82)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1009 2017-11-21 13:26:30.695
+!MESSAGE Unknown javadoc format for ServletException {key=Ljavax/servlet/ServletException;} [in ServletException.class [in javax.servlet [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2017-11-21 13:31:16.332
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [Unknown javadoc format for ServletException {key=Ljavax/servlet/ServletException;} [in ServletException.class [in javax.servlet [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]]
+	at org.eclipse.jdt.internal.core.JavadocContents.getTypeDoc(JavadocContents.java:86)
+	at org.eclipse.jdt.internal.core.BinaryType.getAttachedJavadoc(BinaryType.java:996)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:462)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:555)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:512)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:495)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:129)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:82)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1009 2017-11-21 13:31:16.332
+!MESSAGE Unknown javadoc format for ServletException {key=Ljavax/servlet/ServletException;} [in ServletException.class [in javax.servlet [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2017-11-21 13:31:17.577
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [Unknown javadoc format for ServletException {key=Ljavax/servlet/ServletException;} [in ServletException.class [in javax.servlet [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]]
+	at org.eclipse.jdt.internal.core.JavadocContents.getTypeDoc(JavadocContents.java:86)
+	at org.eclipse.jdt.internal.core.BinaryType.getAttachedJavadoc(BinaryType.java:996)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:462)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:555)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:512)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:495)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:129)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:82)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1009 2017-11-21 13:31:17.577
+!MESSAGE Unknown javadoc format for ServletException {key=Ljavax/servlet/ServletException;} [in ServletException.class [in javax.servlet [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2017-11-21 13:31:21.049
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [Unknown javadoc format for ServletException {key=Ljavax/servlet/ServletException;} [in ServletException.class [in javax.servlet [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]]
+	at org.eclipse.jdt.internal.core.JavadocContents.getTypeDoc(JavadocContents.java:86)
+	at org.eclipse.jdt.internal.core.BinaryType.getAttachedJavadoc(BinaryType.java:996)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:462)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:555)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:512)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:495)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:129)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:82)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1009 2017-11-21 13:31:21.049
+!MESSAGE Unknown javadoc format for ServletException {key=Ljavax/servlet/ServletException;} [in ServletException.class [in javax.servlet [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2017-11-21 13:34:28.495
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [Unknown javadoc format for HttpServletResponse {key=Ljavax/servlet/http/HttpServletResponse;} [in HttpServletResponse.class [in javax.servlet.http [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]]
+	at org.eclipse.jdt.internal.core.JavadocContents.getTypeDoc(JavadocContents.java:86)
+	at org.eclipse.jdt.internal.core.BinaryType.getAttachedJavadoc(BinaryType.java:996)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:462)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:555)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:512)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:495)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:129)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:82)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1009 2017-11-21 13:34:28.495
+!MESSAGE Unknown javadoc format for HttpServletResponse {key=Ljavax/servlet/http/HttpServletResponse;} [in HttpServletResponse.class [in javax.servlet.http [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2017-11-21 13:36:05.495
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [Unknown javadoc format for HttpServletResponse {key=Ljavax/servlet/http/HttpServletResponse;} [in HttpServletResponse.class [in javax.servlet.http [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]]
+	at org.eclipse.jdt.internal.core.JavadocContents.getTypeDoc(JavadocContents.java:86)
+	at org.eclipse.jdt.internal.core.BinaryType.getAttachedJavadoc(BinaryType.java:996)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:462)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:555)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:512)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:495)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:129)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:82)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1009 2017-11-21 13:36:05.495
+!MESSAGE Unknown javadoc format for HttpServletResponse {key=Ljavax/servlet/http/HttpServletResponse;} [in HttpServletResponse.class [in javax.servlet.http [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2017-11-21 13:36:18.723
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [Unknown javadoc format for HttpServlet {key=Ljavax/servlet/http/HttpServlet;} [in HttpServlet.class [in javax.servlet.http [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]]
+	at org.eclipse.jdt.internal.core.JavadocContents.getTypeDoc(JavadocContents.java:86)
+	at org.eclipse.jdt.internal.core.BinaryType.getAttachedJavadoc(BinaryType.java:996)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:462)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:555)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:512)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:495)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:129)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:82)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1009 2017-11-21 13:36:18.723
+!MESSAGE Unknown javadoc format for HttpServlet {key=Ljavax/servlet/http/HttpServlet;} [in HttpServlet.class [in javax.servlet.http [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2017-11-21 13:39:45.626
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [Unknown javadoc format for HttpServlet {key=Ljavax/servlet/http/HttpServlet;} [in HttpServlet.class [in javax.servlet.http [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]]
+	at org.eclipse.jdt.internal.core.JavadocContents.getTypeDoc(JavadocContents.java:86)
+	at org.eclipse.jdt.internal.core.BinaryType.getAttachedJavadoc(BinaryType.java:996)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:462)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:555)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:512)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:495)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:129)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:82)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1009 2017-11-21 13:39:45.626
+!MESSAGE Unknown javadoc format for HttpServlet {key=Ljavax/servlet/http/HttpServlet;} [in HttpServlet.class [in javax.servlet.http [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2017-11-21 13:39:49.327
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [Unknown javadoc format for ServletException {key=Ljavax/servlet/ServletException;} [in ServletException.class [in javax.servlet [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]]
+	at org.eclipse.jdt.internal.core.JavadocContents.getTypeDoc(JavadocContents.java:86)
+	at org.eclipse.jdt.internal.core.BinaryType.getAttachedJavadoc(BinaryType.java:996)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:462)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:555)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:512)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:495)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:129)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:82)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1009 2017-11-21 13:39:49.327
+!MESSAGE Unknown javadoc format for ServletException {key=Ljavax/servlet/ServletException;} [in ServletException.class [in javax.servlet [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2017-11-21 13:39:52.961
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [Unknown javadoc format for ServletException {key=Ljavax/servlet/ServletException;} [in ServletException.class [in javax.servlet [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]]
+	at org.eclipse.jdt.internal.core.JavadocContents.getTypeDoc(JavadocContents.java:86)
+	at org.eclipse.jdt.internal.core.BinaryType.getAttachedJavadoc(BinaryType.java:996)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:462)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:555)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:512)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:495)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:129)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:82)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1009 2017-11-21 13:39:52.961
+!MESSAGE Unknown javadoc format for ServletException {key=Ljavax/servlet/ServletException;} [in ServletException.class [in javax.servlet [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2017-11-21 13:41:07.822
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [Unknown javadoc format for ServletException {key=Ljavax/servlet/ServletException;} [in ServletException.class [in javax.servlet [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]]
+	at org.eclipse.jdt.internal.core.JavadocContents.getTypeDoc(JavadocContents.java:86)
+	at org.eclipse.jdt.internal.core.BinaryType.getAttachedJavadoc(BinaryType.java:996)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:462)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:555)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:512)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:495)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:129)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:82)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1009 2017-11-21 13:41:07.823
+!MESSAGE Unknown javadoc format for ServletException {key=Ljavax/servlet/ServletException;} [in ServletException.class [in javax.servlet [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2017-11-21 13:42:23.794
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [Unknown javadoc format for ServletException {key=Ljavax/servlet/ServletException;} [in ServletException.class [in javax.servlet [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]]
+	at org.eclipse.jdt.internal.core.JavadocContents.getTypeDoc(JavadocContents.java:86)
+	at org.eclipse.jdt.internal.core.BinaryType.getAttachedJavadoc(BinaryType.java:996)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:462)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:555)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:512)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:495)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:129)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:82)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1009 2017-11-21 13:42:23.794
+!MESSAGE Unknown javadoc format for ServletException {key=Ljavax/servlet/ServletException;} [in ServletException.class [in javax.servlet [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2017-11-21 13:42:34.585
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [Unknown javadoc format for ServletException {key=Ljavax/servlet/ServletException;} [in ServletException.class [in javax.servlet [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]]
+	at org.eclipse.jdt.internal.core.JavadocContents.getTypeDoc(JavadocContents.java:86)
+	at org.eclipse.jdt.internal.core.BinaryType.getAttachedJavadoc(BinaryType.java:996)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:462)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:555)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:512)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:495)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:129)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:82)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1009 2017-11-21 13:42:34.585
+!MESSAGE Unknown javadoc format for ServletException {key=Ljavax/servlet/ServletException;} [in ServletException.class [in javax.servlet [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2017-11-21 13:42:57.245
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [Unknown javadoc format for HttpServletResponse {key=Ljavax/servlet/http/HttpServletResponse;} [in HttpServletResponse.class [in javax.servlet.http [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]]
+	at org.eclipse.jdt.internal.core.JavadocContents.getTypeDoc(JavadocContents.java:86)
+	at org.eclipse.jdt.internal.core.BinaryType.getAttachedJavadoc(BinaryType.java:996)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:462)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:555)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:512)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:495)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:129)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:82)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1009 2017-11-21 13:42:57.245
+!MESSAGE Unknown javadoc format for HttpServletResponse {key=Ljavax/servlet/http/HttpServletResponse;} [in HttpServletResponse.class [in javax.servlet.http [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2017-11-21 13:42:58.146
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [Unknown javadoc format for ServletException {key=Ljavax/servlet/ServletException;} [in ServletException.class [in javax.servlet [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]]
+	at org.eclipse.jdt.internal.core.JavadocContents.getTypeDoc(JavadocContents.java:86)
+	at org.eclipse.jdt.internal.core.BinaryType.getAttachedJavadoc(BinaryType.java:996)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:462)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:555)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:512)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:495)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:129)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:82)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1009 2017-11-21 13:42:58.146
+!MESSAGE Unknown javadoc format for ServletException {key=Ljavax/servlet/ServletException;} [in ServletException.class [in javax.servlet [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2017-11-21 13:43:08.320
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [Unknown javadoc format for ServletException {key=Ljavax/servlet/ServletException;} [in ServletException.class [in javax.servlet [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]]
+	at org.eclipse.jdt.internal.core.JavadocContents.getTypeDoc(JavadocContents.java:86)
+	at org.eclipse.jdt.internal.core.BinaryType.getAttachedJavadoc(BinaryType.java:996)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:462)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:555)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:512)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:495)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:129)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:82)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1009 2017-11-21 13:43:08.321
+!MESSAGE Unknown javadoc format for ServletException {key=Ljavax/servlet/ServletException;} [in ServletException.class [in javax.servlet [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2017-11-21 13:43:19.343
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [Unknown javadoc format for HttpServletResponse {key=Ljavax/servlet/http/HttpServletResponse;} [in HttpServletResponse.class [in javax.servlet.http [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]]
+	at org.eclipse.jdt.internal.core.JavadocContents.getTypeDoc(JavadocContents.java:86)
+	at org.eclipse.jdt.internal.core.BinaryType.getAttachedJavadoc(BinaryType.java:996)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:462)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:555)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:512)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:495)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:129)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:82)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1009 2017-11-21 13:43:19.343
+!MESSAGE Unknown javadoc format for HttpServletResponse {key=Ljavax/servlet/http/HttpServletResponse;} [in HttpServletResponse.class [in javax.servlet.http [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2017-11-21 13:43:21.706
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [Unknown javadoc format for HttpServletResponse {key=Ljavax/servlet/http/HttpServletResponse;} [in HttpServletResponse.class [in javax.servlet.http [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]]
+	at org.eclipse.jdt.internal.core.JavadocContents.getTypeDoc(JavadocContents.java:86)
+	at org.eclipse.jdt.internal.core.BinaryType.getAttachedJavadoc(BinaryType.java:996)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:462)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:555)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:512)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:495)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:129)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:82)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1009 2017-11-21 13:43:21.707
+!MESSAGE Unknown javadoc format for HttpServletResponse {key=Ljavax/servlet/http/HttpServletResponse;} [in HttpServletResponse.class [in javax.servlet.http [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2017-11-21 13:44:01.535
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [Unknown javadoc format for HttpServlet {key=Ljavax/servlet/http/HttpServlet;} [in HttpServlet.class [in javax.servlet.http [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]]
+	at org.eclipse.jdt.internal.core.JavadocContents.getTypeDoc(JavadocContents.java:86)
+	at org.eclipse.jdt.internal.core.BinaryType.getAttachedJavadoc(BinaryType.java:996)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:462)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:555)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:512)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:495)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:129)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:82)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1009 2017-11-21 13:44:01.536
+!MESSAGE Unknown javadoc format for HttpServlet {key=Ljavax/servlet/http/HttpServlet;} [in HttpServlet.class [in javax.servlet.http [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2017-11-21 13:47:17.938
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [Unknown javadoc format for HttpServletResponse {key=Ljavax/servlet/http/HttpServletResponse;} [in HttpServletResponse.class [in javax.servlet.http [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]]
+	at org.eclipse.jdt.internal.core.JavadocContents.getTypeDoc(JavadocContents.java:86)
+	at org.eclipse.jdt.internal.core.BinaryType.getAttachedJavadoc(BinaryType.java:996)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:462)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:555)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:512)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:495)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:129)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:82)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1009 2017-11-21 13:47:17.938
+!MESSAGE Unknown javadoc format for HttpServletResponse {key=Ljavax/servlet/http/HttpServletResponse;} [in HttpServletResponse.class [in javax.servlet.http [in D:\Common\plugins\com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\data\libraryset\EE_5\javaee.jar]]]
+
+!ENTRY org.eclipse.jst.jsp.core 2 2 2017-11-21 13:50:12.867
+!MESSAGE SAXParseException with /Hamster/WebRoot/WEB-INF/null/null (fatalError) while reading descriptor: The element type "servlet-mapping" must be terminated by the matching end-tag "</servlet-mapping>".
+
+!ENTRY org.eclipse.jst.jsp.core 2 2 2017-11-21 13:50:12.902
+!MESSAGE SAXParseException with /Hamster/WebRoot/WEB-INF/null/null (fatalError) while reading descriptor: The element type "servlet-mapping" must be terminated by the matching end-tag "</servlet-mapping>".

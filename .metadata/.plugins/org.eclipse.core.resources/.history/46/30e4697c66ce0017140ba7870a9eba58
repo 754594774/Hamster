@@ -1,0 +1,64 @@
+package com.linn.blog.service;
+
+import java.io.Reader;
+import java.sql.Clob;
+import java.sql.Connection;
+import java.sql.Date;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Timestamp;
+
+import com.linn.blog.entity.extension.Article;
+import com.linn.blog.utils.JDBCUtils;
+
+/**
+ * Article service
+ * @author 李难难
+ *
+ */
+public class ArticleServiceImpl {
+
+	/**
+	 * 查找文章信息
+	 */
+	public Article findArticleById (String articleId) throws Exception {
+		
+		Article article = null;
+		Reader reader =null;
+		StringBuilder sb = null;//从数据读取的文章内容
+		Connection conn = JDBCUtils.getMysqlConn();
+		String sql = "SELECT a.`id`,a.`content`,a.`description`,a.`last_time`,a.`title`,c.`name` "+
+			"category_name FROM t_article a JOIN t_category c ON a.category_id=c.id WHERE a.id=? AND a.is_draft=0; ";  
+		
+		//查找文章信息
+		PreparedStatement ps = conn.prepareStatement(sql);
+		ps.setObject(1, articleId);
+		ResultSet rs = ps.executeQuery();
+		while(rs.next()){
+			article = new Article();
+			int id= rs.getInt("id");
+			String categoryName = rs.getString("category_name");
+			String title = rs.getNString("title");
+			Clob c = rs.getClob("content");
+			Timestamp lastTime = rs.getTimestamp("last_time");
+			String intro = rs.getNString("description");
+			
+			reader = c.getCharacterStream();
+			int temp = 0;
+			sb = new StringBuilder();
+			while((temp=reader.read())!=-1){
+				sb.append((char)temp);
+			}
+			article.setId(id);
+			article.setCategoryName(categoryName);
+			article.setTitle(title);
+			article.setContent(sb.toString());
+			article.setLastTime(new Date(lastTime.getTime()));
+			article.setIntro(intro);
+		}
+		reader.close();
+		JDBCUtils.close(conn);
+		return article;
+		
+	}
+}

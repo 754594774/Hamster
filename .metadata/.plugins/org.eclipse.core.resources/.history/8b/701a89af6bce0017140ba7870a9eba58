@@ -1,0 +1,11 @@
+package com.linn.blog.service;
+
+/**
+ * 前端主页面service
+ * @author Administrator
+ *
+ */
+public class IndexServiceImpl {
+
+	public List<Article>
+}

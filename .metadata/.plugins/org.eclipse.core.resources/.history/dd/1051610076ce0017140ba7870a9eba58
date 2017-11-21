@@ -1,0 +1,135 @@
+package com.linn.blog.service.admin;
+
+import java.io.BufferedInputStream;
+import java.io.BufferedReader;
+import java.io.ByteArrayInputStream;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.Date;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import com.google.gson.Gson;
+import com.linn.blog.common.Const;
+import com.linn.blog.entity.extension.Article;
+import com.linn.blog.utils.JDBCUtils;
+
+/**
+ * 文章service
+ * @author Administrator
+ *
+ */
+public class ArticleServiceImpl {
+
+	public int addArticle(Article article) throws Exception{
+
+		String sql = "INSERT INTO t_article (category_id,title,content,description,description_pic,last_time,is_draft) VALUES (?,?,?,?,?,?,?);";  
+		
+		Connection conn = JDBCUtils.getMysqlConn();
+		PreparedStatement ps = conn.prepareStatement(sql);
+		
+		article.setLastTime(new Date(System.currentTimeMillis()));
+		
+		ps.setObject(1, article.getCategoryId());
+		ps.setObject(2, article.getTitle());
+		ps.setClob(3, new BufferedReader(new InputStreamReader(new BufferedInputStream(
+				new ByteArrayInputStream(article.getContent().getBytes("utf-8"))),"utf-8")));
+		ps.setObject(4, article.getDescription());
+		ps.setObject(5, article.getDescriptionPic());
+		ps.setObject(6, article.getLastTime());
+		ps.setObject(7, Const.NO);
+
+		int count = ps.executeUpdate();
+		JDBCUtils.close(ps, conn);
+		return count;
+	}
+	
+	/**
+	 * 删除文章
+	 */
+	public int delArticleById (String articleId) throws Exception {
+		String sql = "delete from t_article where id = ?;";  
+		Connection conn = JDBCUtils.getMysqlConn();
+		PreparedStatement ps = conn.prepareStatement(sql);
+		
+		ps.setObject(1, articleId);
+		int count = ps.executeUpdate();
+		JDBCUtils.close(ps, conn);
+		return count;
+	}
+	
+	public long getNextId(){
+		long nextId = 0;
+		Connection conn =null;
+		PreparedStatement ps=null;
+		String sql = "SELECT AUTO_INCREMENT FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME='t_article';";  
+
+		try {
+			conn = JDBCUtils.getMysqlConn();
+			ps = conn.prepareStatement(sql);
+
+			ResultSet rs = ps.executeQuery();
+			while(rs.next()){
+				nextId = rs.getInt("AUTO_INCREMENT");
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+			nextId= System.currentTimeMillis();
+		}finally{
+			JDBCUtils.close(ps, conn);
+		}
+		return nextId;
+	}
+	
+	/**
+	 * 查看文章列表
+	 * @return
+	 */
+	public List<Article> findArticleList() {
+		Connection conn =null;
+		PreparedStatement ps=null;
+		String sql = "SELECT a.id,c.name category_name,a.title,a.description,a.last_time FROM t_article a JOIN t_category c ON a.category_id=c.id;";  
+		List<Article> items = new ArrayList<Article>();
+		Map<String, Object> resultMap = new HashMap<String, Object>();
+		Gson g = new Gson();
+			conn = JDBCUtils.getMysqlConn();
+			ps = conn.prepareStatement(sql);
+
+			ResultSet rs = ps.executeQuery();
+			int count = 0;
+			while(rs.next()){
+				count ++;
+				Article article = new Article();
+				
+				int id = rs.getInt("id");
+				String name = rs.getNString("category_name");
+				String title = rs.getNString("title");
+				String intro = rs.getNString("description");
+				Timestamp lastTime = rs.getTimestamp("last_time");
+				
+				article.setId(id);
+				article.setCategoryName(name);
+				article.setTitle(title);
+				article.setIntro(intro);
+				article.setLastTime(new Date(lastTime.getTime()));
+				items.add(article);
+			}
+			
+			resultMap.put("rows", items);
+			resultMap.put("total",count);
+			
+			JDBCUtils.close(ps, conn);
+			response.setContentType("text/html;charset=utf-8");
+			PrintWriter out = response.getWriter();
+			out.print(g.toJson(resultMap));
+			out.flush();
+			out.close();
+	}
+}

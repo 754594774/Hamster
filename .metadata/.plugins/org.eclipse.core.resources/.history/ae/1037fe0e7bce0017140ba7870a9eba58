@@ -1,0 +1,59 @@
+package com.linn.blog.service;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.google.gson.Gson;
+import com.linn.blog.entity.system.Result;
+import com.linn.blog.utils.JDBCUtils;
+
+/**
+ * 文章分类service
+ * @author Administrator
+ *
+ */
+public class CategoryServiceImpl {
+
+	/**
+	 * 删除分类
+	 * @param categoryId
+	 * @throws Exception
+	 */
+	public int delCategory(String categoryId) throws Exception{
+		String sql = "delete from t_category where id = ?;";  
+		Connection conn = JDBCUtils.getMysqlConn();
+		PreparedStatement ps = conn.prepareStatement(sql);
+		ps.setObject(1, categoryId);
+		int count = ps.executeUpdate();
+		JDBCUtils.close(ps, conn);
+		return count;
+	}
+	
+	private void changeCategory() throws Exception{
+		
+		Connection conn =null;
+		PreparedStatement ps=null;
+		String sql = "update t_category set code = ?,name = ? where id = ?;";  
+		Result result = new Result ();
+		result.setMsg("OK");
+		result.setSuccess(true);
+		Connection conn = JDBCUtils.getMysqlConn();
+		ps = conn.prepareStatement(sql);
+		String id = request.getParameter("id");
+		String code = request.getParameter("code");
+		String name = request.getParameter("name");
+		
+		ps.setObject(1, code);
+		ps.setObject(2, name);
+		ps.setObject(3, id);
+		int count = ps.executeUpdate();
+		
+		JDBCUtils.close(ps, conn);
+	}
+}

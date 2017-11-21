@@ -185,7 +185,12 @@ function addComent(){
 	    articleId:$("#articleId").val()
 	  },
 	  function(result){
-	    window.location.reload();
+	    var jsonObj = eval('(' + result + ')');
+		if (jsonObj.success){
+			window.location.reload();
+		} else {
+			$.messager.show({title: '失败',msg: jsonObj.msg});
+		}
 	  });
 }
 

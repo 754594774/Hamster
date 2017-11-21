@@ -1,0 +1,8 @@
+package com.linn.blog.service.admin;
+
+public class ArticleServiceImpl {
+
+	public void findArticle (){
+		
+	}
+}

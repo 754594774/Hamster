@@ -32,12 +32,13 @@ version12
 
 version13
 登录登出
+修改密码功能
 
-问题：
-1.异常统一处理
-2.请求方式不统一，使用get,post和js跳转3种方式
-3.存在多余jar包 如json-lib
-4.添加日志
-5.返回数据格式不统一，添加result类
+2017-11-21
+1.精简servlet的数量
+合并了对同一张表操作的servlet；
+修改web.xml，一个servlet对应多个url-pattern
+2.添加service层
+将对数据库的操作放到该层
 
-request.getRequestDispatcher("/index.jsp").forward(request, response);  
+

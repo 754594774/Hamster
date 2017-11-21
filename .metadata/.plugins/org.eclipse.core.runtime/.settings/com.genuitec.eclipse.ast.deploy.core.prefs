@@ -1,9 +1,9 @@
-#Mon Nov 20 21:36:09 CST 2017
+#Tue Nov 21 13:58:08 GMT+08:00 2017
 myeclipseTomcatServer.Hamster.type=WebDeployment
 myeclipseTomcatServer.Hamster.isDeployed=true
-myeclipseTomcatServer.Hamster.shouldBackup=false
+myeclipseTomcatServer.Hamster.shouldBackup=true
 myeclipseTomcatServer.Hamster.altContextRoot=
-myeclipseTomcatServer.Hamster.deploymentPath=G\:\\Workspaces\\Hamster\\.metadata\\.me_tcat\\webapps\\Hamster
+myeclipseTomcatServer.Hamster.deploymentPath=E\:\\\u623F\u4EA7\u7EC4_\u5DE5\u4F5C\u7A7A\u95F4\\java\\workspace\\GitRepository\\.metadata\\.me_tcat\\webapps\\Hamster
 myeclipseTomcatServer.Hamster.shouldOverwrite=false
 myeclipseTomcatServer.Hamster.deployIsOverProject=false
 myeclipseTomcatServer.Hamster.contextRoot=/Hamster

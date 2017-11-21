@@ -1,0 +1,18 @@
+package com.linn.blog.service.admin;
+
+import com.linn.blog.entity.extension.Article;
+
+/**
+ * 文章service
+ * @author Administrator
+ *
+ */
+public class ArticleServiceImpl {
+
+	public int addArticle (Article article) {
+
+		
+		
+		return 0;
+	}
+}

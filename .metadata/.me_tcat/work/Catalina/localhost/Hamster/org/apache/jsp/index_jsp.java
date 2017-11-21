@@ -160,7 +160,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       out.write('\n');
       out.write('	');
       if (true) {
-        _jspx_page_context.forward("index?operation=toIndex");
+        _jspx_page_context.forward("article?operation=toIndex");
         return;
       }
       out.write('\r');
@@ -340,7 +340,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
           out.write("\t\t\t\t\t<div class=\"post-list-item\">\r\n");
           out.write("\t\t\t\t\t\t<div class=\"post-list-item-container\">\r\n");
           out.write("\t\t\t\t\t\t\t<div class=\"item-thumb bg-deepgrey\" style=\"background-image: url(");
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${article.introPicName}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${article.descriptionPic}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
           out.write(");\"></div>\r\n");
           out.write("\t\t\t\t\t\t\t<a href=\"article?operation=toArticle&articleId=");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${article.id}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
@@ -348,7 +348,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
           out.write("\t\t\t\t\t\t\t\t<div class=\"item-desc\">\r\n");
           out.write("\t\t\t\t\t\t\t\t\t<p>\r\n");
           out.write("\t\t\t\t\t\t\t\t\t\t");
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${article.intro}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${article.description}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
           out.write("\r\n");
           out.write("\t\t\t\t\t\t\t\t\t</p>\r\n");
           out.write("\t\t\t\t\t\t\t\t</div> </a>\r\n");

@@ -1,0 +1,10 @@
+package com.linn.blog.service.admin;
+
+/**
+ * 文章service
+ * @author Administrator
+ *
+ */
+public class ArticleServiceImpl {
+
+}

@@ -13,7 +13,7 @@ public class Comment {
 	private String cont;
 	private Date pdate;
 	private Integer isleaf;
-	private Integer article_id ;
+	private Integer articleId ;
 	private List<Comment> childComments = new ArrayList<Comment>();
 	public List<Comment> getChildComments() {
 		return childComments;
@@ -63,15 +63,15 @@ public class Comment {
 	public void setIsleaf(Integer isleaf) {
 		this.isleaf = isleaf;
 	}
-	public Integer getArticle_id() {
-		return article_id;
+	public Integer getArticleId() {
+		return articleId;
 	}
-	public void setArticle_id(Integer articleId) {
-		article_id = articleId;
+	public void setArticleId(Integer articleId) {
+		this.articleId = articleId;
 	}
 	@Override
 	public String toString() {
-		return "Comment [article_id=" + article_id + ", childComments="
+		return "Comment [article_id=" + articleId + ", childComments="
 				+ childComments + ", cont=" + cont + ", id=" + id + ", isleaf="
 				+ isleaf + ", memberName=" + memberName + ", pdate=" + pdate
 				+ ", pid=" + pid + ", rootid=" + rootid + "]";

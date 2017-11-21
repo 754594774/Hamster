@@ -1,114 +1,332 @@
 package com.linn.blog.servlet;
 
+import java.io.File;
 import java.io.IOException;
-import java.io.Reader;
-import java.sql.Clob;
+import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.commons.fileupload.FileItem;
+import org.apache.commons.fileupload.FileUploadException;
+import org.apache.commons.fileupload.disk.DiskFileItemFactory;
+import org.apache.commons.fileupload.servlet.ServletFileUpload;
+
+import com.google.gson.Gson;
 import com.linn.blog.entity.extension.Article;
+import com.linn.blog.entity.extension.Category;
+import com.linn.blog.entity.system.Result;
+import com.linn.blog.service.ArticleServiceImpl;
 import com.linn.blog.utils.JDBCUtils;
 
-public class ArticleServlet extends HttpServlet{
-
+/**
+ * 后台文章管理servet
+ * @author 李难难
+ * 
+ */
+public class ArticleServlet extends HttpServlet {
+	
+	private ServletConfig config = null;
+	private ArticleServiceImpl articleService = null;
+	
 	@Override
-	protected void service(HttpServletRequest req, HttpServletResponse resp)
+	public void init(ServletConfig config) throws ServletException {
+		this.config = config;
+		articleService = new ArticleServiceImpl();
+	}
+	
+	@Override
+	public void destroy() {
+		config = null;
+	}
+	@Override
+	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
+		request.setCharacterEncoding("utf-8");
+		String oper = request.getParameter("operation");
+		
+		if (oper.equals("toAddArticle")){
+			toAddArticle(request,response);
+		} else if (oper.equals("toArticleList")){
+			toArticleList(request,response);
+		} else if (oper.equals("articleList")){
+			articleList(request, response);
+		} else if (oper.equals("delArticle")){
+			delArticle(request,response);
+		} else if(oper.equals("addArticle")){
+			addArticle(request, response);
+		} else if (oper.equals("toArticle")){
+			toArticle(request,response);
+		} else if (oper.equals("toIndex")){
+			toIndex(request,response);
+		} 
+	}
+	/**
+	 * 显示blog主页面
+	 * @param request
+	 * @param response
+	 * @throws IOException 
+	 * @throws ServletException 
+	 */
+	private void toIndex(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+		
 		try {
-			req.setCharacterEncoding("utf-8");
-			String oper = req.getParameter("operation");
-			if (oper.equals("toArticle")){
-				
-				toArticle(req,resp);
-			} 
+			List<Article> articles = articleService.findArticleList();
+			request.setAttribute("articles", articles);
+			request.getRequestDispatcher("/index.jsp").forward(request, response);  
 		} catch (Exception e) {
 			e.printStackTrace();
+			request.setAttribute("errorMessage", "系统内部错误!");
+			request.getRequestDispatcher("/common/error.jsp").forward(request,response);
+		} 
+	}
+	/**
+	 * 跳转到文章展现页面
+	 * @param req
+	 * @param resp
+	 * @throws IOException 
+	 * @throws ServletException 
+	 */
+	private void toArticle(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+		String articleId = req.getParameter("articleId");
+		//查找文章信息
+		try {
+			 Article article =	articleService.findArticleById(articleId);
+			 req.setAttribute("article", article);
+			 req.getRequestDispatcher("/article.jsp").forward(req, resp);
+		} catch (Exception e) {
+			e.printStackTrace();
+			req.setAttribute("errorMessage", "系统内部错误!");
+			req.getRequestDispatcher("/common/error.jsp").forward(req,resp); 
 		}
 	}
 	/**
-	 * 跳转到文章详细页面
-	 * @param req
-	 * @param resp
+	 * 发布文章
+	 * @throws IOException 
 	 */
-	private void toArticle(HttpServletRequest req, HttpServletResponse resp) {
-			
-		Connection conn =null;
+	private void addArticle(HttpServletRequest request, HttpServletResponse response) throws IOException{
 		
+		
+		Result result = new Result();
+		result.setSuccess(true);
+		result.setMsg("OK");
 		try {
-			conn = JDBCUtils.getMysqlConn();
-			//查找文章信息
-			Article article = getArticle(req,resp,conn);
-			
-			req.setAttribute("article", article);
-			
-			ServletContext sc = getServletContext(); 
-			RequestDispatcher rd = sc.getRequestDispatcher("/article.jsp"); 
-			rd.forward(req, resp);
-			
+			Article article = uploadFile(request);
+			int count = articleService.addArticle(article);
+			//添加至数据库
+			if(count<=0){
+				result.setSuccess(false);
+				result.setMsg("添加失败");
+			}
 		} catch (Exception e) {
+			result.setSuccess(false);
+			result.setMsg("系统内部错误");
 			e.printStackTrace();
-		} finally{
-			JDBCUtils.close(conn);
+		}finally{
+			Gson g = new Gson();
+			response.setContentType("text/html;charset=utf-8");
+			PrintWriter out = response.getWriter();
+			out.write(g.toJson(result));
+			out.flush();
+			out.close();
 		}
 	}
 	
 	/**
-	 * 获取文章内容
-	 * @param request
-	 * @param response
+	 * 上传文件
+	 * @throws Exception 
 	 */
-	private Article getArticle(HttpServletRequest request, HttpServletResponse response,
-			Connection conn) throws Exception{
+	private Article uploadFile(HttpServletRequest request) throws Exception{
+		request.setCharacterEncoding("utf-8");
+		Article article = new Article();
+		// 用于存放上传文件的目录
+		String uploadPath = config.getServletContext().getRealPath("/") + "upload\\";   
 		
-		PreparedStatement ps=null;
+		String picPath = request.getContextPath() + "/upload/";   
+		DiskFileItemFactory factory = new DiskFileItemFactory();
+		factory.setSizeThreshold(4096);
 
-		String sql = "SELECT a.`id`,a.`content`,a.`description`,a.`last_time`,a.`title`,c.`name` "+
-			"category_name FROM t_article a JOIN t_category c ON a.category_id=c.id WHERE a.id=? AND a.is_draft=0; ";  
+		ServletFileUpload upload = new ServletFileUpload(factory);
+		upload.setHeaderEncoding("UTF-8");
+		upload.setSizeMax(1000000);
 		
-		StringBuilder sb = null;
-		Reader reader =null;
-		Article article=null;
-		
-		//查找文章信息
-		ps = conn.prepareStatement(sql);
-		
-		String articleId = request.getParameter("articleId");
-		ps.setObject(1, articleId);
-		ResultSet rs = ps.executeQuery();
-		
-		while(rs.next()){
-			article = new Article();
-			int id= rs.getInt("id");
-			String categoryName = rs.getString("category_name");
-			String title = rs.getNString("title");
-			Clob c = rs.getClob("content");
-			Timestamp lastTime = rs.getTimestamp("last_time");
-			String intro = rs.getNString("description");
-			
-			reader = c.getCharacterStream();
-			int temp = 0;
-			sb = new StringBuilder();
-			while((temp=reader.read())!=-1){
-				sb.append((char)temp);
+		String picName = articleService.getNextId() + ".jpg";
+		List fileItems = upload.parseRequest(request);
+		Iterator iter = fileItems.iterator();
+		while (iter.hasNext()) {
+			FileItem item = (FileItem) iter.next();
+			if (!item.isFormField()) {
+				String name = item.getName();
+				long size = item.getSize();
+				if ((name == null || name.equals("")) && size == 0)
+					continue;
+				String path = uploadPath + picName;
+				item.write(new File(path));
+				//存储图片相对路径
+				article.setDescriptionPic(picPath + picName);
 			}
-			article.setId(id);
-			article.setCategoryName(categoryName);
-			article.setTitle(title);
-			article.setContent(sb.toString());
-			article.setLastTime(new Date(lastTime.getTime()));
-			article.setIntro(intro);
+			
+			//取出文本数据
+			if(item.isFormField()) {
+				System.out.println(item.getFieldName() + "==" + item.getString("utf-8").trim());
+				if(item.getFieldName().equals("title")) {
+				 	String title = item.getString("utf-8");
+				 	article.setTitle(title.trim());
+				}else if(item.getFieldName().equals("description")){
+					String description = item.getString("utf-8");
+					article.setDescription(description);
+				}else if(item.getFieldName().equals("categoryId")){
+					int categoryId = Integer.parseInt(item.getString());
+					article.setCategoryId(categoryId);
+				}else if(item.getFieldName().equals("content")){
+					String content = item.getString("utf-8");
+					article.setContent(content.trim());
+				}
+			}
 		}
 		return article;
 	}
+
+	/**
+	 * 删除文章
+	 * @param request
+	 * @param response
+	 * @throws IOException 
+	 */
+	private void delArticle(HttpServletRequest request,
+			HttpServletResponse response) throws IOException {
+
+		request.setCharacterEncoding("utf-8");
+		Result result = new Result();
+		result.setSuccess(true);
+		result.setMsg("OK");
+		try {
+			String id = request.getParameter("id");
+			articleService.delArticleById(id);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			result.setSuccess(false);
+			result.setMsg("failed");
+		
+		}finally{
+			response.setContentType("text/html;charset=utf-8");
+			Gson g = new Gson();
+			PrintWriter out = response.getWriter();
+			out.write(g.toJson(result));
+			out.flush();
+			out.close();
+		}
+	}
+
+	/**
+	 * 跳转到文章列表页面
+	 * @param request
+	 * @param response
+	 */
+	private void toArticleList(HttpServletRequest request, HttpServletResponse response){
+		ServletContext sc = config.getServletContext(); 
+		RequestDispatcher rd = sc.getRequestDispatcher("/admin/articleManager/articleList.jsp"); 
+		try {
+			rd.forward(request, response);
+		} catch (ServletException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	/**
+	 * 文章列表
+	 * @param request
+	 * @param response
+	 * @throws IOException
+	 */
+	private void articleList(HttpServletRequest request, HttpServletResponse response) throws IOException{
+
+		Map<String, Object> resultMap = new HashMap<String, Object>();
+		Gson g = new Gson();
+		try {
+			List<Article> articles = articleService.findArticleList();
+			resultMap.put("rows", articles);
+			resultMap.put("total",articles.size());
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally{
+			response.setContentType("text/html;charset=utf-8");
+			PrintWriter out = response.getWriter();
+			out.print(g.toJson(resultMap));
+			out.flush();
+			out.close();
+		}
+	}
+
+	/**
+	 * 跳转到添加文章页面
+	 * @param request
+	 * @param response
+	 */
+	private void toAddArticle(HttpServletRequest request, HttpServletResponse response){
+
+		Connection conn =null;
+		PreparedStatement ps=null;
+		String sql = "select * from t_category;";  
+
+		List<Category> categorys = new ArrayList<Category>();//已添加分类
+		Category category=null;
+		try {
+			conn = JDBCUtils.getMysqlConn();
+			ps = conn.prepareStatement(sql);
+
+			ResultSet rs = ps.executeQuery();
+			while(rs.next()){
+				category = new Category();
+				String code = rs.getNString("code");
+				String name = rs.getNString("name");
+				int id = rs.getInt("id");
+
+				category.setCode(code);
+				category.setId(id);
+				category.setName(name);
+				
+				categorys.add(category);
+			}
+			request.setAttribute("categorys", categorys);
+			
+			ServletContext sc = config.getServletContext(); 
+			RequestDispatcher rd = sc.getRequestDispatcher("/admin/articleManager/addArticle.jsp"); 
+			rd.forward(request, response);
+			
+		} catch (ServletException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally{
+			JDBCUtils.close(ps, conn);
+		}
+	}
+
+
 }

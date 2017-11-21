@@ -1,0 +1,17 @@
+package com.linn.blog.service.admin;
+
+/**
+ * Article service
+ * @author 李难难
+ *
+ */
+public class ArticleServiceImpl {
+
+	/**
+	 * 查找文章信息
+	 */
+	public void findArticleById (String id){
+		Article article = null;
+		
+	}
+}

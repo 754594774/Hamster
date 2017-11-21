@@ -1,0 +1,53 @@
+package com.linn.blog.service;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
+import com.linn.blog.entity.extension.Comment;
+import com.linn.blog.utils.JDBCUtils;
+
+
+/**
+ * 文章评论service
+ * @author Administrator
+ *
+ */
+public class CommentServiceImpl {
+
+	/**
+	 * 添加评论
+	 */
+	public void addComment (Comment comment) {
+
+		String sql = "INSERT INTO t_comment(pid,rootid,member_name,cont,pdate,isleaf,article_id) " 
+			+"values(?,?,?,?,now(),?,?);";
+		String updateParentLeadSql = "UPDATE t_comment SET isleaf = ? WHERE id = ?;";
+		
+		Connection conn = JDBCUtils.getMysqlConn();
+
+		PreparedStatement ps = conn.prepareStatement(sql);
+		
+		String pid = request.getParameter("pid");
+		String memberName = request.getParameter("memberName");
+		String cont = request.getParameter("cont");
+		String articleId = request.getParameter("articleId");
+		
+		ps.setObject(1, pid);
+		ps.setObject(2, 1);
+		ps.setObject(3, memberName);
+		ps.setObject(4, cont);
+		ps.setObject(5, 0);
+		ps.setObject(6, articleId);
+		
+		int count = ps.executeUpdate();
+		
+		//更改父节点为非叶子节点
+		ps = conn.prepareStatement(updateParentLeadSql);
+		ps.setObject(1, 1);
+		ps.setObject(2, pid);
+		count = ps.executeUpdate();
+		
+		JDBCUtils.close(ps, conn);
+			
+	}
+}
