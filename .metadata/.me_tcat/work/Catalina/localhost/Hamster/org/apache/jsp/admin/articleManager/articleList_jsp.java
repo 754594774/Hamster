@@ -98,15 +98,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       out.write("\t\t\t<tr>\r\n");
       out.write("\t\t\t\t<th field=\"categoryName\" width=\"50\">所属分类</th>\r\n");
       out.write("\t\t\t\t<th field=\"title\" width=\"50\">标题</th>\r\n");
-      out.write("\t\t\t\t<th field=\"intro\" width=\"50\">简介</th>\r\n");
+      out.write("\t\t\t\t<th field=\"description\" width=\"50\">简介</th>\r\n");
       out.write("\t\t\t\t<th field=\"lastTime\" width=\"50\">修改时间</th>\r\n");
       out.write("\t\t\t</tr>\r\n");
       out.write("\t\t</thead>\r\n");
       out.write("\t</table>\r\n");
       out.write("\t\r\n");
       out.write("\t<div id=\"toolbar\">\r\n");
-      out.write("\t\t<a href=\"javascript:void(0)\" class=\"easyui-linkbutton\" iconCls=\"icon-add\" plain=\"true\" onclick=\"\">添加</a>\r\n");
-      out.write("\t\t<a href=\"javascript:void(0)\" class=\"easyui-linkbutton\" iconCls=\"icon-edit\" plain=\"true\" onclick=\"\">编辑</a>\r\n");
+      out.write("\t\t<a href=\"javascript:void(0)\" class=\"easyui-linkbutton\" iconCls=\"icon-add\" plain=\"true\" onclick=\"addArticle()\">添加</a>\r\n");
+      out.write("\t\t<a href=\"javascript:void(0)\" class=\"easyui-linkbutton\" iconCls=\"icon-edit\" plain=\"true\" onclick=\"editArticle()\">编辑</a>\r\n");
       out.write("\t\t<a href=\"javascript:void(0)\" class=\"easyui-linkbutton\" iconCls=\"icon-remove\" plain=\"true\" onclick=\"delArticle()\">删除</a>\r\n");
       out.write("\t</div>\r\n");
       out.write("\t\r\n");

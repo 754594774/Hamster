@@ -14,7 +14,7 @@ public class Article implements Serializable{
 	
 	private String content;
 	
-	private Date lastTime;
+	private Timestamp lastTime;
 	
 	private String description;
 	
@@ -65,14 +65,13 @@ public class Article implements Serializable{
 	}
 
 
-	public Date getLastTime() {
+	public Timestamp getLastTime() {
 		return lastTime;
 	}
 
-	public void setLastTime(Date lastTime) {
+	public void setLastTime(Timestamp lastTime) {
 		this.lastTime = lastTime;
 	}
-
 
 	public String getDescription() {
 		return description;

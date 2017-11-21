@@ -29,7 +29,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	</script>
 </head>
 <body class="easyui-layout">
-	<div data-options="region:'north',border:false" style="height:90px;background:#B3DFDA;padding:10px;">
+	<div data-options="region:'north',border:false" style="height:85px;background:#B3DFDA;padding:10px;">
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 		<div style="width: 50%;float: left;">
 			<b><i><font size="10" color="white">Tale</font><font size="5" color="green">博客管理后台&nbsp&nbspV1.0</font></i></b>
@@ -64,7 +64,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<div data-options="region:'east',split:true,collapsed:false,title:'操作信息'" style="width:200px;padding:10px;">admin登陆了</div>
 	<div data-options="region:'south',border:false" style="height:30px;background:#A9FACD;padding:10px;">友链：<a href="/Hamster/index.jsp" target="_blank">Hamster Blog</a> @2017 Author li bai</div>
 	<div id="content" data-options="region:'center',title:'工作台'">
-		 <IFRAME name="mainFrame" src=""  height="100%" width="100%" frameBorder=0 scrolling="auto" src="" id="mainFrame"></IFRAME>
+		 <IFRAME name="mainFrame" class="test" src=""  height="95%" width="100%" frameBorder=0 scrolling="auto" src="" id="mainFrame"></IFRAME>
 	</div>
 	
 	<div id="dlg" class="easyui-dialog" title="修改密码" style="width:300px;height:250px;padding:10px"

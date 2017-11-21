@@ -28,6 +28,51 @@ import com.linn.blog.utils.JDBCUtils;
  *
  */
 public class ArticleServiceImpl {
+	
+	/**
+	 * 更新文章
+	 * @param article
+	 * @return
+	 */
+	public int updateArticle (Article article) throws Exception{
+		String descPic = "";
+		
+		Connection conn = JDBCUtils.getMysqlConn();
+		if(article.getDescriptionPic() != null && article.getDescriptionPic() != ""){
+			descPic = 	"  description_pic = ?,\n";
+		}
+		
+		String sql = "UPDATE t_article\n" +
+		"SET\n" + 
+		"  category_id = ?,\n" + 
+		"  title = ?,\n" + 
+		"  content = ?,\n" + 
+		"  last_time = ?,\n" + 
+		"  description = ?,\n" + 
+		descPic + 
+		"  is_draft = ?\n" + 
+		"WHERE id = ?;";
+		
+		PreparedStatement ps = conn.prepareStatement(sql);
+		ps.setObject(1, article.getCategoryId());
+		ps.setObject(2, article.getTitle());
+		ps.setObject(3, article.getContent());
+		ps.setObject(4, new Timestamp(System.currentTimeMillis()));
+		ps.setObject(5, article.getDescription());
+		if (article.getDescriptionPic() != null && article.getDescriptionPic() != ""){
+			ps.setObject(6, article.getDescriptionPic());
+			ps.setObject(7, 0);
+			ps.setObject(8, article.getId());
+		} else {
+			ps.setObject(6, 0);
+			ps.setObject(7, article.getId());
+		}
+		int count = ps.executeUpdate();
+		JDBCUtils.close(ps, conn);
+		
+		return count;
+	}
+	
 	/**
 	 * 添加文章
 	 * @param article
@@ -41,7 +86,7 @@ public class ArticleServiceImpl {
 		Connection conn = JDBCUtils.getMysqlConn();
 		PreparedStatement ps = conn.prepareStatement(sql);
 		
-		article.setLastTime(new Date(System.currentTimeMillis()));
+		article.setLastTime(new Timestamp(System.currentTimeMillis()));
 		
 		ps.setObject(1, article.getCategoryId());
 		ps.setObject(2, article.getTitle());
@@ -114,8 +159,8 @@ public class ArticleServiceImpl {
 			String description = rs.getNString("description");
 			Timestamp lastTime = rs.getTimestamp("last_time");
 			String descriptionPic = rs.getString("description_pic");
-			
 			article.setId(id);
+			article.setLastTime(lastTime);
 			article.setCategoryName(categoryName);
 			article.setTitle(title);
 			article.setDescription(description);
@@ -127,6 +172,7 @@ public class ArticleServiceImpl {
 	}
 	/**
 	 * 查找文章详细信息
+	 * 失败返回null
 	 */
 	public Article findArticleById (String articleId) throws Exception {
 		
@@ -134,7 +180,7 @@ public class ArticleServiceImpl {
 		Reader reader =null;
 		StringBuilder sb = null;//从数据读取的文章内容
 		Connection conn = JDBCUtils.getMysqlConn();
-		String sql = "SELECT a.`id`,a.`content`,a.`description`,a.`last_time`,a.`title`,c.`name` "+
+		String sql = "SELECT a.id,a.category_id,a.content,a.description,a.description_pic,a.last_time,a.title,c.name "+
 			"category_name FROM t_article a JOIN t_category c ON a.category_id=c.id WHERE a.id=? AND a.is_draft=0; ";  
 		
 		//查找文章信息
@@ -149,7 +195,9 @@ public class ArticleServiceImpl {
 			Clob c = rs.getClob("content");
 			Timestamp lastTime = rs.getTimestamp("last_time");
 			String description = rs.getNString("description");
-			
+			String descriptionPic = rs.getNString("description_pic");
+			int categoryId = rs.getInt("category_id");
+		
 			reader = c.getCharacterStream();
 			int temp = 0;
 			sb = new StringBuilder();
@@ -157,15 +205,16 @@ public class ArticleServiceImpl {
 				sb.append((char)temp);
 			}
 			article.setId(id);
+			article.setCategoryId(categoryId);
 			article.setCategoryName(categoryName);
 			article.setTitle(title);
 			article.setContent(sb.toString());
-			article.setLastTime(new Date(lastTime.getTime()));
+			article.setLastTime(new Timestamp(System.currentTimeMillis()));
 			article.setDescription(description);
+			article.setDescriptionPic(descriptionPic);
 		}
 		reader.close();
 		JDBCUtils.close(conn);
 		return article;
-		
 	}
 }

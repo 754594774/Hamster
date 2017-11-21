@@ -30,42 +30,41 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-	<form action="" method="post" id="articleForm" enctype="multipart/form-data">
-	    <input type="hidden" name="operation" value="addArticle">
+	<form action="" method="post" name="articleForm" id="articleForm" enctype="multipart/form-data">
 		<div class="easyui-panel" style="width:100%;height:160px;padding:5px;">
 			<div style="width:80%;float: left;">
 				<div style="padding:10px;">
 						<select id="categoryId" class="easyui-combobox" name="categoryId" label="文章分类:" style="width:45%;" required="true">
 						  	<c:forEach items="${categorys}" var="category">
-			                	<option value=${category.id}>${category.name}</option>
+						  		<option value="${category.id}" <c:if test="${article.categoryId eq category.id}">selected="selected"</c:if>>${category.name}</option>
 			                </c:forEach>
 						</select>
-					<input id="title" name="title"  label="标题:" class="easyui-textbox" style="width:45%;" required="true">
+					<input id="title" name="title"  label="标题:" class="easyui-textbox" style="width:45%;" required="true" value="${article.title}">
 				</div>
 				<div style="padding:10px;">
-					<input id="intro" name="intro"  label="简介:" class="easyui-textbox" style="width: 90%" required="true">
+					<input id="intro" name="description"  label="简介:" class="easyui-textbox" style="width: 90%" required="true" value="${article.description}">
 				</div>
 				<div  style="padding:10px;">
-					<input id="introPic" name ="introPic" label="简介图片:" class="easyui-filebox" data-options="onChange:function(){preview(this)},prompt:'选择简介图片...',buttonText:'&nbsp;选&nbsp;择&nbsp;'" style="width:45%;" required="true">
+					<input id="introPic" name ="descriptionPic" label="简介图片:" class="easyui-filebox" data-options="onChange:function(){preview(this)},prompt:'选择简介图片...',buttonText:'&nbsp;选&nbsp;择&nbsp;'" style="width:45%;" required="true" value="${article.descriptionPic}">
 				</div>
 			</div>
 			<div class="easyui-panel" style="width:15%;height: 140px;float: right;">
-				<img id="previewPic" alt="预览" src="" style="width: 100%;height: 98%;" /> 
+				<img id="previewPic" alt="预览" src="${article.descriptionPic}" style="width: 100%;height: 98%;" /> 
 			</div>
 		</div>
-			
 		<div style="margin: 10px 0">
 				<textarea name="content" style="margin-top: 10px; width: 100%; height: 500px;" required="true">
-						
+						${article.content}
 				</textarea>
 		</div>
+	    <input type="hidden" name="articleId" id="articleId" value="${article.id}">
 	</form>
 	<div style="margin: 10px 0;padding:10px 0;">
-			<a href="javascript:void(0)" class="easyui-linkbutton c7" style="width: 100px; float: right" onclick="addDraft()">存为草稿</a>
-			<label style="width: 5px; float: right">
-				&nbsp
-			</label>
-			<a href="javascript:void(0)" class="easyui-linkbutton c6" style="width: 100px; float: right" onclick="addArticle()">发布文章</a>
+		<a href="javascript:void(0)" class="easyui-linkbutton c7" style="width: 100px; float: right" onclick="addDraft()">存为草稿</a>
+		<label style="width: 5px; float: right">
+			&nbsp
+		</label>
+		<a href="javascript:void(0)" class="easyui-linkbutton c6" style="width: 100px; float: right" onclick="addArticle()">发布文章</a>
 	</div>
 	</body>
 </html>

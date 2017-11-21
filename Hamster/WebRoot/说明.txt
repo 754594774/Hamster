@@ -40,5 +40,7 @@ version13
 修改web.xml，一个servlet对应多个url-pattern
 2.添加service层
 将对数据库的操作放到该层
+3.添加编辑文章功能
+
 
 

@@ -35,6 +35,7 @@ import com.linn.blog.entity.extension.Article;
 import com.linn.blog.entity.extension.Category;
 import com.linn.blog.entity.system.Result;
 import com.linn.blog.service.ArticleServiceImpl;
+import com.linn.blog.service.CategoryServiceImpl;
 import com.linn.blog.utils.JDBCUtils;
 
 /**
@@ -46,11 +47,13 @@ public class ArticleServlet extends HttpServlet {
 	
 	private ServletConfig config = null;
 	private ArticleServiceImpl articleService = null;
+	private CategoryServiceImpl categoryService = null;
 	
 	@Override
 	public void init(ServletConfig config) throws ServletException {
 		this.config = config;
 		articleService = new ArticleServiceImpl();
+		categoryService = new CategoryServiceImpl();
 	}
 	
 	@Override
@@ -62,7 +65,7 @@ public class ArticleServlet extends HttpServlet {
 			throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 		String oper = request.getParameter("operation");
-		
+		System.out.println(oper);
 		if (oper.equals("toAddArticle")){
 			toAddArticle(request,response);
 		} else if (oper.equals("toArticleList")){
@@ -79,6 +82,7 @@ public class ArticleServlet extends HttpServlet {
 			toIndex(request,response);
 		} 
 	}
+
 	/**
 	 * 显示blog主页面
 	 * @param request
@@ -125,14 +129,18 @@ public class ArticleServlet extends HttpServlet {
 	 */
 	private void addArticle(HttpServletRequest request, HttpServletResponse response) throws IOException{
 		
-		
 		Result result = new Result();
 		result.setSuccess(true);
 		result.setMsg("OK");
+		
 		try {
 			Article article = uploadFile(request);
-			int count = articleService.addArticle(article);
-			//添加至数据库
+			int count = 0;
+			if(article.getId() != null) {
+				count = articleService.updateArticle(article);
+			} else {
+				count = articleService.addArticle(article);
+			}
 			if(count<=0){
 				result.setSuccess(false);
 				result.setMsg("添加失败");
@@ -200,6 +208,12 @@ public class ArticleServlet extends HttpServlet {
 				}else if(item.getFieldName().equals("content")){
 					String content = item.getString("utf-8");
 					article.setContent(content.trim());
+				}else if(item.getFieldName().equals("articleId")){
+					String articleId = item.getString("utf-8");
+					if(articleId !=null && !articleId .equals(""))
+					{
+						article.setId(Integer.parseInt(articleId.trim()));
+					}
 				}
 			}
 		}
@@ -220,7 +234,7 @@ public class ArticleServlet extends HttpServlet {
 		result.setSuccess(true);
 		result.setMsg("OK");
 		try {
-			String id = request.getParameter("id");
+			String id = request.getParameter("articleId");
 			articleService.delArticleById(id);
 			
 		} catch (Exception e) {
@@ -288,43 +302,21 @@ public class ArticleServlet extends HttpServlet {
 	 */
 	private void toAddArticle(HttpServletRequest request, HttpServletResponse response){
 
-		Connection conn =null;
-		PreparedStatement ps=null;
-		String sql = "select * from t_category;";  
-
-		List<Category> categorys = new ArrayList<Category>();//已添加分类
-		Category category=null;
 		try {
-			conn = JDBCUtils.getMysqlConn();
-			ps = conn.prepareStatement(sql);
 
-			ResultSet rs = ps.executeQuery();
-			while(rs.next()){
-				category = new Category();
-				String code = rs.getNString("code");
-				String name = rs.getNString("name");
-				int id = rs.getInt("id");
-
-				category.setCode(code);
-				category.setId(id);
-				category.setName(name);
-				
-				categorys.add(category);
-			}
+			List<Category> categorys = categoryService.findCategoryList();
 			request.setAttribute("categorys", categorys);
-			
+			String articleId = request.getParameter("articleId");
+			if(articleId != null) {
+				Article article = articleService.findArticleById(articleId);
+				request.setAttribute("article", article);
+			} 
 			ServletContext sc = config.getServletContext(); 
 			RequestDispatcher rd = sc.getRequestDispatcher("/admin/articleManager/addArticle.jsp"); 
 			rd.forward(request, response);
 			
-		} catch (ServletException e) {
+		} catch (Exception e){
 			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}finally{
-			JDBCUtils.close(ps, conn);
 		}
 	}
 
