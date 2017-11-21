@@ -7,6 +7,14 @@ package com.linn.blog.entity.system;
  */
 public class User {
 
+	private Integer id;
+	
+	public Integer getId() {
+		return id;
+	}
+	public void setId(Integer id) {
+		this.id = id;
+	}
 	private String username;
 	
 	private String password;
@@ -25,7 +33,8 @@ public class User {
 	}
 	@Override
 	public String toString() {
-		return "User [password=" + password + ", username=" + username + "]";
+		return "User [id=" + id + ", password=" + password + ", username="
+				+ username + "]";
 	}
 
 }

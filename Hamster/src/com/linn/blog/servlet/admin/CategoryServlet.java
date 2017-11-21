@@ -89,7 +89,7 @@ public class CategoryServlet extends HttpServlet {
 	 * @throws IOException 
 	 */
 	private void changeCategory(HttpServletRequest request, HttpServletResponse response) throws IOException{
-	request.setCharacterEncoding("utf-8");
+		request.setCharacterEncoding("utf-8");
 		
 		Connection conn =null;
 		PreparedStatement ps=null;

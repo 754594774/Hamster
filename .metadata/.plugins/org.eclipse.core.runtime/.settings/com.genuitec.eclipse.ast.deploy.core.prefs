@@ -1,0 +1,13 @@
+#Mon Nov 20 21:36:09 CST 2017
+myeclipseTomcatServer.Hamster.type=WebDeployment
+myeclipseTomcatServer.Hamster.isDeployed=true
+myeclipseTomcatServer.Hamster.shouldBackup=false
+myeclipseTomcatServer.Hamster.altContextRoot=
+myeclipseTomcatServer.Hamster.deploymentPath=G\:\\Workspaces\\Hamster\\.metadata\\.me_tcat\\webapps\\Hamster
+myeclipseTomcatServer.Hamster.shouldOverwrite=false
+myeclipseTomcatServer.Hamster.deployIsOverProject=false
+myeclipseTomcatServer.Hamster.contextRoot=/Hamster
+myeclipseTomcatServer.Hamster.isExploded=true
+eclipse.preferences.version=1
+myeclipseTomcatServer.Hamster.IEARProjectName=
+myeclipseTomcatServer.Hamster.isUptoDate=true

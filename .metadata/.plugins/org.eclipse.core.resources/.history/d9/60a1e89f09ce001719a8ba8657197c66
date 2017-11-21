@@ -1,0 +1,41 @@
+$(document).ready(
+	function(){
+		$('#dlg').dialog('close');
+	}
+)
+
+/**
+ * 弹出密码修改框
+ */
+function editPassword(){
+	$('#dlg').dialog('open');
+	$("#username").val("22012");
+	$("#password").textbox('setValue', "22011");
+	$("#confirmPassword").textbox('setValue', "22010");
+	url = 'admin/login?operation=changePassword';
+}
+/**
+ * 保存修改
+ * @memberOf {TypeName} 
+ * @return {TypeName} 
+ */
+function saveUser(){
+	$('#fm').form('submit',{
+		url: url,
+		onSubmit: function(){
+			return $(this).form('validate');
+		},
+		success: function(result){
+			var result = eval('('+result+')');
+			if (result.success){
+				$('#dlg').dialog('close');		// close the dialog
+				$('#dg').datagrid('reload');	// reload the Category data
+			} else {
+				$.messager.show({
+					title: 'Error',
+					msg: result.msg
+				});
+			}
+		}
+	});
+}
