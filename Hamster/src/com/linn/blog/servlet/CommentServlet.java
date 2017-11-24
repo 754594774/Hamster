@@ -3,14 +3,10 @@ package com.linn.blog.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.io.UnsupportedEncodingException;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -21,7 +17,6 @@ import com.google.gson.Gson;
 import com.linn.blog.entity.extension.Comment;
 import com.linn.blog.entity.system.Result;
 import com.linn.blog.service.CommentServiceImpl;
-import com.linn.blog.utils.JDBCUtils;
 
 public class CommentServlet extends HttpServlet {
 
@@ -41,7 +36,53 @@ public class CommentServlet extends HttpServlet {
 			getComments(request,response);
 		} else if(oper.equals("addComent")){
 			addComent(request,response);
+		} else if(oper.equals("commentList")){
+			commentList(request,response);
+		} else if(oper.equals("toCommentList")){
+			toCommentList(request,response);
+		} else if(oper.equals("childCommentList")) {
+			childCommentList(request,response);
 		}
+	}
+	/**
+	 * 查找评论的回复
+	 * @param request
+	 * @param response
+	 * @throws IOException 
+	 */
+	private void childCommentList(HttpServletRequest request,
+			HttpServletResponse response) throws IOException {
+		Map<String, Object> resultMap = new HashMap<String, Object>();
+		List<Comment> comments = new ArrayList<Comment>();
+		String rootId = request.getParameter("rootid");
+		try {
+			comments = commentService.findChildCommentList(rootId);
+			resultMap.put("rows", comments);
+			resultMap.put("total",comments.size());
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			response.setContentType("text/html;charset=utf-8");
+			PrintWriter out = response.getWriter();
+			Gson g = new Gson();
+			out.print(g.toJson(resultMap));
+			out.flush();
+			out.close();
+		}
+		
+	}
+	/**
+	 * 跳转到文章评论列表
+	 * @param request
+	 * @param response
+	 * @throws IOException 
+	 * @throws ServletException 
+	 */
+	private void toCommentList(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
+		
+		request.getRequestDispatcher("/admin/articleManager/commentList.jsp").forward(request, response);
+		
 	}
 	/**
 	 * 添加评论
@@ -57,8 +98,13 @@ public class CommentServlet extends HttpServlet {
 		String memberName = request.getParameter("memberName");
 		String cont = request.getParameter("cont");
 		String articleId = request.getParameter("articleId");
+		String rootid = request.getParameter("rootid");
 		
 		Comment comment = new Comment();
+		if(rootid == null){
+			rootid = "0";
+		}
+		comment.setRootid(Integer.parseInt(rootid));
 		comment.setPid(Integer.parseInt(pid));
 		comment.setMemberName(memberName);
 		comment.setCont(cont);
@@ -69,7 +115,6 @@ public class CommentServlet extends HttpServlet {
 		result.setSuccess(true);
 		try {
 			int count = commentService.addComment(comment);
-			System.out.println("添加评论结果：" + count);
 		} catch (Exception e) {
 			e.printStackTrace();
 			result.setMsg("添加失败，系统错误");
@@ -86,6 +131,7 @@ public class CommentServlet extends HttpServlet {
 	}
 	/**
 	 * 查找文章的评论信息
+	 * 用于前端显示
 	 * @param request
 	 * @param response
 	 * @param conn
@@ -98,9 +144,10 @@ public class CommentServlet extends HttpServlet {
 		String jsonMsg = "";
 		String articleId = request.getParameter("articleId");
 		try {
-			comments = commentService.findCommentList(articleId);
+			comments = commentService.findCommentListTree(articleId);
 			Gson gson = new Gson();
 			jsonMsg = gson.toJson(comments);
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -111,7 +158,43 @@ public class CommentServlet extends HttpServlet {
 			out.close();
 		}
 	}
-	
+	/**
+	 * 查找文章的评论信息
+	 * 显示文章评论列表
+	 * 对文章列表信息进行扩展
+	 * @param request
+	 * @param response
+	 * @param conn
+	 * @throws IOException 
+	 * @throws ServletException 
+	 */
+	private void commentList(HttpServletRequest request, HttpServletResponse response) 
+		throws IOException, ServletException{
+		
+		Map<String, Object> resultMap = new HashMap<String, Object>();
+		List<Comment> comments = new ArrayList<Comment>();
+		String articleId = request.getParameter("articleId");
+		try {
+			
+			if (articleId == null) {
+				comments = commentService.findRootCommentAll();
+			} else {
+				comments = commentService.findCommentByArticleId(articleId);
+			}
+			System.out.println(comments);
+			resultMap.put("rows", comments);
+			resultMap.put("total",comments.size());
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			response.setContentType("text/html;charset=utf-8");
+			PrintWriter out = response.getWriter();
+			Gson g = new Gson();
+			out.print(g.toJson(resultMap));
+			out.flush();
+			out.close();
+		}
+	}
 
 
 }

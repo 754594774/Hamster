@@ -1,6 +1,7 @@
 package com.linn.blog.entity.extension;
 
 import java.sql.Date;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,9 +12,16 @@ public class Comment {
 	private Integer rootid;
 	private String memberName;
 	private String cont;
-	private Date pdate;
+	private Timestamp pdate;
 	private Integer isleaf;
 	private Integer articleId ;
+	private String articleTitle;
+	public String getArticleTitle() {
+		return articleTitle;
+	}
+	public void setArticleTitle(String articleTitle) {
+		this.articleTitle = articleTitle;
+	}
 	private List<Comment> childComments = new ArrayList<Comment>();
 	public List<Comment> getChildComments() {
 		return childComments;
@@ -51,10 +59,10 @@ public class Comment {
 	public void setCont(String cont) {
 		this.cont = cont;
 	}
-	public Date getPdate() {
+	public Timestamp getPdate() {
 		return pdate;
 	}
-	public void setPdate(Date pdate) {
+	public void setPdate(Timestamp pdate) {
 		this.pdate = pdate;
 	}
 	public Integer getIsleaf() {
@@ -71,10 +79,12 @@ public class Comment {
 	}
 	@Override
 	public String toString() {
-		return "Comment [article_id=" + articleId + ", childComments="
-				+ childComments + ", cont=" + cont + ", id=" + id + ", isleaf="
-				+ isleaf + ", memberName=" + memberName + ", pdate=" + pdate
-				+ ", pid=" + pid + ", rootid=" + rootid + "]";
+		return "Comment [articleId=" + articleId + ", articleTitle="
+				+ articleTitle + ", childComments=" + childComments + ", cont="
+				+ cont + ", id=" + id + ", isleaf=" + isleaf + ", memberName="
+				+ memberName + ", pdate=" + pdate + ", pid=" + pid
+				+ ", rootid=" + rootid + "]";
 	}
+
 	
 }

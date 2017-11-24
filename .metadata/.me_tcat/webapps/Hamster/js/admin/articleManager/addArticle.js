@@ -7,7 +7,7 @@ KindEditor.ready(function(K) {
 	items : [
 		'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline',
 		'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist',
-		'insertunorderedlist', '|', 'emoticons', 'link']
+		'insertunorderedlist', '|', 'emoticons', 'image', 'link']
 	});
 });
 
@@ -52,7 +52,6 @@ function addArticle(K) {
 			var jsonObj = eval('(' + result + ')');
 			if (jsonObj.success){
 				$.messager.show({title: '成功',msg: jsonObj.msg});
-				window.parent.$('#mainFrame').attr('src','admin/article?operation=toArticleList');
 			} else {
 				$.messager.show({title: '失败',msg: jsonObj.msg});
 			}

@@ -1,23 +1,96 @@
-<%@ page language="java" import="java.util.*" contentType="text/html; charset=UTF-8"  pageEncoding="UTF-8"%> 
-		<footer id="footer" class="footer bg-white">
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <base href="<%=basePath%>">
+    
+    <title>footer page</title>
+    
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="0">    
+	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+	<meta http-equiv="description" content="This is my page">
+	
+	<link href="css/index/xcode.min.css" rel="stylesheet">
+	<link href="css/index/style.min.css" rel="stylesheet">
+	<script src="js/jquery.min.js"></script>
+	<script src="js/index/index.js"></script>
+	<script src="js/headroom.min.js"></script>
+	<script src="js/highlight.min.js"></script>
+	<script src="js/instantclick.min.js"></script>
+	<!--
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	-->
+	<style>
+		#instantclick {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			pointer-events: none;
+			z-index: 2147483647;
+			transition: opacity .25s .1s
+		}
+		.instantclick-bar {
+			background: #29d;
+			width: 100%;
+			margin-left: -100%;
+			height: 2px;
+			transition: all .25s
+		}
+	</style>
+	<script type="text/javascript">
+		var header = new Headroom(document.getElementById("header"), {
+			tolerance : 10,
+			offset : 80,
+			classes : {
+				initial : "animated",
+				pinned : "slideDown",
+				unpinned : "slideUp"
+			}
+		});
+		header.init();
+		$('#search-inp').keypress(function(e) {
+			var key = e.which; //e.which是按键的值
+				if (key == 13) {
+					var q = $(this).val();
+					if (q && q != '') {
+						window.location.href = '/search/' + q;
+					}
+				}
+			});
+	</script>
+	<script data-no-instant="">
+			InstantClick.on('change', function(isInitialLoad) {
+				var blocks = document.querySelectorAll('pre code');
+				for ( var i = 0; i < blocks.length; i++) {
+					hljs.highlightBlock(blocks[i]);
+				}
+				if (isInitialLoad === false) {
+					if (typeof ga !== 'undefined')
+						ga('send', 'pageview', location.pathname + location.search);
+				}
+			});
+			InstantClick.init('mousedown');
+	</script>
+  </head>
+  <body>
+  	<footer id="footer" class="footer bg-white">
 		<div class="footer-social">
 			<div class="footer-container clearfix">
 				<div class="social-list">
 					<a class="social weibo" target="blank"
-						href="http://weibo.com/biezhi">微博</a>
-
-					<a class="social zhihu" target="blank"
-						href="https://www.zhihu.com/people/biezhi">知乎</a>
-
-					<a class="social rss" target="blank"
-						href="https://tale.biezhi.me/feed">RSS</a>
-
-					<a class="social github" target="blank"
-						href="https://github.com/biezhi">Github</a>
-
-					<a class="social twitter" target="blank"
-						href="https://twitter.com/biezhii">Twitter</a>
+						href="https://github.com/754594774/Hamster">github</a>
+					<a href="images/wxCode.png" class="tooltip" title="二维码">	微信	</a>	
+						
 				</div>
+				<div id="sp" style=""></div>
 			</div>
 		</div>
 		<div class="footer-meta">
@@ -28,7 +101,7 @@
 								src="images/logo.png" alt="Tale Blog"> </a>
 						<div class="info-text">
 							<p>
-								一生有所追求.
+								一生何求.
 							</p>
 							<p>
 								Powered by
@@ -62,54 +135,6 @@
 				</div>
 			</div>
 		</div>
-		</footer>
-
-		<script src="js/headroom.min.js"></script>
-		<script src="js/highlight.min.js"></script>
-		<script src="js/instantclick.min.js"></script>
-		<script type="text/javascript">
-			var header = new Headroom(document.getElementById("header"), {
-				tolerance : 10,
-				offset : 80,
-				classes : {
-					initial : "animated",
-					pinned : "slideDown",
-					unpinned : "slideUp"
-				}
-			});
-			header.init();
-			$('#search-inp').keypress(function(e) {
-				var key = e.which; //e.which是按键的值
-					if (key == 13) {
-						var q = $(this).val();
-						if (q && q != '') {
-							window.location.href = '/search/' + q;
-						}
-					}
-				});
-			</script>
-			<script data-no-instant="">
-				InstantClick.on('change', function(isInitialLoad) {
-					var blocks = document.querySelectorAll('pre code');
-					for ( var i = 0; i < blocks.length; i++) {
-						hljs.highlightBlock(blocks[i]);
-					}
-					if (isInitialLoad === false) {
-						if (typeof ga !== 'undefined')
-							ga('send', 'pageview', location.pathname + location.search);
-					}
-				});
-				InstantClick.init('mousedown');
-			</script>
-
-		<div id="qb-sougou-search" style="display: none; opacity: 0;">
-			<p>
-				搜索
-			</p>
-			<p class="last-btn">
-				复制
-			</p>
-			<%--<iframe src="saved_resource.html"></iframe>
-		--%></div>
-	</body>
+	  </footer>
+  </body>
 </html>

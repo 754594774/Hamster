@@ -256,17 +256,13 @@ public class ArticleServlet extends HttpServlet {
 	 * 跳转到文章列表页面
 	 * @param request
 	 * @param response
+	 * @throws IOException 
+	 * @throws ServletException 
 	 */
-	private void toArticleList(HttpServletRequest request, HttpServletResponse response){
+	private void toArticleList(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		ServletContext sc = config.getServletContext(); 
 		RequestDispatcher rd = sc.getRequestDispatcher("/admin/articleManager/articleList.jsp"); 
-		try {
-			rd.forward(request, response);
-		} catch (ServletException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		rd.forward(request, response);
 	}
 
 	/**
@@ -283,7 +279,7 @@ public class ArticleServlet extends HttpServlet {
 			List<Article> articles = articleService.findArticleList();
 			resultMap.put("rows", articles);
 			resultMap.put("total",articles.size());
-			
+	
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally{

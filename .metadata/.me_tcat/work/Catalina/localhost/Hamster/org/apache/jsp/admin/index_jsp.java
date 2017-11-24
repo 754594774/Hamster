@@ -85,7 +85,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       out.write("\t</script>\r\n");
       out.write("</head>\r\n");
       out.write("<body class=\"easyui-layout\">\r\n");
-      out.write("\t<div data-options=\"region:'north',border:false\" style=\"height:85px;background:#B3DFDA;padding:10px;\">\r\n");
+      out.write("\t<div data-options=\"region:'north',border:false\" style=\"height:85px;background:#164069;padding:10px;\">\r\n");
       out.write("\t\t&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\r\n");
       out.write("\t\t<div style=\"width: 50%;float: left;\">\r\n");
       out.write("\t\t\t<b><i><font size=\"10\" color=\"white\">Tale</font><font size=\"5\" color=\"green\">博客管理后台&nbsp&nbspV1.0</font></i></b>\r\n");
@@ -120,7 +120,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       out.write("\t\t</div>\r\n");
       out.write("\t</div>\r\n");
       out.write("\t<div data-options=\"region:'east',split:true,collapsed:false,title:'操作信息'\" style=\"width:200px;padding:10px;\">admin登陆了</div>\r\n");
-      out.write("\t<div data-options=\"region:'south',border:false\" style=\"height:30px;background:#A9FACD;padding:10px;\">友链：<a href=\"/Hamster/index.jsp\" target=\"_blank\">Hamster Blog</a> @2017 Author li bai</div>\r\n");
+      out.write("\t<div data-options=\"region:'south',border:false\" style=\"height:30px;background:#164069;padding:10px;\">友链：<a href=\"/Hamster/index.jsp\" target=\"_blank\">Hamster Blog</a> @2017 Author li bai</div>\r\n");
       out.write("\t<div id=\"content\" data-options=\"region:'center',title:'工作台'\">\r\n");
       out.write("\t\t <IFRAME name=\"mainFrame\" class=\"test\" src=\"\"  height=\"95%\" width=\"100%\" frameBorder=0 scrolling=\"auto\" src=\"\" id=\"mainFrame\"></IFRAME>\r\n");
       out.write("\t</div>\r\n");

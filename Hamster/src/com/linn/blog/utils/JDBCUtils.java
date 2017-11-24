@@ -30,7 +30,6 @@ public class JDBCUtils {
 			return null;
 		}
 	}
-	
 
 	public static void close(ResultSet rs,Statement ps,Connection conn){
 		try {

@@ -24,12 +24,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				$('#mainFrame').attr('src','admin/article?operation=' + oper); 
 			}else if(oper =='toCategoryList'){
 				$('#mainFrame').attr('src','admin/category?operation=' + oper); 
+			}else if(oper =='toCommentList'){
+				$('#mainFrame').attr('src','admin/comment?operation=' + oper); 
 			}
 		}
 	</script>
 </head>
 <body class="easyui-layout">
-	<div data-options="region:'north',border:false" style="height:85px;background:#B3DFDA;padding:10px;">
+	<div data-options="region:'north',border:false" style="height:85px;background:#194f86;padding:10px;">
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 		<div style="width: 50%;float: left;">
 			<b><i><font size="10" color="white">Tale</font><font size="5" color="green">博客管理后台&nbsp&nbspV1.0</font></i></b>
@@ -52,6 +54,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<a href="javascript:void(0)" onclick="showcontent('toArticleList')" class="easyui-linkbutton" style="width:100%" data-options="iconCls:'icon-large-shapes',size:'large',iconAlign:'top'">文章列表</a>
 				<hr/>
 				<a href="javascript:void(0)" onclick="showcontent('toCategoryList')" class="easyui-linkbutton" style="width:100%" data-options="iconCls:'icon-large-clipart',size:'large',iconAlign:'top'">文章分类</a>
+				<hr/>
+				<a href="javascript:void(0)" onclick="showcontent('toCommentList')" class="easyui-linkbutton" style="width:100%" data-options="iconCls:'icon-large-smartart',size:'large',iconAlign:'top'">评论列表</a>
 			</div>
 			<div title="音乐管理" style="padding:10px;">
 				content2
@@ -62,7 +66,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		</div>
 	</div>
 	<div data-options="region:'east',split:true,collapsed:false,title:'操作信息'" style="width:200px;padding:10px;">admin登陆了</div>
-	<div data-options="region:'south',border:false" style="height:30px;background:#A9FACD;padding:10px;">友链：<a href="/Hamster/index.jsp" target="_blank">Hamster Blog</a> @2017 Author li bai</div>
+	<div data-options="region:'south',border:false" style="height:30px;background:#194f86;padding:10px;">友链：<a href="/Hamster/index.jsp" target="_blank">Hamster Blog</a> @2017 Author li bai</div>
 	<div id="content" data-options="region:'center',title:'工作台'">
 		 <IFRAME name="mainFrame" class="test" src=""  height="95%" width="100%" frameBorder=0 scrolling="auto" src="" id="mainFrame"></IFRAME>
 	</div>

@@ -40,6 +40,7 @@
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>CommentServlet</servlet-name>
+    <url-pattern>/admin/comment</url-pattern>
     <url-pattern>/comment</url-pattern>
   </servlet-mapping>
  <!--servlet配置 结束-->

@@ -1,8 +1,7 @@
 $(document).ready(function(){
 	initData();
-	initEvent();
-});
 
+})
 //初始化事件
 function initEvent(){
 	//获取所有评论框
@@ -32,6 +31,9 @@ function initEvent(){
 				hf.removeClass('hf-on');
 				var area = $(e.target);
 				area.val('评论…');	
+				var input = $(e.target).parents(".list0").find(".hf-id");
+				input.attr("value","0");
+				
 			}	
 		}			
 	)
@@ -59,19 +61,15 @@ function initEvent(){
 	//回复按钮点击事件，添加评论
 	$(".hf-btn").click(
 		function(e){
-			
-			//textarea标签，存储评论信息json
-			var pComment= $(e.target).prev();
-			var commentJson = pComment.val();
-			var obj = jQuery.parseJSON(commentJson);
-			var id = obj.id;
-			var cont = $(e.target).siblings(".hf-text").val();
-			var articleId = obj.articleId;
-						
+			var pid= $(e.target).prev().attr("value");//回复的父id
+			var cont = $(e.target).siblings(".hf-text").val();//评论内容
+			var articleId = $("#articleId").val();//文章id
+			var rootid = $(e.target).parent().siblings(".text").find(".name").attr("value");
 			$.post("comment",
 			  {
 				operation:"addComent",
-			    pid:id,
+			    rootid:rootid,
+				pid:pid,
 			    memberName:"游客(" + returnCitySN.cip + ")",
 			    cont:cont,
 			    articleId:articleId
@@ -90,6 +88,10 @@ function initEvent(){
 			var txt=$(e.target).text();
 			//判断当前点击的是否为回复
 			if(txt=="回复"){
+				var id = user.attr("value"); 
+				var input = $(e.target).parents(".list0").find(".hf-id");
+				input.attr("value",id);
+				
 				var area = $(e.target).parents(".list0").find(".hf-text");
 				//评论框触发焦点事件 也就是变高
 				area.focus();
@@ -131,21 +133,22 @@ function initData(){
 					'<li class="list0">' + 
 				   		'<div class="head"><img src="images/unicorn.png" alt=""/></div>' + 
 				   		'<div class="content">' + 
-				   		'<p class="text"><span class="name">' + comment.memberName + '：</span>'+ comment.cont +'</p>' +   
+				   		'<p class="text"><span class="name" value=' + comment.id + '>' + comment.memberName + '：</span>'+ comment.cont +'</p>' +   
 				   		childStr + 
 				   		'<div class="hf">' +
 				   			'<textarea type="text" class="hf-text" autocomplete="off" maxlength="100">评论…</textarea>' +
-				   		    '<textarea style="display:none">' + JSON.stringify(comment) + '</textarea>' + 
+				   			'<input type="hidden" class="hf-id" value='+ comment.id +'>' +
 				   			'<button class="hf-btn">回复</button>' +
 				   			'<span class="hf-nub">0/100</span>' +
 				   		'</div>' +
 				   		'</div>' +
-					'</li>'
+					'</li>';
 			}
 			
 			//生成评论添加进页面元素
 			$("#pn").append(html);
 			initEvent();
+			console.log(html);
 		});
 	
 	var str = '';
@@ -156,9 +159,8 @@ function initData(){
 	   			'<div class="comment" user="self">' + 
 		   			'<div class="comment-left"><img src="images/unicorn.png" alt=""/></div>' + 
 		   			'<div class="comment-right">' + 
-		   				'<div class="comment-text"><span class="user">' + comment.memberName +'</span>' + '：'+ comment.cont +'</div>' + 
+		   				'<div class="comment-text"><span class="user" value='+ comment.id +'>' + comment.memberName +'</span>' + '：'+ comment.cont +'</div>' + 
 		   				'<div class="comment-date">' + comment.pdate + 
-		   				 	'<textarea style="display:none">' + JSON.stringify(comment) + '</textarea>' + 
 			   				'<a class="comment-dele" href="javascript:;">回复</a>' +
 		   				'</div>' + 
 		   			'</div>' +
@@ -180,7 +182,6 @@ function addComent(){
 		operation:"addComent",
 	    pid:"0",
 	    memberName:"游客(" + returnCitySN.cip + ")",
-	    qq:"无",
 	    cont:$("#articleComment").val(),
 	    articleId:$("#articleId").val()
 	  },

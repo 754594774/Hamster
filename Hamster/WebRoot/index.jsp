@@ -1,7 +1,31 @@
-<%@ include file="/partial/header.jsp"%>
-<%  if (request.getAttribute("articles") == null ) {%>
-	<jsp:forward page="article?operation=toIndex" ></jsp:forward>
-<%}%>
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <base href="<%=basePath%>">
+    
+    <title>Hamster Blog-Content</title>
+    
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="0">    
+	<meta http-equiv="keywords" content="博客系统,Hamster,李难难">
+	<meta http-equiv="description" content="博客系统,Hamster,李难难">
+	<!--
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	-->
+  </head>
+  <body>
+  <jsp:include page="partial/header.jsp" />
+	<%  if (request.getAttribute("articles") == null ) {%>
+		<jsp:forward page="article?operation=toIndex" ></jsp:forward>
+	<%}%>
 		<div class="main-content index-page clearfix">
 			<div class="post-lists">
 				<div class="post-lists-body">
@@ -38,18 +62,15 @@
 			</div>
 			<div class="lists-navigator clearfix">
 				<ol class="page-navigator">
-
 					<li class="current">
-						<a href="https://tale.biezhi.me/page/1">1</a>
+						<a href="https://tale.biezhi.me/page/1">上一页</a>
 					</li>
 					<li>
-						<a href="https://tale.biezhi.me/page/2">2</a>
-					</li>
-
-					<li class="next">
-						<a href="https://tale.biezhi.me/page/2">→</a>
+						<a href="https://tale.biezhi.me/page/2">下一页</a>
 					</li>
 				</ol>
 			</div>
 		</div>
-<%@ include file="/partial/footer.jsp"%>
+	<jsp:include page="partial/footer.jsp" />
+  </body>
+</html>

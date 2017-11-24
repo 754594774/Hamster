@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<item value="2" key="TypeHierarchyViewPart.hierarchyview"/>
-	<item value="3" key="TypeHierarchyViewPart.orientation"/>
 	<item value="false" key="TypeHierarchyViewPart.qualifiednames"/>
+	<item value="3" key="TypeHierarchyViewPart.orientation"/>
 	<item value="false" key="TypeHierarchyViewPart.linkeditors"/>
 	<section name="OptionalMessageDialog.hide.">
 		<item value="true" key="org.eclipse.jdt.ui.typecomment.deprecated"/>
+	</section>
+	<section name="OverrideMethodDialog">
+		<item value="true" key="showtypes"/>
 	</section>
 	<section name="org.eclipse.jdt.internal.ui.packageview.PackageExplorerPart">
 		<item value="true" key="group_libraries"/>
@@ -18,9 +21,21 @@
 	</section>
 	<section name="JavaElementSearchActions">
 	</section>
+	<section name="RenameInformationPopup">
+	</section>
 	<section name="org.eclipse.ltk.ui.refactoring.settings">
 	</section>
-	<section name="RenameInformationPopup">
+	<section name="SourceActionDialog.methods">
+		<item value="false" key="SkipNull"/>
+		<item value="10" key="LimitValue"/>
+		<item value="0" key="ToStringTemplateSelected"/>
+		<item value="0" key="StringStyle"/>
+		<item value="false" key="Comments"/>
+		<item value="1" key="VisibilityModifier"/>
+		<item value="false" key="LimitElements"/>
+		<item value="false" key="SynchronizedModifier"/>
+		<item value="true" key="IgnoreDefault"/>
+		<item value="false" key="FinalModifier"/>
 	</section>
 	<section name="org.eclipse.jdt.internal.ui.text.QuickOutline">
 		<item value="false" key="GoIntoTopLevelTypeAction.isChecked"/>
@@ -29,20 +44,17 @@
 		<item value="320" key="org.eclipse.jdt.internal.ui.text.JavaOutlineInformationControlDIALOG_HEIGHT"/>
 		<item value="false" key="org.eclipse.jdt.internal.ui.text.JavaOutlineInformationControlDIALOG_USE_PERSISTED_LOCATION"/>
 	</section>
-	<section name="SourceActionDialog.methods">
-		<item value="false" key="SkipNull"/>
-		<item value="10" key="LimitValue"/>
-		<item value="1" key="VisibilityModifier"/>
-		<item value="false" key="Comments"/>
-		<item value="0" key="StringStyle"/>
-		<item value="0" key="ToStringTemplateSelected"/>
-		<item value="false" key="LimitElements"/>
-		<item value="false" key="SynchronizedModifier"/>
-		<item value="false" key="FinalModifier"/>
-		<item value="true" key="IgnoreDefault"/>
-	</section>
 	<section name="AddGetterSetterDialog">
 		<item value="false" key="RemoveFinal"/>
 		<item value="false" key="SortOrdering"/>
+	</section>
+	<section name="NewHtmlCreationWizardPage">
+		<item value="Default HTML template" key="templatezh_CN"/>
+		<item value="/Hamster/WebRoot" key="filePath"/>
+		<item value="HTML 4.01 Transitional" key="doctype"/>
+	</section>
+	<section name="NewJspCreationWizardPage">
+		<item value="Default JSP template" key="templatezh_CN"/>
+		<item value="/Hamster/WebRoot" key="filePath"/>
 	</section>
 </section>

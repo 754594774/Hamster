@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="17" version="2.0">
+<workbench progressCount="77" version="2.0">
 <workbenchAdvisor/>
 <window height="768" maximized="true" width="1024" x="90" y="90">
 <fastViewData fastViewLocation="1024"/>
@@ -8,7 +8,7 @@
 </perspectiveBar>
 <coolbarLayout locked="0">
 <coolItem id="group.file" itemType="typeGroupMarker"/>
-<coolItem id="org.eclipse.ui.workbench.file" itemType="typeToolBarContribution" x="197" y="22"/>
+<coolItem id="org.eclipse.ui.workbench.file" itemType="typeToolBarContribution" x="136" y="22"/>
 <coolItem id="additions" itemType="typeGroupMarker"/>
 <coolItem id="com.genuitec.eclipse.j2eedt.core.ejb" itemType="typeToolBarContribution" x="55" y="22"/>
 <coolItem id="com.genuitec.eclipse.uml.actions" itemType="typeToolBarContribution" x="61" y="22"/>
@@ -23,18 +23,22 @@
 <coolItem id="org.eclipse.search.searchActionSet" itemType="typeToolBarContribution" x="147" y="22"/>
 <coolItem id="org.eclipse.ui.edit.text.actionSet.presentation" itemType="typeToolBarContribution" x="61" y="22"/>
 <coolItem id="org.eclipse.wst.xml.ui.perspective.NewFileToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
-<coolItem id="org.eclipse.wst.xml.ui.design.DesignToolBar" itemType="typeToolBarContribution" x="115" y="22"/>
+<coolItem id="org.eclipse.wst.xml.ui.design.DesignToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="group.nav" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="198" y="22"/>
 <coolItem id="group.editor" itemType="typeGroupMarker"/>
+<coolItem id="org.jboss.tools.common.propertieseditor.PropertiesCompoundEditor" itemType="typePlaceholder" x="38" y="22"/>
+<coolItem id="org.eclipse.wst.css.core.csssource.source" itemType="typePlaceholder" x="-1" y="-1"/>
+<coolItem id="org.eclipse.wst.html.core.htmlsource.source" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="com.genuitec.eclipse.webdesigner3.editors.html" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="org.eclipse.jdt.ui.ClassFileEditor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="org.eclipse.debug.ui.NoSourceFoundEditor" itemType="typePlaceholder" x="-1" y="-1"/>
-<coolItem id="org.jboss.tools.common.model.ui.editor.EditorPartWrapper" itemType="typePlaceholder" x="38" y="22"/>
+<coolItem id="org.jboss.tools.common.model.ui.editor.EditorPartWrapper" itemType="typeToolBarContribution" x="38" y="22"/>
 <coolItem id="org.eclipse.wst.jsdt.ui.CompilationUnitEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="org.eclipse.jst.jsp.core.jspsource.source" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="com.genuitec.eclipse.webdesigner3.editors.jsp" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="org.eclipse.jdt.ui.CompilationUnitEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
-<coolItem id="org.eclipse.ui.DefaultTextEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.ui.DefaultTextEditor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="group.help" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
 </coolbarLayout>
@@ -42,7 +46,7 @@
 <editors>
 <editorArea activeWorkbook="DefaultEditorWorkbook">
 <info part="DefaultEditorWorkbook">
-<folder appearance="1" expanded="0">
+<folder appearance="1" expanded="2">
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
 <part id="1"/>
@@ -50,37 +54,59 @@
 <part id="3"/>
 <part id="4"/>
 <part id="5"/>
+<part id="6"/>
+<part id="7"/>
+<part id="8"/>
+<part id="9"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
-<editor id="org.eclipse.jst.jsp.core.jspsource.source" name="addArticle.jsp" partName="addArticle.jsp" path="E:/房产组_工作空间/java/workspace/GitRepository/Hamster/WebRoot/admin/articleManager/addArticle.jsp" title="addArticle.jsp" tooltip="Hamster/WebRoot/admin/articleManager/addArticle.jsp" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Hamster/WebRoot/admin/articleManager/addArticle.jsp"/>
-<editorState selectionHorizontalPixel="57" selectionLength="0" selectionOffset="1977" selectionTopPixel="527"/>
+<editor id="org.eclipse.jst.jsp.core.jspsource.source" name="article.jsp" partName="article.jsp" path="E:/房产组_工作空间/java/workspace/GitRepository/Hamster/WebRoot/article.jsp" title="article.jsp" tooltip="Hamster/WebRoot/article.jsp" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Hamster/WebRoot/article.jsp"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="4777" selectionTopPixel="1236"/>
 </editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ArticleServiceImpl.java" partName="ArticleServiceImpl.java" path="E:/房产组_工作空间/java/workspace/GitRepository/Hamster/src/com/linn/blog/service/ArticleServiceImpl.java" title="ArticleServiceImpl.java" tooltip="Hamster/src/com/linn/blog/service/ArticleServiceImpl.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Hamster/src/com/linn/blog/service/ArticleServiceImpl.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="6276" selectionTopPixel="2884"/>
+<editor id="org.eclipse.jst.jsp.core.jspsource.source" name="index.jsp" partName="index.jsp" path="E:/房产组_工作空间/java/workspace/GitRepository/Hamster/WebRoot/index.jsp" title="index.jsp" tooltip="Hamster/WebRoot/index.jsp" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Hamster/WebRoot/index.jsp"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="609" selectionTopPixel="459"/>
 </editor>
-<editor id="org.eclipse.wst.jsdt.ui.CompilationUnitEditor" name="addArticle.js" partName="addArticle.js" path="E:/房产组_工作空间/java/workspace/GitRepository/Hamster/WebRoot/js/admin/articleManager/addArticle.js" title="addArticle.js" tooltip="Hamster/WebRoot/js/admin/articleManager/addArticle.js" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Hamster/WebRoot/js/admin/articleManager/addArticle.js"/>
-<editorState selectionHorizontalPixel="0" selectionLength="21" selectionOffset="1159" selectionTopPixel="714"/>
+<editor id="org.eclipse.jst.jsp.core.jspsource.source" name="index.jsp" partName="index.jsp" path="E:/房产组_工作空间/java/workspace/GitRepository/Hamster/WebRoot/admin/index.jsp" title="index.jsp" tooltip="Hamster/WebRoot/admin/index.jsp" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Hamster/WebRoot/admin/index.jsp"/>
+<editorState selectionHorizontalPixel="0" selectionLength="13" selectionOffset="1209" selectionTopPixel="238"/>
 </editor>
-<editor id="org.eclipse.wst.jsdt.ui.CompilationUnitEditor" name="articleList.js" partName="articleList.js" path="E:/房产组_工作空间/java/workspace/GitRepository/Hamster/WebRoot/js/admin/articleManager/articleList.js" title="articleList.js" tooltip="Hamster/WebRoot/js/admin/articleManager/articleList.js" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Hamster/WebRoot/js/admin/articleManager/articleList.js"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="632" selectionTopPixel="289"/>
+<editor id="org.eclipse.jst.jsp.core.jspsource.source" name="commentList.jsp" partName="commentList.jsp" path="E:/房产组_工作空间/java/workspace/GitRepository/Hamster/WebRoot/admin/articleManager/commentList.jsp" title="commentList.jsp" tooltip="Hamster/WebRoot/admin/articleManager/commentList.jsp" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Hamster/WebRoot/admin/articleManager/commentList.jsp"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1588" selectionTopPixel="519"/>
 </editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ArticleServlet.java" partName="ArticleServlet.java" path="E:/房产组_工作空间/java/workspace/GitRepository/Hamster/src/com/linn/blog/servlet/ArticleServlet.java" title="ArticleServlet.java" tooltip="Hamster/src/com/linn/blog/servlet/ArticleServlet.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Hamster/src/com/linn/blog/servlet/ArticleServlet.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="9306" selectionTopPixel="4533"/>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="CommentServlet.java" partName="CommentServlet.java" path="E:/房产组_工作空间/java/workspace/GitRepository/Hamster/src/com/linn/blog/servlet/CommentServlet.java" title="CommentServlet.java" tooltip="Hamster/src/com/linn/blog/servlet/CommentServlet.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Hamster/src/com/linn/blog/servlet/CommentServlet.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="3174" selectionTopPixel="1292"/>
 </editor>
-<editor focus="true" id="org.eclipse.ui.DefaultTextEditor" name="说明.txt" partName="说明.txt" path="E:/房产组_工作空间/java/workspace/GitRepository/Hamster/WebRoot/说明.txt" title="说明.txt" tooltip="Hamster/WebRoot/说明.txt" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Hamster/WebRoot/说明.txt"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="441" selectionTopPixel="385"/>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="CommentServiceImpl.java" partName="CommentServiceImpl.java" path="E:/房产组_工作空间/java/workspace/GitRepository/Hamster/src/com/linn/blog/service/CommentServiceImpl.java" title="CommentServiceImpl.java" tooltip="Hamster/src/com/linn/blog/service/CommentServiceImpl.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Hamster/src/com/linn/blog/service/CommentServiceImpl.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2573" selectionTopPixel="1003"/>
+</editor>
+<editor activePart="true" focus="true" id="org.eclipse.wst.jsdt.ui.CompilationUnitEditor" name="evaluation.js" partName="evaluation.js" path="E:/房产组_工作空间/java/workspace/GitRepository/Hamster/WebRoot/js/article/evaluation.js" title="evaluation.js" tooltip="Hamster/WebRoot/js/article/evaluation.js" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Hamster/WebRoot/js/article/evaluation.js"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1459" selectionTopPixel="912"/>
+</editor>
+<editor id="org.eclipse.wst.html.core.htmlsource.source" name="saved_resource.html" partName="saved_resource.html" path="E:/房产组_工作空间/java/workspace/GitRepository/Hamster/WebRoot/saved_resource.html" title="saved_resource.html" tooltip="Hamster/WebRoot/saved_resource.html" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Hamster/WebRoot/saved_resource.html"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="490" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jst.jsp.core.jspsource.source" name="footer.jsp" partName="footer.jsp" path="E:/房产组_工作空间/java/workspace/GitRepository/Hamster/WebRoot/partial/footer.jsp" title="footer.jsp" tooltip="Hamster/WebRoot/partial/footer.jsp" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Hamster/WebRoot/partial/footer.jsp"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="3799" selectionTopPixel="1984"/>
+</editor>
+<editor id="org.eclipse.jst.jsp.core.jspsource.source" name="header.jsp" partName="header.jsp" path="E:/房产组_工作空间/java/workspace/GitRepository/Hamster/WebRoot/partial/header.jsp" title="header.jsp" tooltip="Hamster/WebRoot/partial/header.jsp" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Hamster/WebRoot/partial/header.jsp"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="947"/>
 </editor>
 </editors>
 <views>
-<view id="com.genuitec.eclipse.ui.HTMLView" partName="Web Browser"/>
+<view id="com.genuitec.eclipse.ui.HTMLView" partName="Web Browser">
+<viewState/>
+</view>
 <view id="uky.article.imageviewer.views.ImageView" partName="Image Preview">
 <viewState/>
 </view>
@@ -90,7 +116,6 @@
 <view id="org.eclipse.search.ui.views.SearchView" partName="Search">
 <viewState isPinned="false">
 <view IMemento.internal.id="" org.eclipse.search.lastActivation="0"/>
-<view IMemento.internal.id="org.eclipse.search.text.FileSearchResultPage" org.eclipse.search.lastActivation="1" org.eclipse.search.resultpage.layout="2" org.eclipse.search.resultpage.limit="1000" org.eclipse.search.resultpage.sorting="2"/>
 </viewState>
 </view>
 <view id="org.eclipse.debug.ui.DebugView" partName="Debug">
@@ -164,8 +189,8 @@
 </viewState>
 </view>
 </views>
-<perspectives activePart="com.genuitec.eclipse.ast.deploy.core.serverview" activePerspective="com.genuitec.myeclipse.perspective.myeclipseperspective">
-<perspective editorAreaTrimState="4" editorAreaVisible="1" fixed="0" version="0.016">
+<perspectives activePart="org.eclipse.jdt.ui.PackageExplorer" activePerspective="com.genuitec.myeclipse.perspective.myeclipseperspective">
+<perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="com.genuitec.myeclipse.perspective.MyEclipsePerspectiveFactory" id="com.genuitec.myeclipse.perspective.myeclipseperspective" label="MyEclipse Java Enterprise"/>
 <alwaysOnActionSet id="com.genuitec.myeclipse.actions.deploytools"/>
 <alwaysOnActionSet id="com.genuitec.myeclipse.actions"/>
@@ -269,10 +294,12 @@
 <view id="org.eclipse.ui.views.ProblemView"/>
 <view id="org.eclipse.ui.views.TaskList"/>
 <view id="com.genuitec.eclipse.ui.HTMLView"/>
-<view id="org.eclipse.ui.console.ConsoleView"/>
 <view id="com.genuitec.eclipse.ast.deploy.core.serverview"/>
 <view id="org.eclipse.search.ui.views.SearchView"/>
 <view id="org.eclipse.debug.ui.DebugView"/>
+<view id="org.eclipse.ui.console.ConsoleView"/>
+<view id="org.eclipse.jdt.ui.PackageExplorer"/>
+<view id="org.eclipse.jdt.ui.TypeHierarchy"/>
 <fastViewBars>
 <fastViewBar fastViewLocation="131072" id="org.eclipse.ui.internal.ViewStack@fad969" orientation="512" selectedTabId="org.eclipse.ui.views.ContentOutline" style="0">
 <fastViews>
@@ -284,12 +311,6 @@
 <view id="org.eclipse.ui.views.PropertySheet" ratio="0.3"/>
 </fastViews>
 </fastViewBar>
-<fastViewBar fastViewLocation="16384" id="topleft" orientation="512" selectedTabId="org.eclipse.jdt.ui.PackageExplorer" style="1">
-<fastViews>
-<view id="org.eclipse.jdt.ui.PackageExplorer" ratio="0.3"/>
-<view id="org.eclipse.jdt.ui.TypeHierarchy" ratio="0.3"/>
-</fastViews>
-</fastViewBar>
 <fastViewBar fastViewLocation="16384" id="bottomleft" orientation="512" selectedTabId="uky.article.imageviewer.views.ImageView" style="0">
 <fastViews>
 <view id="uky.article.imageviewer.views.ImageView" ratio="0.3"/>
@@ -298,7 +319,7 @@
 </fastViewBar>
 </fastViewBars>
 <layout>
-<mainWindow maximized="bottom">
+<mainWindow>
 <info folder="true" part="cvslocation">
 <folder appearance="2" expanded="2">
 <page content="org.eclipse.team.ccvs.ui.RepositoriesView" label="LabelNotFound"/>
@@ -311,28 +332,28 @@
 <page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
 </folder>
 </info>
-<info part="org.eclipse.ui.editorss" ratio="0.15295926" ratioLeft="199" ratioRight="1102" relationship="2" relative="cvslocation"/>
+<info part="org.eclipse.ui.editorss" ratio="0.14911607" ratioLeft="194" ratioRight="1107" relationship="2" relative="cvslocation"/>
 <info folder="true" part="org.eclipse.ui.internal.ViewStack@fad969" ratio="0.9229287" ratioLeft="1437" ratioRight="120" relationship="2" relative="org.eclipse.ui.editorss">
-<folder appearance="2" expanded="0">
+<folder appearance="2" expanded="2">
 <page content="org.eclipse.ui.views.ContentOutline" label="LabelNotFound"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
 <info folder="true" part="org.eclipse.ui.internal.ViewStack@d7ad36" ratio="0.5496063" ratioLeft="349" ratioRight="286" relationship="4" relative="org.eclipse.ui.internal.ViewStack@fad969">
-<folder appearance="2" expanded="0">
+<folder appearance="2" expanded="2">
 <page content="org.eclipse.ui.views.PropertySheet" label="LabelNotFound"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
-<info folder="true" part="bottom" ratio="0.71237457" ratioLeft="426" ratioRight="172" relationship="4" relative="org.eclipse.ui.editorss">
-<folder activePageID="com.genuitec.eclipse.ast.deploy.core.serverview" appearance="2" expanded="1">
+<info folder="true" part="bottom" ratio="0.6839465" ratioLeft="409" ratioRight="189" relationship="4" relative="org.eclipse.ui.editorss">
+<folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
 <page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
 <page content="org.eclipse.ui.views.TaskList" label="Tasks"/>
 <page content="com.genuitec.eclipse.ui.HTMLView" label="Web Browser"/>
-<page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
 <page content="com.genuitec.eclipse.ast.deploy.core.serverview" label="Servers"/>
 <page content="org.eclipse.search.ui.views.SearchView" label="Search"/>
 <page content="org.eclipse.debug.ui.DebugView" label="Debug"/>
+<page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
 <page content="org.eclipse.ui.views.BookmarkView" label="LabelNotFound"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
@@ -346,11 +367,14 @@
 </folder>
 </info>
 <info folder="true" part="topleft" ratio="0.4" ratioLeft="254" ratioRight="381" relationship="4" relative="cvslocation">
-<folder appearance="2" expanded="0">
-<page content="org.eclipse.jdt.ui.PackageExplorer" label="LabelNotFound"/>
-<page content="org.eclipse.jdt.ui.TypeHierarchy" label="LabelNotFound"/>
+<folder activePageID="org.eclipse.jdt.ui.PackageExplorer" appearance="2" expanded="2">
+<page content="org.eclipse.jdt.ui.PackageExplorer" label="Package Explorer"/>
+<page content="org.eclipse.jdt.ui.TypeHierarchy" label="Hierarchy"/>
 <page content="org.eclipse.ui.views.ResourceNavigator" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+</presentation>
 </folder>
 </info>
 <info folder="true" part="bottomleft" ratio="0.5496063" ratioLeft="349" ratioRight="286" relationship="4" relative="topleft">
@@ -479,7 +503,7 @@
 <page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
 </folder>
 </info>
-<info folder="true" part="org.eclipse.debug.internal.ui.ConsoleFolderView" ratio="0.6822742" ratioLeft="408" ratioRight="190" relationship="4" relative="org.eclipse.debug.internal.ui.NavigatorFolderView">
+<info folder="true" part="org.eclipse.debug.internal.ui.ConsoleFolderView" ratio="0.79321486" ratioLeft="491" ratioRight="128" relationship="4" relative="org.eclipse.debug.internal.ui.NavigatorFolderView">
 <folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
 <page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
 <page content="org.eclipse.ui.views.TaskList" label="Tasks"/>
@@ -499,7 +523,7 @@
 </presentation>
 </folder>
 </info>
-<info part="org.eclipse.ui.editorss" ratio="0.4419753" ratioLeft="179" ratioRight="226" relationship="4" relative="org.eclipse.debug.internal.ui.NavigatorFolderView"/>
+<info part="org.eclipse.ui.editorss" ratio="0.4882227" ratioLeft="228" ratioRight="239" relationship="4" relative="org.eclipse.debug.internal.ui.NavigatorFolderView"/>
 <info folder="true" part="org.eclipse.debug.internal.ui.OutlineFolderView" ratio="0.74960214" ratioLeft="1413" ratioRight="472" relationship="2" relative="org.eclipse.ui.editorss">
 <folder activePageID="org.eclipse.ui.views.ContentOutline" appearance="2" expanded="2">
 <page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
@@ -531,160 +555,163 @@
 <workingSets/>
 <navigationHistory>
 <editors>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Hamster/src/com/linn/blog/servlet/ArticleServlet.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" path="/Hamster/WebRoot/admin/articleManager/addArticle.jsp"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Hamster/src/com/linn/blog/service/ArticleServiceImpl.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" path="/Hamster/WebRoot/说明.txt"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.jsdt.ui.CompilationUnitEditor" path="/Hamster/WebRoot/js/article/evaluation.js"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.html.core.htmlsource.source" path="/Hamster/WebRoot/saved_resource.html"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" path="/Hamster/WebRoot/article.jsp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" path="/Hamster/WebRoot/partial/footer.jsp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" path="/Hamster/WebRoot/partial/header.jsp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Hamster/src/com/linn/blog/servlet/CommentServlet.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Hamster/src/com/linn/blog/service/CommentServiceImpl.java"/>
 </editors>
-<item historyLabel="ArticleServlet.java" index="0">
-<position info="not_deleted" x="4207" y="0"/>
+<item historyLabel="evaluation.js" index="0">
+<position info="not_deleted" x="2161" y="0"/>
 </item>
-<item historyLabel="ArticleServlet.java" index="0">
-<position info="not_deleted" x="4250" y="0"/>
-</item>
-<item historyLabel="ArticleServlet.java" index="0">
-<position info="not_deleted" x="4269" y="0"/>
-</item>
-<item historyLabel="ArticleServlet.java" index="0">
-<position info="not_deleted" x="4303" y="0"/>
-</item>
-<item historyLabel="ArticleServlet.java" index="0">
-<position info="not_deleted" x="4533" y="0"/>
-</item>
-<item historyLabel="ArticleServlet.java" index="0">
-<position info="not_deleted" x="4563" y="0"/>
-</item>
-<item historyLabel="ArticleServlet.java" index="0">
-<position info="not_deleted" x="4592" y="0"/>
-</item>
-<item historyLabel="ArticleServlet.java" index="0">
-<position info="not_deleted" x="4335" y="0"/>
-</item>
-<item historyLabel="ArticleServiceImpl.java" index="2">
-<position info="not_deleted" x="813" y="13"/>
-</item>
-<item historyLabel="ArticleServlet.java" index="0">
-<position info="not_deleted" x="4338" y="0"/>
-</item>
-<item historyLabel="ArticleServiceImpl.java" index="2">
-<position info="not_deleted" x="813" y="13"/>
-</item>
-<item historyLabel="ArticleServiceImpl.java" index="2">
-<position info="not_deleted" x="1858" y="0"/>
-</item>
-<item historyLabel="ArticleServlet.java" index="0">
-<position info="not_deleted" x="2459" y="33"/>
-</item>
-<item historyLabel="ArticleServiceImpl.java" index="2">
-<position info="not_deleted" x="1307" y="0"/>
-</item>
-<item historyLabel="ArticleServlet.java" index="0">
-<position info="not_deleted" x="6448" y="57"/>
-</item>
-<item historyLabel="ArticleServlet.java" index="0">
-<position info="not_deleted" x="6859" y="56"/>
-</item>
-<item historyLabel="ArticleServlet.java" index="0">
-<position info="not_deleted" x="6847" y="0"/>
-</item>
-<item historyLabel="ArticleServlet.java" index="0">
-<position info="not_deleted" x="6936" y="0"/>
-</item>
-<item historyLabel="addArticle.jsp" index="1">
-<position info="not_deleted" x="2646" y="0"/>
-</item>
-<item historyLabel="ArticleServiceImpl.java" index="2">
-<position info="not_deleted" x="2867" y="33"/>
-</item>
-<item historyLabel="ArticleServlet.java" index="0">
-<position info="not_deleted" x="6936" y="0"/>
-</item>
-<item historyLabel="ArticleServlet.java" index="0">
-<position info="not_deleted" x="4207" y="0"/>
-</item>
-<item historyLabel="ArticleServlet.java" index="0">
-<position info="not_deleted" x="4250" y="0"/>
-</item>
-<item historyLabel="ArticleServlet.java" index="0">
-<position info="not_deleted" x="4269" y="0"/>
-</item>
-<item historyLabel="ArticleServlet.java" index="0">
-<position info="not_deleted" x="6746" y="0"/>
-</item>
-<item historyLabel="ArticleServlet.java" index="0">
-<position info="not_deleted" x="4269" y="0"/>
-</item>
-<item historyLabel="addArticle.jsp" index="1">
-<position info="not_deleted" x="3068" y="9"/>
-</item>
-<item historyLabel="ArticleServlet.java" index="0">
-<position info="not_deleted" x="4269" y="0"/>
-</item>
-<item historyLabel="ArticleServlet.java" index="0">
-<position info="not_deleted" x="4235" y="0"/>
-</item>
-<item historyLabel="ArticleServlet.java" index="0">
-<position info="not_deleted" x="4897" y="10"/>
-</item>
-<item historyLabel="ArticleServlet.java" index="0">
-<position info="not_deleted" x="5199" y="0"/>
-</item>
-<item historyLabel="ArticleServlet.java" index="0">
-<position info="not_deleted" x="4207" y="0"/>
-</item>
-<item historyLabel="ArticleServlet.java" index="0">
-<position info="not_deleted" x="4250" y="0"/>
-</item>
-<item historyLabel="ArticleServlet.java" index="0">
-<position info="not_deleted" x="4232" y="0"/>
-</item>
-<item historyLabel="ArticleServlet.java" index="0">
-<position info="not_deleted" x="4897" y="10"/>
-</item>
-<item historyLabel="ArticleServlet.java" index="0">
-<position info="not_deleted" x="4207" y="0"/>
-</item>
-<item historyLabel="ArticleServlet.java" index="0">
-<position info="not_deleted" x="6748" y="0"/>
-</item>
-<item historyLabel="ArticleServlet.java" index="0">
-<position info="not_deleted" x="6827" y="0"/>
-</item>
-<item historyLabel="addArticle.jsp" index="1">
+<item historyLabel="saved_resource.html" index="1">
 <position/>
 </item>
-<item historyLabel="ArticleServiceImpl.java" index="2">
-<position info="not_deleted" x="2867" y="33"/>
+<item historyLabel="evaluation.js" index="0">
+<position info="not_deleted" x="2161" y="0"/>
 </item>
-<item historyLabel="ArticleServlet.java" index="0">
-<position info="not_deleted" x="6827" y="0"/>
-</item>
-<item historyLabel="ArticleServlet.java" index="0">
-<position info="not_deleted" x="2157" y="0"/>
-</item>
-<item historyLabel="ArticleServlet.java" index="0">
-<position info="not_deleted" x="9306" y="0"/>
-</item>
-<item historyLabel="ArticleServiceImpl.java" index="2">
-<position info="not_deleted" x="5099" y="15"/>
-</item>
-<item historyLabel="ArticleServiceImpl.java" index="2">
-<position info="not_deleted" x="6090" y="0"/>
-</item>
-<item historyLabel="ArticleServiceImpl.java" index="2">
-<position info="not_deleted" x="6091" y="0"/>
-</item>
-<item historyLabel="ArticleServiceImpl.java" index="2">
+<item historyLabel="saved_resource.html" index="1">
 <position/>
 </item>
-<item historyLabel="ArticleServiceImpl.java" index="2">
-<position info="not_deleted" x="6276" y="0"/>
+<item historyLabel="evaluation.js" index="0">
+<position info="not_deleted" x="2155" y="0"/>
 </item>
-<item historyLabel="addArticle.jsp" index="1">
-<position info="not_deleted" x="1977" y="0"/>
+<item historyLabel="saved_resource.html" index="1">
+<position/>
 </item>
-<item active="true" historyLabel="说明.txt" index="3">
+<item historyLabel="evaluation.js" index="0">
+<position info="not_deleted" x="2126" y="0"/>
+</item>
+<item historyLabel="saved_resource.html" index="1">
+<position/>
+</item>
+<item historyLabel="evaluation.js" index="0">
+<position info="not_deleted" x="2126" y="0"/>
+</item>
+<item historyLabel="saved_resource.html" index="1">
+<position/>
+</item>
+<item historyLabel="evaluation.js" index="0">
+<position info="not_deleted" x="2126" y="0"/>
+</item>
+<item historyLabel="saved_resource.html" index="1">
+<position/>
+</item>
+<item historyLabel="evaluation.js" index="0">
+<position info="not_deleted" x="1420" y="0"/>
+</item>
+<item historyLabel="saved_resource.html" index="1">
+<position/>
+</item>
+<item historyLabel="article.jsp" index="2">
+<position info="not_deleted" x="4680" y="9"/>
+</item>
+<item historyLabel="evaluation.js" index="0">
+<position info="not_deleted" x="1420" y="0"/>
+</item>
+<item historyLabel="saved_resource.html" index="1">
+<position/>
+</item>
+<item historyLabel="evaluation.js" index="0">
+<position info="not_deleted" x="1420" y="0"/>
+</item>
+<item historyLabel="saved_resource.html" index="1">
+<position/>
+</item>
+<item historyLabel="evaluation.js" index="0">
+<position info="not_deleted" x="1526" y="0"/>
+</item>
+<item historyLabel="saved_resource.html" index="1">
+<position/>
+</item>
+<item historyLabel="evaluation.js" index="0">
+<position info="not_deleted" x="1446" y="0"/>
+</item>
+<item historyLabel="footer.jsp" index="3">
 <position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="header.jsp" index="4">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="footer.jsp" index="3">
+<position info="not_deleted" x="3799" y="0"/>
+</item>
+<item historyLabel="saved_resource.html" index="1">
+<position/>
+</item>
+<item historyLabel="header.jsp" index="4">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="evaluation.js" index="0">
+<position info="not_deleted" x="1446" y="0"/>
+</item>
+<item historyLabel="CommentServlet.java" index="5">
+<position info="not_deleted" x="3524" y="0"/>
+</item>
+<item historyLabel="CommentServlet.java" index="5">
+<position info="not_deleted" x="3095" y="0"/>
+</item>
+<item historyLabel="evaluation.js" index="0">
+<position info="not_deleted" x="1596" y="6"/>
+</item>
+<item historyLabel="CommentServlet.java" index="5">
+<position info="not_deleted" x="3095" y="0"/>
+</item>
+<item historyLabel="evaluation.js" index="0">
+<position info="not_deleted" x="1596" y="6"/>
+</item>
+<item historyLabel="CommentServlet.java" index="5">
+<position info="not_deleted" x="3095" y="0"/>
+</item>
+<item historyLabel="CommentServlet.java" index="5">
+<position info="not_deleted" x="3479" y="0"/>
+</item>
+<item historyLabel="CommentServiceImpl.java" index="6">
+<position info="not_deleted" x="2573" y="0"/>
+</item>
+<item historyLabel="evaluation.js" index="0">
+<position info="not_deleted" x="713" y="0"/>
+</item>
+<item historyLabel="CommentServlet.java" index="5">
+<position info="not_deleted" x="3183" y="46"/>
+</item>
+<item historyLabel="evaluation.js" index="0">
+<position info="not_deleted" x="1453" y="6"/>
+</item>
+<item historyLabel="CommentServlet.java" index="5">
+<position info="not_deleted" x="3183" y="46"/>
+</item>
+<item historyLabel="CommentServlet.java" index="5">
+<position info="not_deleted" x="3174" y="0"/>
+</item>
+<item historyLabel="evaluation.js" index="0">
+<position info="not_deleted" x="3585" y="0"/>
+</item>
+<item historyLabel="article.jsp" index="2">
+<position info="not_deleted" x="4777" y="0"/>
+</item>
+<item historyLabel="evaluation.js" index="0">
+<position info="not_deleted" x="4626" y="0"/>
+</item>
+<item historyLabel="saved_resource.html" index="1">
+<position info="not_deleted" x="330" y="44"/>
+</item>
+<item historyLabel="evaluation.js" index="0">
+<position info="not_deleted" x="1448" y="81"/>
+</item>
+<item historyLabel="saved_resource.html" index="1">
+<position info="not_deleted" x="330" y="44"/>
+</item>
+<item historyLabel="evaluation.js" index="0">
+<position info="not_deleted" x="1459" y="0"/>
+</item>
+<item historyLabel="saved_resource.html" index="1">
+<position/>
+</item>
+<item active="true" historyLabel="evaluation.js" index="0">
+<position info="not_deleted" x="1459" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -694,10 +721,8 @@
 <trimLayout>
 <trimArea IMemento.internal.id="16384">
 <trimItem IMemento.internal.id="bottomleft"/>
-<trimItem IMemento.internal.id="topleft"/>
 </trimArea>
 <trimArea IMemento.internal.id="131072">
-<trimItem IMemento.internal.id="org.eclipse.ui.editorss"/>
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.ViewStack@fad969"/>
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.ViewStack@d7ad36"/>
 </trimArea>
@@ -712,50 +737,50 @@
 </trimLayout>
 </window>
 <mruList>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" name="说明.txt" tooltip="Hamster/WebRoot/说明.txt">
-<persistable path="/Hamster/WebRoot/说明.txt"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" name="header.jsp" tooltip="Hamster/WebRoot/partial/header.jsp">
+<persistable path="/Hamster/WebRoot/partial/header.jsp"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ArticleServlet.java" tooltip="Hamster/src/com/linn/blog/servlet/ArticleServlet.java">
-<persistable path="/Hamster/src/com/linn/blog/servlet/ArticleServlet.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" name="footer.jsp" tooltip="Hamster/WebRoot/partial/footer.jsp">
+<persistable path="/Hamster/WebRoot/partial/footer.jsp"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.html.core.htmlsource.source" name="saved_resource.html" tooltip="Hamster/WebRoot/saved_resource.html">
+<persistable path="/Hamster/WebRoot/saved_resource.html"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.jsdt.ui.CompilationUnitEditor" name="evaluation.js" tooltip="Hamster/WebRoot/js/article/evaluation.js">
+<persistable path="/Hamster/WebRoot/js/article/evaluation.js"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.jsdt.ui.CompilationUnitEditor" name="index.js" tooltip="Hamster/WebRoot/js/index/index.js">
+<persistable path="/Hamster/WebRoot/js/index/index.js"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Comment.java" tooltip="Hamster/src/com/linn/blog/entity/extension/Comment.java">
+<persistable path="/Hamster/src/com/linn/blog/entity/extension/Comment.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="CommentServiceImpl.java" tooltip="Hamster/src/com/linn/blog/service/CommentServiceImpl.java">
+<persistable path="/Hamster/src/com/linn/blog/service/CommentServiceImpl.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.jsdt.ui.CompilationUnitEditor" name="commentList.js" tooltip="Hamster/WebRoot/js/admin/articleManager/commentList.js">
+<persistable path="/Hamster/WebRoot/js/admin/articleManager/commentList.js"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.jsdt.ui.CompilationUnitEditor" name="articleList.js" tooltip="Hamster/WebRoot/js/admin/articleManager/articleList.js">
 <persistable path="/Hamster/WebRoot/js/admin/articleManager/articleList.js"/>
 </file>
-<file factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" name="HttpServlet.class" tooltip="javax.servlet.http.HttpServlet">
-<persistable org.eclipse.jdt.ui.ClassFileIdentifier="=Hamster/D:\/Common\/plugins\/com.genuitec.eclipse.j2eedt.core_8.6.0.me201007292038\/data\/libraryset\/EE_5\/javaee.jar&lt;javax.servlet.http(HttpServlet.class"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="CommentServlet.java" tooltip="Hamster/src/com/linn/blog/servlet/CommentServlet.java">
+<persistable path="/Hamster/src/com/linn/blog/servlet/CommentServlet.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.jsdt.ui.CompilationUnitEditor" name="addArticle.js" tooltip="Hamster/WebRoot/js/admin/articleManager/addArticle.js">
-<persistable path="/Hamster/WebRoot/js/admin/articleManager/addArticle.js"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ErrorHandlerServlet.java" tooltip="Hamster/src/com/linn/blog/servlet/ErrorHandlerServlet.java">
+<persistable path="/Hamster/src/com/linn/blog/servlet/ErrorHandlerServlet.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ArticleServiceImpl.java" tooltip="Hamster/src/com/linn/blog/service/ArticleServiceImpl.java">
-<persistable path="/Hamster/src/com/linn/blog/service/ArticleServiceImpl.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="CategoryServiceImpl.java" tooltip="Hamster/src/com/linn/blog/service/CategoryServiceImpl.java">
-<persistable path="/Hamster/src/com/linn/blog/service/CategoryServiceImpl.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Article.java" tooltip="Hamster/src/com/linn/blog/entity/extension/Article.java">
-<persistable path="/Hamster/src/com/linn/blog/entity/extension/Article.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" name="index.jsp" tooltip="Hamster/WebRoot/admin/index.jsp">
-<persistable path="/Hamster/WebRoot/admin/index.jsp"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" name="index.jsp" tooltip="Hamster/WebRoot/index.jsp">
-<persistable path="/Hamster/WebRoot/index.jsp"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" name="addArticle.jsp" tooltip="Hamster/WebRoot/admin/articleManager/addArticle.jsp">
-<persistable path="/Hamster/WebRoot/admin/articleManager/addArticle.jsp"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.jsdt.ui.CompilationUnitEditor" name="categoryList.js" tooltip="Hamster/WebRoot/js/admin/articleManager/categoryList.js">
-<persistable path="/Hamster/WebRoot/js/admin/articleManager/categoryList.js"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" name="CommentList.jsp" tooltip="Hamster/WebRoot/admin/articleManager/CommentList.jsp">
+<persistable path="/Hamster/WebRoot/admin/articleManager/CommentList.jsp"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" name="categoryList.jsp" tooltip="Hamster/WebRoot/admin/articleManager/categoryList.jsp">
 <persistable path="/Hamster/WebRoot/admin/articleManager/categoryList.jsp"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="CategoryServlet.java" tooltip="Hamster/src/com/linn/blog/servlet/CategoryServlet.java">
-<persistable path="/Hamster/src/com/linn/blog/servlet/CategoryServlet.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ArticleServlet.java" tooltip="Hamster/src/com/linn/blog/servlet/ArticleServlet.java">
+<persistable path="/Hamster/src/com/linn/blog/servlet/ArticleServlet.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" name="articleList.jsp" tooltip="Hamster/WebRoot/admin/articleManager/articleList.jsp">
-<persistable path="/Hamster/WebRoot/admin/articleManager/articleList.jsp"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" name="index.jsp" tooltip="Hamster/WebRoot/admin/index.jsp">
+<persistable path="/Hamster/WebRoot/admin/index.jsp"/>
 </file>
 </mruList>
 </workbench>

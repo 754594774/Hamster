@@ -41,15 +41,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<tr>
 				<th field="categoryName" width="50">所属分类</th>
 				<th field="title" width="50">标题</th>
-				<th field="description" width="50">简介</th>
+				<th field="intro" width="50">简介</th>
 				<th field="lastTime" width="50">修改时间</th>
 			</tr>
 		</thead>
 	</table>
 	
 	<div id="toolbar">
-		<a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="addArticle()">添加</a>
-		<a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="editArticle()">编辑</a>
+		<a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="">添加</a>
+		<a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="">编辑</a>
 		<a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="delArticle()">删除</a>
 	</div>
 	

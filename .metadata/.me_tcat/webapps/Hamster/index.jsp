@@ -1,6 +1,6 @@
 <%@ include file="/partial/header.jsp"%>
 <%  if (request.getAttribute("articles") == null ) {%>
-	<jsp:forward page="article?operation=toIndex" ></jsp:forward>
+	<jsp:forward page="index?operation=toIndex" ></jsp:forward>
 <%}%>
 		<div class="main-content index-page clearfix">
 			<div class="post-lists">
@@ -8,11 +8,11 @@
 				<c:forEach items="${articles}" var="article">
 					<div class="post-list-item">
 						<div class="post-list-item-container">
-							<div class="item-thumb bg-deepgrey" style="background-image: url(${article.descriptionPic});"></div>
+							<div class="item-thumb bg-deepgrey" style="background-image: url(${article.introPicName});"></div>
 							<a href="article?operation=toArticle&articleId=${article.id}">
 								<div class="item-desc">
 									<p>
-										${article.description}
+										${article.intro}
 									</p>
 								</div> </a>
 							<div class="item-slant reverse-slant bg-deepgrey"></div>
