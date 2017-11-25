@@ -160,7 +160,7 @@ public class CommentServiceImpl {
 		List<Comment> comments = new ArrayList<Comment>();
 		Comment comment = null;
 		Connection conn = JDBCUtils.getMysqlConn();
-		String sql = "select * from t_comment where rootid = ?;";	
+		String sql = "select * from t_comment where rootid = ? order by id asc;";	
 		PreparedStatement ps = conn.prepareStatement(sql);
 		ps.setObject(1, rootId);
 		
