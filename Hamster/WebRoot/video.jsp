@@ -10,7 +10,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>我的音乐-Hamster Blog</title>
+    <title>实验室-Hamster Blog</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -31,6 +31,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<script src="js/headroom.min.js"></script>
 	<script src="js/highlight.min.js"></script>
 	<script src="js/instantclick.min.js"></script>
+	
+	<link href="http://vjs.zencdn.net/5.19/video-js.css" rel="stylesheet">
+    <script src="http://vjs.zencdn.net/ie8/1.1/videojs-ie8.min.js"></script>
+    <script src="http://vjs.zencdn.net/5.19/video.js"></script>
   </head>
   
   <body>
@@ -99,14 +103,23 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	 <article class="main-content page-page" itemscope="" itemtype="http://schema.org/Article">
 	    <div class="post-header">
 	        <h1 id="articleTitle" class="post-title" itemprop="name headline">
-	            	最近听的歌
+	            	测试短片
 	        </h1>
 			<blockquote>
-			<p>网易云音乐收藏的一些歌曲</p>
+			<p>还没有任何介绍</p>
 			</blockquote>
-				<c:forEach items="${musics}" var="music">
-					<p>${music.linkAddress}</p> 
-				</c:forEach>
+			<p>
+				 <video id="example_video_1" class="video-js vjs-default-skin" controls preload="none" width="640" height="264" poster="http://vjs.zencdn.net/v/oceans.png" data-setup="{}">
+				    <source src="http://vjs.zencdn.net/v/oceans.mp4" type="video/mp4">
+				    <source src="http://vjs.zencdn.net/v/oceans.webm" type="video/webm">
+				    <source src="http://vjs.zencdn.net/v/oceans.ogv" type="video/ogg">
+				    <track kind="captions" src="../shared/example-captions.vtt" srclang="en" label="English"></track>
+				    <!-- Tracks need an ending tag thanks to IE9 -->
+				    <track kind="subtitles" src="../shared/example-captions.vtt" srclang="en" label="English"></track>
+				    <!-- Tracks need an ending tag thanks to IE9 -->
+				    <!-- <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p> -->
+				  </video>
+			</p>
 	        <div class="post-data"> 
 	            <time  itemprop="datePublished">发布于 2017-11-26</time> 
 	        </div>

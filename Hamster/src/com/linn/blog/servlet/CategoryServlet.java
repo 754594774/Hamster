@@ -66,8 +66,8 @@ public class CategoryServlet extends HttpServlet {
 		result.setSuccess(true);
 		try {
 			int count = categoryService.delCategory(id);
-			if(count <= 0) {
-				result.setMsg("失败");
+			if(count == -1) {
+				result.setMsg("该分类下有文章，删除失败");
 				result.setSuccess(false);
 			}
 		} catch (Exception e) {
@@ -132,7 +132,7 @@ public class CategoryServlet extends HttpServlet {
 	private void toCategoryList(HttpServletRequest request, HttpServletResponse response) throws IOException{
 			
 		ServletContext sc = getServletContext(); 
-		RequestDispatcher rd = sc.getRequestDispatcher("/admin//articleManager/categoryList.jsp"); 
+		RequestDispatcher rd = sc.getRequestDispatcher("/admin/articleManager/categoryList.jsp"); 
 		try {
 			rd.forward(request, response);
 		} catch (ServletException e) {

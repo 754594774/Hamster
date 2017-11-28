@@ -34,9 +34,12 @@ public class ArticleServiceImpl {
 	 */
 	public List<Article> findArticleNewest() throws Exception{
 		List<Article> articles = new ArrayList<Article>();
-		String sql = "SELECT title FROM t_article LIMIT 0,6;";  
+		String sql = "SELECT a2.title,a2.id FROM " + 
+			"(SELECT a1.id,a1.title FROM t_article a1 WHERE a1.is_deleted=? ORDER BY a1.id DESC LIMIT 0,6) a2 " +
+			"ORDER BY a2.id ASC;";  
 		Connection conn = JDBCUtils.getMysqlConn();
 		PreparedStatement ps = conn.prepareStatement(sql);
+		ps.setObject(1, Const.NO);
 		ResultSet rs = ps.executeQuery();
 		
 		Article article=null;
@@ -101,7 +104,7 @@ public class ArticleServiceImpl {
 	 */
 	public int addArticle(Article article) throws Exception{
 		String sql = "INSERT INTO t_article (category_id,title,content,description," 
-			+ "description_pic,last_time,is_draft) VALUES (?,?,?,?,?,?,?);";  
+			+ "description_pic,last_time,is_draft,is_deleted) VALUES (?,?,?,?,?,?,?,?);";  
 		
 		Connection conn = JDBCUtils.getMysqlConn();
 		PreparedStatement ps = conn.prepareStatement(sql);
@@ -116,6 +119,7 @@ public class ArticleServiceImpl {
 		ps.setObject(5, article.getDescriptionPic());
 		ps.setObject(6, article.getLastTime());
 		ps.setObject(7, Const.NO);
+		ps.setObject(8, Const.NO);
 
 		int count = ps.executeUpdate();
 		JDBCUtils.close(ps, conn);
@@ -124,13 +128,15 @@ public class ArticleServiceImpl {
 	
 	/**
 	 * 删除文章
+	 * 状态改为删除
 	 */
 	public int delArticleById (String articleId) throws Exception {
-		String sql = "delete from t_article where id = ?;";  
+		String sql = "UPDATE t_article SET is_deleted = ? WHERE id = ?;";  
 		Connection conn = JDBCUtils.getMysqlConn();
 		PreparedStatement ps = conn.prepareStatement(sql);
 		
-		ps.setObject(1, articleId);
+		ps.setObject(1, Const.YES);
+		ps.setObject(2, articleId);
 		int count = ps.executeUpdate();
 		JDBCUtils.close(ps, conn);
 		return count;
@@ -158,6 +164,42 @@ public class ArticleServiceImpl {
 		}
 		return nextId;
 	}
+	/**
+	 * 查找文章列表
+	 * @return
+	 * @throws Exception
+	 */
+	public List<Article> findArticleListAdmin() throws Exception{
+		List<Article> articles = new ArrayList<Article>();//已添加分类
+		String sql = "SELECT a.id,c.name category_name,a.title,a.description,a.description_pic,a.last_time " + 
+			"FROM t_article a JOIN t_category c ON a.category_id=c.id WHERE a.is_deleted = ?;";
+			
+		
+		Connection conn = JDBCUtils.getMysqlConn();
+		PreparedStatement ps = conn.prepareStatement(sql);
+		ps.setObject(1, Const.NO);
+		ResultSet rs = ps.executeQuery();
+		
+		Article article=null;
+		while(rs.next()){
+			article = new Article();
+			int id = rs.getInt("id");
+			String categoryName = rs.getNString("category_name");
+			String title = rs.getNString("title");
+			String description = rs.getNString("description");
+			Timestamp lastTime = rs.getTimestamp("last_time");
+			String descriptionPic = rs.getString("description_pic");
+			article.setId(id);
+			article.setLastTime(lastTime);
+			article.setCategoryName(categoryName);
+			article.setTitle(title);
+			article.setDescription(description);
+			article.setDescriptionPic(descriptionPic);
+			articles.add(article);
+		} 
+		JDBCUtils.close(ps, conn);
+		return articles;
+	}
 	
 	/**
 	 * 查看文章列表
@@ -165,9 +207,13 @@ public class ArticleServiceImpl {
 	 */
 	public List<Article> findArticleList() throws Exception{
 		List<Article> articles = new ArrayList<Article>();//已添加分类
-		String sql = "SELECT a.id,c.name category_name,a.title,a.description,a.description_pic,a.last_time FROM t_article a JOIN t_category c ON a.category_id=c.id;";  
+		String sql = "SELECT a.id,c.name category_name,a.title,a.description,a.description_pic,a.last_time " + 
+			"FROM t_article a JOIN t_category c ON a.category_id=c.id " + 
+			"WHERE a.is_deleted =?;";
+		
 		Connection conn = JDBCUtils.getMysqlConn();
 		PreparedStatement ps = conn.prepareStatement(sql);
+		ps.setObject(1, Const.NO);
 		ResultSet rs = ps.executeQuery();
 		
 		Article article=null;

@@ -27,7 +27,9 @@ public class CommentServiceImpl {
 		List<Comment> comments = new ArrayList<Comment>();
 		Comment comment = null;
 		Connection conn = JDBCUtils.getMysqlConn();
-		String sql = "SELECT cont FROM t_comment WHERE is_deleted =? LIMIT 0,6;";	
+		String sql = "SELECT c2.cont,c2.id FROM " +
+			"(SELECT c1.id,c1.cont FROM t_comment c1 WHERE c1.is_deleted=? ORDER BY c1.id DESC LIMIT 0,6) c2" +
+			"  ORDER BY c2.id ASC;";	
 		PreparedStatement ps = conn.prepareStatement(sql);
 		ps.setObject(1, Const.NO);
 		ResultSet rs = ps.executeQuery();
@@ -48,8 +50,9 @@ public class CommentServiceImpl {
 		List<Comment> comments = new ArrayList<Comment>();
 		Comment comment = null;
 		Connection conn = JDBCUtils.getMysqlConn();
-		String sql = "SELECT c.id,c.`member_name`,c.`cont`,c.`pdate`,a.`title`,c.`is_deleted` FROM t_comment c LEFT JOIN t_article a ON  c.`article_id` = a.`id` WHERE c.`pid` = 0;";	
+		String sql = "SELECT c.id,c.`member_name`,c.`cont`,c.`pdate`,a.`title` FROM t_comment c LEFT JOIN t_article a ON  c.`article_id` = a.`id` WHERE c.`is_deleted`=? AND c.`pid` = 0;";	
 		PreparedStatement ps = conn.prepareStatement(sql);
+		ps.setObject(1, Const.NO);
 		
 		ResultSet rs = ps.executeQuery();
 		while(rs.next()){
@@ -59,7 +62,6 @@ public class CommentServiceImpl {
 			comment.setCont(rs.getString("cont"));
 			comment.setPdate(rs.getTimestamp("pdate"));
 			comment.setArticleTitle("title");
-			comment.setIsDeleted(rs.getInt("is_deleted"));
 			comments.add(comment);
 		}
 		JDBCUtils.close(ps,conn);

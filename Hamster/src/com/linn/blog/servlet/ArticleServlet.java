@@ -98,10 +98,10 @@ public class ArticleServlet extends HttpServlet {
 		
 		try {
 			List<Article> articles = articleService.findArticleList();
-			request.setAttribute("articles", articles);
 			List<Comment> newestComments  = commentService.findCommentNewest();
-			request.getSession().setAttribute("newestComments", newestComments);
 			List<Article> newestArticles = articleService.findArticleNewest();
+			request.setAttribute("articles", articles);
+			request.getSession().setAttribute("newestComments", newestComments);
 			request.getSession().setAttribute("newestArticles", newestArticles);
 			request.getRequestDispatcher("/index.jsp").forward(request, response);  
 		} catch (Exception e) {
@@ -204,20 +204,15 @@ public class ArticleServlet extends HttpServlet {
 					article.setContent(content.trim());
 				}else if(item.getFieldName().equals("articleId")){
 					String articleId = item.getString("utf-8");
-					if(articleId !=null && !articleId .equals(""))
+					if(articleId !=null && !articleId.equals(""))
 					{
-						article.setId(Integer.parseInt(articleId.trim()));
+						article.setId(Integer.parseInt(articleId));
 					}
 				}
 			}
-			String picName = "";
-			if (article.getId()!=null){
-				picName = article.getId() + ".jpg";
-			} else {
-				picName = articleService.getNextId() + ".jpg";
-			}
 			
 			if (!item.isFormField()) {
+				String picName = String.valueOf( System.currentTimeMillis());
 				String name = item.getName();
 				long size = item.getSize();
 				if ((name == null || name.equals("")) && size == 0)
@@ -287,7 +282,7 @@ public class ArticleServlet extends HttpServlet {
 		Map<String, Object> resultMap = new HashMap<String, Object>();
 		Gson g = new Gson();
 		try {
-			List<Article> articles = articleService.findArticleList();
+			List<Article> articles = articleService.findArticleListAdmin();
 			resultMap.put("rows", articles);
 			resultMap.put("total",articles.size());
 	

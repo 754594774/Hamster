@@ -25,6 +25,11 @@
     <servlet-name>CommentServlet</servlet-name>
     <servlet-class>com.linn.blog.servlet.CommentServlet</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>MusicServlet</servlet-name>
+    <servlet-class>com.linn.blog.servlet.MusicServlet</servlet-class>
+  </servlet>
+  
   <servlet-mapping>
     <servlet-name>LoginServlet</servlet-name>
     <url-pattern>/admin/login</url-pattern>
@@ -43,16 +48,23 @@
     <url-pattern>/admin/comment</url-pattern>
     <url-pattern>/comment</url-pattern>
   </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>MusicServlet</servlet-name>
+    <url-pattern>/admin/music</url-pattern>
+    <url-pattern>/music</url-pattern>
+  </servlet-mapping>
  <!--servlet配置 结束-->
  <!--servlet异常处理开始-->
   <servlet>
     <servlet-name>ErrorHandlerServlet</servlet-name>
     <servlet-class>com.linn.blog.servlet.ErrorHandlerServlet</servlet-class>
   </servlet>
+
   <servlet-mapping>
     <servlet-name>ErrorHandlerServlet</servlet-name>
     <url-pattern>/ErrorHandler</url-pattern>
   </servlet-mapping>
+
   <error-page>
     <error-code>404</error-code>
     <location>/ErrorHandler</location>

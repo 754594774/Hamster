@@ -1,5 +1,6 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -38,8 +39,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<div class="navbar-container">
 				<a href="index.jsp" class="navbar-logo"> <img src="images/logo.png" alt="Tale Blog"></a>
 				<div class="navbar-menu">
-					<a href="music.jsp">音乐</a>
-					<a href="chat.jsp">实验室</a>
+					<a href="music?operation=toMusicIndex">音乐</a>
+					<a href="video.jsp">实验室</a>
 					<a href="about.jsp">关于</a>
 				</div>
 			</div>
@@ -102,8 +103,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	            ${article.title}
 	        </h1>
 	        <div class="post-data">
-	            <time datetime="${article.lastTime}" itemprop="datePublished">发布于 ${article.lastTime}</time>
-	            / <a href="">${article.categoryName}</a> / <a href="">31 条评论</a> 
+	            <time datetime="${article.lastTime}" itemprop="datePublished">发布于 
+	             <fmt:formatDate value="${article.lastTime}" pattern="yyyy-MM-dd HH:mm:ss" />
+	            </time>
+	            / <a>${article.categoryName}</a>
 	        </div>
 	    </div>
 	    <div id="post-content" class="post-content" itemprop="articleBody">
@@ -111,7 +114,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				${article.content}
 	        <p class="post-info">
 	            本文由 <a href="">李难难</a> 创作，采用 <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="external nofollow">知识共享署名4.0</a> 国际许可协议进行许可<br>本站文章除注明转载/出处外，均为本站原创或翻译，转载前请务必署名<br>最后编辑时间为:
-	            2017/11/12 11:34
+	              <fmt:formatDate value="${article.lastTime}" pattern="yyyy-MM-dd HH:mm:ss" />
 	        </p>
 	    </div>
 	</article>
@@ -167,7 +170,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						</h3>
 						<c:forEach items="${newestComments}" var="newestComment">
 							<li>
-								${ newestComment.cont}
+								${newestComment.cont}
 							</li>
 						</c:forEach>
 					</div>

@@ -43,7 +43,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<th field="articleTitle" width="50">文章标题</th>
 					<th field="cont" width="50">评论内容</th>
 					<th field="pdate" width="50">评论时间</th>
-					<th field="isDeleted" width="50">是否显示</th>
 				</tr>
 			</thead>
 		</table>
