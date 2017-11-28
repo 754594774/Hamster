@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import com.linn.blog.common.Const;
 import com.linn.blog.entity.extension.Comment;
 import com.linn.blog.utils.JDBCUtils;
 
@@ -19,6 +20,26 @@ import com.linn.blog.utils.JDBCUtils;
 public class CommentServiceImpl {
 
 	/**
+	 * 查找最新的评论
+	 * @return
+	 */
+	public List<Comment> findCommentNewest() throws Exception{
+		List<Comment> comments = new ArrayList<Comment>();
+		Comment comment = null;
+		Connection conn = JDBCUtils.getMysqlConn();
+		String sql = "SELECT cont FROM t_comment WHERE is_deleted =? LIMIT 0,6;";	
+		PreparedStatement ps = conn.prepareStatement(sql);
+		ps.setObject(1, Const.NO);
+		ResultSet rs = ps.executeQuery();
+		while(rs.next()){
+			comment = new Comment();
+			comment.setCont(rs.getString("cont"));
+			comments.add(comment);
+		}
+		JDBCUtils.close(ps,conn);
+		return comments;
+	}
+	/**
 	 * 查看所有对文章的评论
 	 * （不包括对评论的回复）
 	 * @return
@@ -27,7 +48,7 @@ public class CommentServiceImpl {
 		List<Comment> comments = new ArrayList<Comment>();
 		Comment comment = null;
 		Connection conn = JDBCUtils.getMysqlConn();
-		String sql = "SELECT c.id,c.`member_name`,c.`cont`,c.`pdate`,a.`title` FROM t_comment c LEFT JOIN t_article a ON  c.`article_id` = a.`id` WHERE c.`pid` = 0;";	
+		String sql = "SELECT c.id,c.`member_name`,c.`cont`,c.`pdate`,a.`title`,c.`is_deleted` FROM t_comment c LEFT JOIN t_article a ON  c.`article_id` = a.`id` WHERE c.`pid` = 0;";	
 		PreparedStatement ps = conn.prepareStatement(sql);
 		
 		ResultSet rs = ps.executeQuery();
@@ -38,6 +59,7 @@ public class CommentServiceImpl {
 			comment.setCont(rs.getString("cont"));
 			comment.setPdate(rs.getTimestamp("pdate"));
 			comment.setArticleTitle("title");
+			comment.setIsDeleted(rs.getInt("is_deleted"));
 			comments.add(comment);
 		}
 		JDBCUtils.close(ps,conn);
@@ -50,9 +72,10 @@ public class CommentServiceImpl {
 		List<Comment> comments = new ArrayList<Comment>();
 		Comment comment = null;
 		Connection conn = JDBCUtils.getMysqlConn();
-		String sql = "select * from t_comment where pid = 0 and article_id =?;";	
+		String sql = "select * from t_comment where pid = 0 and article_id =? and is_deleted = ?;";	
 		PreparedStatement ps = conn.prepareStatement(sql);
 		ps.setObject(1, articleId);
+		ps.setObject(2, Const.NO);
 		
 		ResultSet rs = ps.executeQuery();
 		while(rs.next()){
@@ -75,8 +98,8 @@ public class CommentServiceImpl {
 	 */
 	public int addComment (Comment comment) throws Exception{
 
-		String sql = "INSERT INTO t_comment(pid,rootid,member_name,cont,pdate,isleaf,article_id) " 
-			+"values(?,?,?,?,now(),?,?);";
+		String sql = "INSERT INTO t_comment(pid,rootid,member_name,cont,pdate,isleaf,article_id,is_deleted) " 
+			+"values(?,?,?,?,now(),?,?,?);";
 		String updateParentLeadSql = "UPDATE t_comment SET isleaf = ? WHERE id = ?;";
 		
 		Connection conn = JDBCUtils.getMysqlConn();
@@ -88,6 +111,7 @@ public class CommentServiceImpl {
 		ps.setObject(4, comment.getCont());
 		ps.setObject(5, 0);
 		ps.setObject(6, comment.getArticleId());
+		ps.setObject(7, Const.NO);
 		
 		int count = ps.executeUpdate();
 		
@@ -177,5 +201,24 @@ public class CommentServiceImpl {
 		}
 		JDBCUtils.close(ps,conn);
 		return comments;
+	}
+	/**
+	 * 隐藏/显示评论
+	 * @param commentId
+	 * @return
+	 */
+	public int editComment(String commentId,String editType) throws Exception{
+		String sql = "UPDATE t_comment SET is_deleted = ? WHERE id = ?;";
+		Connection conn = JDBCUtils.getMysqlConn();
+		PreparedStatement ps = conn.prepareStatement(sql);
+		if (editType.equals("show")){
+			ps.setObject(1, Const.NO);
+		} else if (editType.equals("hide")){
+			ps.setObject(1, Const.YES);
+		}
+		ps.setObject(2, commentId);
+		int count = ps.executeUpdate();
+		JDBCUtils.close(ps, conn);
+		return count;
 	}
 }

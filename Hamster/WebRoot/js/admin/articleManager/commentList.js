@@ -37,13 +37,14 @@ $(document).ready(function(){
 /**
  * 删除评论
  */
-function delArticle(){
+function editComment(editType){
+	
 	var row = $('#dg').datagrid('getSelected');
-	alert(row.id);
+
 	if (row){
-		$.messager.confirm('确认','确定删除该记录?',function(r){
+		$.messager.confirm('确认','确定修改该记录?',function(r){
 			if (r){
-				$.post('admin/article',{articleId:row.id,operation:'delArticle'},function(result){
+				$.post('admin/comment',{commentId:row.id,operation:'editComment',editType:editType},function(result){
 					if (result.success){
 						$('#dg').datagrid('reload');	// reload the Category data
 					} else {
@@ -58,16 +59,4 @@ function delArticle(){
 	}
 }
 
-/**
- * 修改评论
- */
-function editComment(){
-	//查询文章信息
-	var row = $('#dg').datagrid('getSelected');
-	alert(row.id);
-	if (row){
-		//跳转至添加界面
-		//window.parent.$('#mainFrame').attr('src','admin/article?operation=toAddArticle&articleId=' + row.id);
-	}
-}
 

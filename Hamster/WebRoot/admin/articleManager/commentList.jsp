@@ -43,13 +43,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<th field="articleTitle" width="50">文章标题</th>
 					<th field="cont" width="50">评论内容</th>
 					<th field="pdate" width="50">评论时间</th>
+					<th field="isDeleted" width="50">是否显示</th>
 				</tr>
 			</thead>
 		</table>
 		
 		<div id="toolbar">
-			<a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="editComment()">编辑</a>
-			<a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="delComment()">屏蔽</a>
+			<a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="editComment('show')">显示</a>
+			<a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="editComment('hide')">屏蔽</a>
 		</div>
   </body>
 </html>

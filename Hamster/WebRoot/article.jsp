@@ -24,10 +24,78 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<script type="text/javascript" src="js/jquery.min.js"></script>
 	<script type="text/javascript" src="http://pv.sohu.com/cityjson?ie=utf-8"></script> 
    	<script type="text/javascript" src="js/article/evaluation.js"></script>
+   	
+   	<link href="css/index/xcode.min.css" rel="stylesheet">
+	<link href="css/index/style.min.css" rel="stylesheet">
+	<script src="js/jquery.min.js"></script>
+	<script src="js/headroom.min.js"></script>
+	<script src="js/highlight.min.js"></script>
+	<script src="js/instantclick.min.js"></script>
   </head>
   
   <body>
-   <jsp:include page="partial/header.jsp" />
+	 <header id="header"	class="header bg-white animated headroom--not-bottom slideDown headroom--top">
+			<div class="navbar-container">
+				<a href="index.jsp" class="navbar-logo"> <img src="images/logo.png" alt="Tale Blog"></a>
+				<div class="navbar-menu">
+					<a href="music.jsp">音乐</a>
+					<a href="chat.jsp">实验室</a>
+					<a href="about.jsp">关于</a>
+				</div>
+			</div>
+	</header>
+	<style>
+		#instantclick {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			pointer-events: none;
+			z-index: 2147483647;
+			transition: opacity .25s .1s
+		}
+		.instantclick-bar {
+			background: #29d;
+			width: 100%;
+			margin-left: -100%;
+			height: 2px;
+			transition: all .25s
+		}
+	</style>
+	<script type="text/javascript">
+		var header = new Headroom(document.getElementById("header"), {
+			tolerance : 10,
+			offset : 80,
+			classes : {
+				initial : "animated",
+				pinned : "slideDown",
+				unpinned : "slideUp"
+			}
+		});
+		header.init();
+		$('#search-inp').keypress(function(e) {
+			var key = e.which; //e.which是按键的值
+				if (key == 13) {
+					var q = $(this).val();
+					if (q && q != '') {
+						window.location.href = '/search/' + q;
+					}
+				}
+			});
+	</script>
+	<script data-no-instant="">
+			InstantClick.on('change', function(isInitialLoad) {
+				var blocks = document.querySelectorAll('pre code');
+				for ( var i = 0; i < blocks.length; i++) {
+					hljs.highlightBlock(blocks[i]);
+				}
+				if (isInitialLoad === false) {
+					if (typeof ga !== 'undefined')
+						ga('send', 'pageview', location.pathname + location.search);
+				}
+			});
+			InstantClick.init('mousedown');
+	</script>
 	 <article class="main-content page-page" itemscope="" itemtype="http://schema.org/Article">
 	    <div class="post-header">
 	        <h1 id="articleTitle" class="post-title" itemprop="name headline">
@@ -35,7 +103,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	        </h1>
 	        <div class="post-data">
 	            <time datetime="${article.lastTime}" itemprop="datePublished">发布于 ${article.lastTime}</time>
-	            / <a href="https://tale.biezhi.me/category/%E9%BB%98%E8%AE%A4%E5%88%86%E7%B1%BB">${article.categoryName}</a> / <a href="https://tale.biezhi.me/article/14#comments">31 条评论</a> 
+	            / <a href="">${article.categoryName}</a> / <a href="">31 条评论</a> 
 	        </div>
 	    </div>
 	    <div id="post-content" class="post-content" itemprop="articleBody">
@@ -47,38 +115,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	        </p>
 	    </div>
 	</article>
-	<div id="post-bottom-bar" class="post-bottom-bar">
-	    <div class="bottom-bar-inner">
-	        <div class="bottom-bar-items social-share left">
-	            <span class="bottom-bar-item">Share : </span>
-	            <span class="bottom-bar-item bottom-bar-facebook"><a href="https://www.facebook.com/sharer/sharer.php?u=https://tale.biezhi.me/article/14" target="_blank" title="步步向上的一年" rel="nofollow">facebook</a></span>
-	            <span class="bottom-bar-item bottom-bar-twitter"><a href="https://twitter.com/intent/tweet?url=https://tale.biezhi.me/article/14&amp;text=%E6%AD%A5%E6%AD%A5%E5%90%91%E4%B8%8A%E7%9A%84%E4%B8%80%E5%B9%B4" target="_blank" title="步步向上的一年" rel="nofollow">Twitter</a></span>
-	            <span class="bottom-bar-item bottom-bar-weibo"><a href="http://service.weibo.com/share/share.php?url=https://tale.biezhi.me/article/14&amp;title=%E6%AD%A5%E6%AD%A5%E5%90%91%E4%B8%8A%E7%9A%84%E4%B8%80%E5%B9%B4" target="_blank" title="步步向上的一年" rel="nofollow">Weibo</a></span>
-	            <span class="bottom-bar-item bottom-bar-qrcode"><a href="https://pan.baidu.com/share/qrcode?w=300&amp;h=300&amp;url=https://tale.biezhi.me/article/14" target="_blank" rel="nofollow">QRcode</a></span>
-	        </div>
-	        <div class="bottom-bar-items right">
-	            <span class="bottom-bar-item"><a href="https://tale.biezhi.me/article/2" title="第一篇文章">→</a></span>
-	            <span class="bottom-bar-item"><a href="https://tale.biezhi.me/article/15" title="最近听的歌">←</a></span>
-	            <span class="bottom-bar-item"><a href="https://tale.biezhi.me/article/14#footer">↓</a></span>
-	            <span class="bottom-bar-item"><a href="https://tale.biezhi.me/article/14#">↑</a></span>
-	        </div>
-	    </div>
-	</div>
-	<div id="directory-content" class="directory-content" >
-	    <div id="directory">
-		    <ul>
-		    	<li>
-		    		<a href="#articleTitle">文章标题</a>
-		    	</li>
-		    	<li>
-		    		<a href="#articleTitle">添加评论</a>
-		    	</li>
-		    	<li>
-		    		<a href="#articleTitle">参与讨论</a>
-		    	</li>
-		    </ul>
-	    </div>
-	</div>
 	<div id="14" class="comment-container">
 	    <div id="comments" class="clearfix">
 	        <span class="response"></span>
@@ -94,6 +130,49 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	  		</ul>
 	    </div>
 	</div>
-	<jsp:include page="partial/footer.jsp" />
+		<footer id="footer" class="footer bg-white">
+			<div class="footer-meta">
+				<div class="footer-container">
+					<div class="meta-item meta-copyright">
+						<div class="meta-copyright-info">
+							<a href="" class="info-logo"> <img
+									src="images/logo.png" alt="Tale Blog"> </a>
+							<div class="info-text">
+								<p>
+									一生何求.
+								</p>
+								<p>
+									Powered by Hamster</a>
+								</p>
+								<p>
+									© 2017
+									<a href="https://github.com/754594774" target="_blank">李难难</a>
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="meta-item meta-posts">
+						<h3 class="meta-title">
+							最新文章
+						</h3>
+						<c:forEach items="${newestArticles}" var="newestArticle">
+							<li>
+								${ newestArticle.title}
+							</li>
+						</c:forEach>
+					</div>
+					<div class="meta-item meta-comments">
+						<h3 class="meta-title">
+							最新评论
+						</h3>
+						<c:forEach items="${newestComments}" var="newestComment">
+							<li>
+								${ newestComment.cont}
+							</li>
+						</c:forEach>
+					</div>
+				</div>
+			</div>
+	  	</footer>
   </body>
 </html>

@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%
 String path = request.getContextPath();
@@ -10,34 +10,41 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>Hamster Blog-Content</title>
+    <title>关于我-Hamster Blog</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">    
-	<meta http-equiv="keywords" content="博客系统,Hamster,李难难">
-	<meta http-equiv="description" content="博客系统,Hamster,李难难">
-	<link href="css/index/xcode.min.css" rel="stylesheet">
+	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+	<meta http-equiv="description" content="This is my page">
+	<!--
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	-->
+	<link href="css/article/evalute.css" rel="stylesheet"></script>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="http://pv.sohu.com/cityjson?ie=utf-8"></script> 
+   	<script type="text/javascript" src="js/article/evaluation.js"></script>
+   	
+   	<link href="css/index/xcode.min.css" rel="stylesheet">
 	<link href="css/index/style.min.css" rel="stylesheet">
 	<script src="js/jquery.min.js"></script>
 	<script src="js/headroom.min.js"></script>
 	<script src="js/highlight.min.js"></script>
 	<script src="js/instantclick.min.js"></script>
-	<script src="js/index/index.js"></script>
-	
   </head>
+  
   <body>
-    <header id="header"	class="header bg-white animated headroom--not-bottom slideDown headroom--top">
-		<div class="navbar-container">
-			<a href="index.jsp" class="navbar-logo"><img src="images/logo.png" alt="Hamster Blog"></a>
-			<div class="navbar-menu">
-				<a href="music.jsp">音乐</a>
-				<a href="chat.jsp">实验室</a>
-				<a href="about.jsp">关于</a>
+	 <header id="header"	class="header bg-white animated headroom--not-bottom slideDown headroom--top">
+			<div class="navbar-container">
+				<a href="index.jsp" class="navbar-logo"> <img src="images/logo.png" alt="Tale Blog"></a>
+				<div class="navbar-menu">
+					<a href="music.jsp">音乐</a>
+					<a href="chat.jsp">实验室</a>
+					<a href="about.jsp">关于</a>
+				</div>
 			</div>
-		</div>
 	</header>
-		<style>
+	<style>
 		#instantclick {
 			position: fixed;
 			top: 0;
@@ -89,50 +96,35 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			});
 			InstantClick.init('mousedown');
 	</script>
-	<%  if (request.getAttribute("articles") == null ) {%>
-		<jsp:forward page="article?operation=toIndex" ></jsp:forward>
-	<%}%>
-		<div class="main-content index-page clearfix">
-			<div class="post-lists">
-				<div class="post-lists-body">
-				<c:forEach items="${articles}" var="article">
-					<div class="post-list-item">
-						<div class="post-list-item-container">
-							<div class="item-thumb bg-deepgrey" style="background-image: url(${article.descriptionPic});"></div>
-							<a href="article?operation=toArticle&articleId=${article.id}">
-								<div class="item-desc">
-									<p>
-										${article.description}
-									</p>
-								</div> </a>
-							<div class="item-slant reverse-slant bg-deepgrey"></div>
-							<div class="item-slant"></div>
-							<div class="item-label">
-								<div class="item-title">
-									<a href="article?operation=toArticle&articleId=${article.id}">${article.title}</a>
-								</div>
-								<div class="item-meta clearfix">
-									<div class="item-meta-ico bg-ico-image"
-										style="background: url(images/bg-ico.png) no-repeat; background-size: 40px auto;"></div>
-									<div class="item-meta-cat">
-										<a href="article?operation=toArticle&articleId=${article.id}">
-											${article.categoryName}
-										</a>
-									</div>
-								</div>
-							</div>
-						</div>
-						</div>
-					</c:forEach>
-				</div>
-			</div>
-		</div>
- 		<footer id="footer" class="footer bg-white">
+	 <article class="main-content page-page" itemscope="" itemtype="http://schema.org/Article">
+	    <div class="post-header">
+	        <h1 id="articleTitle" class="post-title" itemprop="name headline">
+	            	关于
+	        </h1>
+	        <p class="post-tags"></p>
+			<h2>#关于本站</h2>
+			<blockquote>
+			<p>该站使用jsp + servlet，后期功能多了，会使用框架来规范</p>
+			</blockquote>
+			<p>备注：源码可在在<a href="https://github.com/754594774/Hamster">gitHub</a>上查看，持续更新中...</p>
+			<h2>#关于我</h2>
+			<ul>
+			<li>网站名称：Hamster博客</li>
+			<li>网站地址：www.linn.site</li>
+			<li>微信号码：<a href="images/wxCode.png" title="二维码" target="_blank">li754594774</a></li>
+			</ul>
+	        <div class="post-data"> 
+	            <time  itemprop="datePublished">发布于 2017-11-26</time> 
+	        </div>
+	    </div>
+	</article>
+		<footer id="footer" class="footer bg-white">
 			<div class="footer-meta">
 				<div class="footer-container">
 					<div class="meta-item meta-copyright">
 						<div class="meta-copyright-info">
-							<a href="index.jsp" class="info-logo"><img src="images/logo.png" alt="Hamster Blog"> </a>
+							<a href="" class="info-logo"> <img
+									src="images/logo.png" alt="Tale Blog"> </a>
 							<div class="info-text">
 								<p>
 									一生何求.
@@ -170,5 +162,5 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</div>
 			</div>
 	  	</footer>
-  	</body>
+  </body>
 </html>

@@ -33,9 +33,11 @@ import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import com.google.gson.Gson;
 import com.linn.blog.entity.extension.Article;
 import com.linn.blog.entity.extension.Category;
+import com.linn.blog.entity.extension.Comment;
 import com.linn.blog.entity.system.Result;
 import com.linn.blog.service.ArticleServiceImpl;
 import com.linn.blog.service.CategoryServiceImpl;
+import com.linn.blog.service.CommentServiceImpl;
 import com.linn.blog.utils.JDBCUtils;
 
 /**
@@ -48,12 +50,14 @@ public class ArticleServlet extends HttpServlet {
 	private ServletConfig config = null;
 	private ArticleServiceImpl articleService = null;
 	private CategoryServiceImpl categoryService = null;
+	private CommentServiceImpl commentService = null;
 	
 	@Override
 	public void init(ServletConfig config) throws ServletException {
 		this.config = config;
 		articleService = new ArticleServiceImpl();
 		categoryService = new CategoryServiceImpl();
+		commentService = new CommentServiceImpl();
 	}
 	
 	@Override
@@ -95,6 +99,10 @@ public class ArticleServlet extends HttpServlet {
 		try {
 			List<Article> articles = articleService.findArticleList();
 			request.setAttribute("articles", articles);
+			List<Comment> newestComments  = commentService.findCommentNewest();
+			request.getSession().setAttribute("newestComments", newestComments);
+			List<Article> newestArticles = articleService.findArticleNewest();
+			request.getSession().setAttribute("newestArticles", newestArticles);
 			request.getRequestDispatcher("/index.jsp").forward(request, response);  
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -167,8 +175,7 @@ public class ArticleServlet extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		Article article = new Article();
 		// 用于存放上传文件的目录
-		String uploadPath = config.getServletContext().getRealPath("/") + "upload\\";   
-		
+		String uploadPath = config.getServletContext().getRealPath("/") + "upload/";   
 		String picPath = request.getContextPath() + "/upload/";   
 		DiskFileItemFactory factory = new DiskFileItemFactory();
 		factory.setSizeThreshold(4096);
@@ -177,25 +184,12 @@ public class ArticleServlet extends HttpServlet {
 		upload.setHeaderEncoding("UTF-8");
 		upload.setSizeMax(1000000);
 		
-		String picName = articleService.getNextId() + ".jpg";
 		List fileItems = upload.parseRequest(request);
 		Iterator iter = fileItems.iterator();
 		while (iter.hasNext()) {
 			FileItem item = (FileItem) iter.next();
-			if (!item.isFormField()) {
-				String name = item.getName();
-				long size = item.getSize();
-				if ((name == null || name.equals("")) && size == 0)
-					continue;
-				String path = uploadPath + picName;
-				item.write(new File(path));
-				//存储图片相对路径
-				article.setDescriptionPic(picPath + picName);
-			}
-			
 			//取出文本数据
 			if(item.isFormField()) {
-				System.out.println(item.getFieldName() + "==" + item.getString("utf-8").trim());
 				if(item.getFieldName().equals("title")) {
 				 	String title = item.getString("utf-8");
 				 	article.setTitle(title.trim());
@@ -215,6 +209,23 @@ public class ArticleServlet extends HttpServlet {
 						article.setId(Integer.parseInt(articleId.trim()));
 					}
 				}
+			}
+			String picName = "";
+			if (article.getId()!=null){
+				picName = article.getId() + ".jpg";
+			} else {
+				picName = articleService.getNextId() + ".jpg";
+			}
+			
+			if (!item.isFormField()) {
+				String name = item.getName();
+				long size = item.getSize();
+				if ((name == null || name.equals("")) && size == 0)
+					continue;
+				String path = uploadPath + picName;
+				item.write(new File(path));
+				//存储图片相对路径
+				article.setDescriptionPic(picPath + picName);
 			}
 		}
 		return article;

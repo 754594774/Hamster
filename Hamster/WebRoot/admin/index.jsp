@@ -34,7 +34,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<div data-options="region:'north',border:false" style="height:85px;background:#194f86;padding:10px;">
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 		<div style="width: 50%;float: left;">
-			<b><i><font size="10" color="white">Tale</font><font size="5" color="green">博客管理后台&nbsp&nbspV1.0</font></i></b>
+			<b><i><font size="10" color="white">Hamster</font><font size="5" color="green">博客管理后台&nbsp&nbspV1.0</font></i></b>
 		</div>
 	    <div style="width: 40%;float: right;margin-top: 35px;">
 	    	<button onclick="editPassword()" style="float: right;">修改密码</button>

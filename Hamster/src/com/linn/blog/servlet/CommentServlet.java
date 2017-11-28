@@ -42,6 +42,38 @@ public class CommentServlet extends HttpServlet {
 			toCommentList(request,response);
 		} else if(oper.equals("childCommentList")) {
 			childCommentList(request,response);
+		} else if(oper.equals("editComment")) {
+			editComment(request,response);
+		}
+	}
+	/**
+	 * 在前端屏蔽该评论极其回复
+	 * @param request
+	 * @param response
+	 * @throws IOException 
+	 */
+	private void editComment(HttpServletRequest request,
+			HttpServletResponse response) throws IOException {
+
+		String commentId = request.getParameter("commentId");
+		String editType = request.getParameter("editType");
+		
+		Result result = new Result ();
+		result.setMsg("OK");
+		result.setSuccess(true);
+		try {
+			int count = commentService.editComment(commentId,editType);
+		} catch (Exception e) {
+			result.setMsg("系统内部错误");
+			result.setSuccess(false);
+			e.printStackTrace();
+		}finally{
+			response.setContentType("text/html;charset=utf-8");
+			PrintWriter out = response.getWriter();
+			Gson g = new Gson();
+			out.write(g.toJson(result));
+			out.flush();
+			out.close();
 		}
 	}
 	/**

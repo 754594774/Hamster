@@ -16,6 +16,15 @@ public class Comment {
 	private Integer isleaf;
 	private Integer articleId ;
 	private String articleTitle;
+	private Integer isDeleted;
+	
+	
+	public Integer getIsDeleted() {
+		return isDeleted;
+	}
+	public void setIsDeleted(Integer isDeleted) {
+		this.isDeleted = isDeleted;
+	}
 	public String getArticleTitle() {
 		return articleTitle;
 	}
@@ -81,10 +90,12 @@ public class Comment {
 	public String toString() {
 		return "Comment [articleId=" + articleId + ", articleTitle="
 				+ articleTitle + ", childComments=" + childComments + ", cont="
-				+ cont + ", id=" + id + ", isleaf=" + isleaf + ", memberName="
-				+ memberName + ", pdate=" + pdate + ", pid=" + pid
-				+ ", rootid=" + rootid + "]";
+				+ cont + ", id=" + id + ", isDeleted=" + isDeleted
+				+ ", isleaf=" + isleaf + ", memberName=" + memberName
+				+ ", pdate=" + pdate + ", pid=" + pid + ", rootid=" + rootid
+				+ "]";
 	}
+
 
 	
 }

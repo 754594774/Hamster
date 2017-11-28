@@ -28,7 +28,27 @@ import com.linn.blog.utils.JDBCUtils;
  *
  */
 public class ArticleServiceImpl {
-	
+	/**
+	 * 查看文章列表
+	 * @return
+	 */
+	public List<Article> findArticleNewest() throws Exception{
+		List<Article> articles = new ArrayList<Article>();
+		String sql = "SELECT title FROM t_article LIMIT 0,6;";  
+		Connection conn = JDBCUtils.getMysqlConn();
+		PreparedStatement ps = conn.prepareStatement(sql);
+		ResultSet rs = ps.executeQuery();
+		
+		Article article=null;
+		while(rs.next()){
+			article = new Article();
+			String title = rs.getNString("title");
+			article.setTitle(title);
+			articles.add(article);
+		} 
+		JDBCUtils.close(ps, conn);
+		return articles;
+	}
 	/**
 	 * 更新文章
 	 * @param article

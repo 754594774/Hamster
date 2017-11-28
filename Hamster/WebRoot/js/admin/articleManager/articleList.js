@@ -37,7 +37,6 @@ $(document).ready(function(){
  */
 function delArticle(){
 	var row = $('#dg').datagrid('getSelected');
-	alert(row.id);
 	if (row){
 		$.messager.confirm('确认','确定删除该记录?',function(r){
 			if (r){
