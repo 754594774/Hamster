@@ -1,6 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -11,7 +10,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>${article.title }-Hamster Blog</title>
+    <title>关于我-Hamster Blog</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -98,42 +97,29 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			});
 			InstantClick.init('mousedown');
 	</script>
-	 <article class="main-content page-page" itemscope="" itemtype="http://schema.org/Article">
+	<article class="main-content page-page">
 	    <div class="post-header">
-	        <h1 id="articleTitle" class="post-title" itemprop="name headline">
-	            ${article.title}
-	        </h1>
+	        <h1 class="post-title" itemprop="name headline">友情链接</h1>
 	        <div class="post-data">
-	            <time datetime="${article.lastTime}" itemprop="datePublished">发布于 
-	             <fmt:formatDate value="${article.lastTime}" pattern="yyyy-MM-dd HH:mm:ss" />
-	            </time>
-	            / <a>${article.categoryName}</a>
+	            <time datetime="2017-09-17" itemprop="datePublished">发布于 2017-09-17</time>
 	        </div>
 	    </div>
-	    <div id="post-content" class="post-content" itemprop="articleBody">
-	        <p class="post-tags"></p>
-				${article.content}
-	        <p class="post-info">
-	            本文由 <a href="">李难难</a> 创作，采用 <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="external nofollow">知识共享署名4.0</a> 国际许可协议进行许可<br>本站文章除注明转载/出处外，均为本站原创或翻译，转载前请务必署名<br>最后编辑时间为:
-	              <fmt:formatDate value="${article.lastTime}" pattern="yyyy-MM-dd HH:mm:ss" />
-	        </p>
-	    </div>
-	</article>
-	<div id="14" class="comment-container">
-	    <div id="comments" class="clearfix">
-	        <span class="response"></span>
-	        <div class="comment-form">
-		        <textarea name="content" id="articleComment" class="form-control" placeholder="留下点什么." required="" minlength="5" maxlength="100"></textarea>
-		        <input id="articleId" type="hidden" value="${article.id}">
-		        <button class="submit" onclick="addComent()">提交</button>
-	        </div>
-	        <%--评论 --%>
-	        <ul id="pn">
-	        	<span style="font-size: 15px">留言区  ↓：
-	        	</span>
-	  		</ul>
-	    </div>
+	    <div id="post-content" class="post-content"><h2>站长的小伙伴 </h2>
+	<ul>
+		<c:forEach items="${linksList}" var="links">
+			<li>🔒 <a href="${links.url}" target="_blank">${links.name }</a></li>
+		</c:forEach>
+	</ul>
+	<h2>链接须知</h2>
+	<blockquote>
+	<p>请在当页通过评论来申请友链 <br/>
+	        请确定贵站可以稳定运营
+	</p>
+
+	</blockquote>
+
 	</div>
+	</article>
 		<footer id="footer" class="footer bg-white">
 			<div class="footer-meta">
 				<div class="footer-container">
@@ -171,7 +157,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						</h3>
 						<c:forEach items="${newestComments}" var="newestComment">
 							<li>
-								${newestComment.cont}
+								${ newestComment.cont}
 							</li>
 						</c:forEach>
 					</div>

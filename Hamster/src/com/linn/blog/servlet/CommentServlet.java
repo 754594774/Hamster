@@ -213,7 +213,6 @@ public class CommentServlet extends HttpServlet {
 			} else {
 				comments = commentService.findCommentByArticleId(articleId);
 			}
-			System.out.println(comments);
 			resultMap.put("rows", comments);
 			resultMap.put("total",comments.size());
 		} catch (Exception e) {

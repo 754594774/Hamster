@@ -50,7 +50,8 @@ public class CommentServiceImpl {
 		List<Comment> comments = new ArrayList<Comment>();
 		Comment comment = null;
 		Connection conn = JDBCUtils.getMysqlConn();
-		String sql = "SELECT c.id,c.`member_name`,c.`cont`,c.`pdate`,a.`title` FROM t_comment c LEFT JOIN t_article a ON  c.`article_id` = a.`id` WHERE c.`is_deleted`=? AND c.`pid` = 0;";	
+		String sql = "SELECT c.id,c.`member_name`,c.`cont`,c.`pdate`,a.`title` FROM t_comment c LEFT JOIN " +
+			"t_article a ON  c.`article_id` = a.`id` WHERE c.`is_deleted`=? AND c.`pid` = 0;";	
 		PreparedStatement ps = conn.prepareStatement(sql);
 		ps.setObject(1, Const.NO);
 		
@@ -61,7 +62,7 @@ public class CommentServiceImpl {
 			comment.setMemberName(rs.getString("member_name"));
 			comment.setCont(rs.getString("cont"));
 			comment.setPdate(rs.getTimestamp("pdate"));
-			comment.setArticleTitle("title");
+			comment.setArticleTitle(rs.getNString("title"));
 			comments.add(comment);
 		}
 		JDBCUtils.close(ps,conn);

@@ -305,14 +305,16 @@ public class ArticleServlet extends HttpServlet {
 	private void toAddArticle(HttpServletRequest request, HttpServletResponse response){
 
 		try {
-
+			//查询文章的分类列表
 			List<Category> categorys = categoryService.findCategoryList();
 			request.setAttribute("categorys", categorys);
+			//编辑文章，查询文章详细内容
 			String articleId = request.getParameter("articleId");
 			if(articleId != null) {
 				Article article = articleService.findArticleById(articleId);
 				request.setAttribute("article", article);
 			} 
+			//跳转到添加文章界面
 			ServletContext sc = config.getServletContext(); 
 			RequestDispatcher rd = sc.getRequestDispatcher("/admin/articleManager/addArticle.jsp"); 
 			rd.forward(request, response);

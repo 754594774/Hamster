@@ -33,6 +33,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<div class="navbar-menu">
 				<a href="music?operation=toMusicIndex">音乐</a>
 				<a href="video.jsp">实验室</a>
+				<a href="links?operation=getLinks">友链</a>
 				<a href="about.jsp">关于</a>
 			</div>
 		</div>
@@ -163,7 +164,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						</h3>
 						<c:forEach items="${newestComments}" var="newestComment">
 							<li>
-								${ newestComment.cont}
+								${newestComment.cont}
 							</li>
 						</c:forEach>
 					</div>

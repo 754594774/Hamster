@@ -28,6 +28,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				$('#mainFrame').attr('src','admin/comment?operation=' + oper); 
 			}else if(oper == 'toMusicList'){
 				$('#mainFrame').attr('src','admin/music?operation=' + oper); 
+			}else if(oper == "toLinksList"){
+				$('#mainFrame').attr('src','admin/links?operation=' + oper)
 			}
 		}
 	</script>
@@ -61,6 +63,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</div>
 			<div title="音乐管理" style="padding:10px;">
 				<a href="javascript:void(0)" onclick="showcontent('toMusicList')" class="easyui-linkbutton" style="width:100%" data-options="iconCls:'icon-large-smartart',size:'large',iconAlign:'top'">音乐列表</a>
+			</div>
+			<div title="友链管理" style="padding:10px">
+				<a href="javascript:void(0)" onclick="showcontent('toLinksList')" class="easyui-linkbutton" style="width:100%" data-options="iconCls:'icon-large-smartart',size:'large',iconAlign:'top'">友链列表</a>
 			</div>
 			<div title="实验室" style="padding:10px">
 				content3

@@ -33,7 +33,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     	<h2>文章列表管理</h2>
 	<div style="margin:20px 0;">
 		<table id="dg" title="分类列表" class="easyui-datagrid" style="width:100%"
-				url="admin/article?operation=articleList"
+				url="admin/article?operation=articleList"  
 				toolbar="#toolbar"
 				rownumbers="true" fitColumns="true" singleSelect="true">
 			<thead>
