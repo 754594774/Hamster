@@ -29,12 +29,15 @@ import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.FileUploadException;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.google.gson.Gson;
 import com.linn.blog.entity.extension.Article;
 import com.linn.blog.entity.extension.Category;
 import com.linn.blog.entity.extension.Comment;
 import com.linn.blog.entity.system.Result;
+import com.linn.blog.filter.AuthorizationFilter;
 import com.linn.blog.service.ArticleServiceImpl;
 import com.linn.blog.service.CategoryServiceImpl;
 import com.linn.blog.service.CommentServiceImpl;
@@ -46,7 +49,8 @@ import com.linn.blog.utils.JDBCUtils;
  * 
  */
 public class ArticleServlet extends HttpServlet {
-	
+ 	private static Logger logger = LoggerFactory.getLogger(ArticleServlet.class);
+ 	
 	private ServletConfig config = null;
 	private ArticleServiceImpl articleService = null;
 	private CategoryServiceImpl categoryService = null;
@@ -69,7 +73,7 @@ public class ArticleServlet extends HttpServlet {
 			throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 		String oper = request.getParameter("operation");
-		System.out.println(oper);
+		logger.info("operation",oper);
 		if (oper.equals("toAddArticle")){
 			toAddArticle(request,response);
 		} else if (oper.equals("toArticleList")){
@@ -105,7 +109,7 @@ public class ArticleServlet extends HttpServlet {
 			request.getSession().setAttribute("newestArticles", newestArticles);
 			request.getRequestDispatcher("/index.jsp").forward(request, response);  
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("跳转到bolog主页面出错",e);	
 			request.setAttribute("errorMessage", "系统内部错误!");
 			request.getRequestDispatcher("/common/error.jsp").forward(request,response);
 		} 
@@ -126,7 +130,7 @@ public class ArticleServlet extends HttpServlet {
 			 req.setAttribute("article", article);
 			 req.getRequestDispatcher("/article.jsp").forward(req, resp);
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("查找文章出错",e);
 			req.setAttribute("errorMessage", "系统内部错误!");
 			req.getRequestDispatcher("/common/error.jsp").forward(req,resp); 
 		}
@@ -156,7 +160,7 @@ public class ArticleServlet extends HttpServlet {
 		} catch (Exception e) {
 			result.setSuccess(false);
 			result.setMsg("系统内部错误");
-			e.printStackTrace();
+			logger.error("发布文章出错",e);
 		}finally{
 			Gson g = new Gson();
 			response.setContentType("text/html;charset=utf-8");
@@ -244,7 +248,7 @@ public class ArticleServlet extends HttpServlet {
 			articleService.delArticleById(id);
 			
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("删除文章出错",e);
 			result.setSuccess(false);
 			result.setMsg("failed");
 		
@@ -287,6 +291,7 @@ public class ArticleServlet extends HttpServlet {
 			resultMap.put("total",articles.size());
 	
 		} catch (Exception e) {
+			logger.error("查找文章列表出错",e);
 			e.printStackTrace();
 		}finally{
 			response.setContentType("text/html;charset=utf-8");
@@ -321,6 +326,7 @@ public class ArticleServlet extends HttpServlet {
 			
 		} catch (Exception e){
 			e.printStackTrace();
+			logger.error("跳转到添加文章界面",e);
 		}
 	}
 

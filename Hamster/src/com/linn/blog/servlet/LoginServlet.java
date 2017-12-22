@@ -10,6 +10,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.google.gson.Gson;
 import com.linn.blog.entity.system.Result;
 import com.linn.blog.entity.system.User;
@@ -24,6 +27,7 @@ import com.linn.blog.service.UserServiceImpl;
 public class LoginServlet extends HttpServlet {
 	
 	private UserServiceImpl loginServiceImpl = null; 
+	private static Logger logger = LoggerFactory.getLogger(LinksServlet.class);
 	
 	@Override
 	public void init() throws ServletException {
@@ -38,6 +42,7 @@ public class LoginServlet extends HttpServlet {
 			
 			req.setCharacterEncoding("utf-8");
 			String oper = req.getParameter("operation");
+			logger.info("operation",oper);
 			if (oper.equals("login")){
 				login(req,resp);
 			} else if (oper.equals("logout")){
@@ -79,7 +84,7 @@ public class LoginServlet extends HttpServlet {
 				count = loginServiceImpl.changeUser(user);
 
 			} catch (Exception e) {
-				e.printStackTrace();
+				logger.error("修改密码",e);
 				result.setSuccess(false);
 				result.setMsg("修改失败");
 			}
@@ -138,7 +143,7 @@ public class LoginServlet extends HttpServlet {
 					req.getRequestDispatcher("/admin/login.jsp").forward(req,resp); 
 				}
 			} catch (Exception e) {
-				e.printStackTrace();
+				logger.error("登录",e);
 				req.setAttribute("message", "系统内部错误!");
 				req.getRequestDispatcher("/admin/login.jsp").forward(req,resp); 
 				return;

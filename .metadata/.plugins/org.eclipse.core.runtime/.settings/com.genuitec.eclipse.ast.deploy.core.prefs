@@ -1,24 +1,24 @@
-#Fri Nov 24 11:12:50 GMT+08:00 2017
+#Thu Dec 21 09:56:12 GMT+08:00 2017
 tomcat6Server.Hamster.deploymentPath=D\:\\java_environment\\apache-tomcat-6.0.35\\webapps\\Hamster
-tomcat6Server.GateControllerJava.isExploded=true
-tomcat6Server.GateControllerJava.altContextRoot=
 tomcat6Server.Hamster.type=WebDeployment
-tomcat6Server.GateControllerJava.shouldBackup=true
 tomcat6Server.Hamster.isDeployed=true
 eclipse.preferences.version=1
-tomcat6Server.Hamster.shouldBackup=true
+tomcat6Server.wx_test.deploymentPath=D\:\\java_environment\\apache-tomcat-6.0.35\\webapps\\wx_test
+tomcat6Server.Hamster.shouldBackup=false
+tomcat6Server.wx_test.isExploded=true
+tomcat6Server.wx_test.contextRoot=/wx_test
 tomcat6Server.Hamster.contextRoot=/Hamster
 tomcat6Server.Hamster.altContextRoot=
-tomcat6Server.GateControllerJava.deployIsOverProject=false
-tomcat6Server.GateControllerJava.shouldOverwrite=false
-tomcat6Server.GateControllerJava.deploymentPath=D\:\\java_environment\\apache-tomcat-6.0.35\\webapps\\ROOT
-tomcat6Server.GateControllerJava.type=WebDeployment
-tomcat6Server.GateControllerJava.IEARProjectName=
+tomcat6Server.wx_test.shouldBackup=false
+tomcat6Server.wx_test.shouldOverwrite=false
+tomcat6Server.wx_test.IEARProjectName=
 tomcat6Server.Hamster.isUptoDate=true
+tomcat6Server.wx_test.isDeployed=true
 tomcat6Server.Hamster.deployIsOverProject=false
+tomcat6Server.wx_test.altContextRoot=
+tomcat6Server.wx_test.type=WebDeployment
+tomcat6Server.wx_test.isUptoDate=true
+tomcat6Server.wx_test.deployIsOverProject=false
 tomcat6Server.Hamster.isExploded=true
-tomcat6Server.GateControllerJava.isDeployed=true
-tomcat6Server.GateControllerJava.contextRoot=/
 tomcat6Server.Hamster.shouldOverwrite=false
-tomcat6Server.GateControllerJava.isUptoDate=true
 tomcat6Server.Hamster.IEARProjectName=

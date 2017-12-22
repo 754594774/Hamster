@@ -18,6 +18,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.google.gson.Gson;
 import com.linn.blog.entity.extension.Article;
 import com.linn.blog.entity.extension.Category;
@@ -28,6 +31,7 @@ import com.linn.blog.utils.JDBCUtils;
 public class CategoryServlet extends HttpServlet {
 	
 	private CategoryServiceImpl categoryService = null;
+	private static Logger logger = LoggerFactory.getLogger(CategoryServlet.class);
 	
 	@Override
 	public void init() throws ServletException {
@@ -40,6 +44,7 @@ public class CategoryServlet extends HttpServlet {
 			throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 		String oper = request.getParameter("operation");
+		logger.info("operation",oper );
 		
 		if(oper.equals("toCategoryList")){
 			toCategoryList(request,response);
@@ -73,7 +78,7 @@ public class CategoryServlet extends HttpServlet {
 		} catch (Exception e) {
 			result.setMsg("系统内部错误");
 			result.setSuccess(false);
-			e.printStackTrace();
+			logger.error("删除分类出错",e);
 		}finally{
 			response.setContentType("text/html;charset=utf-8");
 			PrintWriter out = response.getWriter();
@@ -113,6 +118,7 @@ public class CategoryServlet extends HttpServlet {
 			result.setMsg("系统内部错误");
 			result.setSuccess(false);
 			e.printStackTrace();
+			logger.error("修改分类出错",e);
 		}finally{
 			response.setContentType("text/html;charset=utf-8");
 			PrintWriter out = response.getWriter();
@@ -135,11 +141,9 @@ public class CategoryServlet extends HttpServlet {
 		RequestDispatcher rd = sc.getRequestDispatcher("/admin/articleManager/categoryList.jsp"); 
 		try {
 			rd.forward(request, response);
-		} catch (ServletException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		} catch (Exception e) {
+			logger.error("跳转到分类列表页面",e);
+		} 
 
 	}
 	/**
@@ -155,7 +159,7 @@ public class CategoryServlet extends HttpServlet {
 			resultMap.put("rows", articles);
 			resultMap.put("total",articles.size());
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("查找分类列表",e);
 		}finally{
 			response.setContentType("text/html;charset=utf-8");
 			PrintWriter out = response.getWriter();
@@ -192,7 +196,7 @@ public class CategoryServlet extends HttpServlet {
 		} catch (Exception e) {
 			result.setSuccess(false);
 			result.setMsg("系统内部错误");
-			e.printStackTrace();
+			logger.error("添加分类出错",e);
 		}finally{
 			response.setContentType("text/html;charset=utf-8");
 			PrintWriter out = response.getWriter();

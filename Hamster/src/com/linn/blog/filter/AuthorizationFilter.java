@@ -12,12 +12,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.linn.blog.entity.system.User;
 
 public class AuthorizationFilter implements Filter {
-
+ 	private static Logger logger = LoggerFactory.getLogger(AuthorizationFilter.class);
+	
 	public void destroy() {
-		System.out.println("AuthorizationFilter destroy");
+		logger.info("AuthorizationFilter destroy");
 	}
 
 	public void doFilter(ServletRequest req, ServletResponse rep,
@@ -29,7 +33,7 @@ public class AuthorizationFilter implements Filter {
 		String url = request.getRequestURI();
 		String path = url.substring(url.lastIndexOf("/"));
 		Boolean isWhiteList = path.endsWith(".css") || path.endsWith(".js") || path.endsWith(".png")|| path.endsWith(".jpg");
-System.out.println("url:" + url);
+		logger.info("过滤器url",url);
 		if (isWhiteList){
 			fc.doFilter(req, rep);
 			return;
@@ -47,7 +51,7 @@ System.out.println("url:" + url);
 	}
 
 	public void init(FilterConfig arg0) throws ServletException {
-		System.out.println("AuthorizationFilter init");
+		logger.info("AuthorizationFilter init");
 	}
 
 }

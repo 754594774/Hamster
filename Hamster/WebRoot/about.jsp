@@ -36,7 +36,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <body>
 	 <header id="header"	class="header bg-white animated headroom--not-bottom slideDown headroom--top">
 			<div class="navbar-container">
-				<a href="index.jsp" class="navbar-logo"> <img src="images/logo.png" alt="Tale Blog"></a>
+				<a href="index.jsp" class="navbar-logo"> <img src="images/logo.png" alt="Hamster Blog"></a>
 				<div class="navbar-menu">
 					<a href="music?operation=toMusicIndex">音乐</a>
 					<a href="video.jsp">实验室</a>

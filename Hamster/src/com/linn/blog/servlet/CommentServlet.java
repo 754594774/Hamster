@@ -13,6 +13,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.google.gson.Gson;
 import com.linn.blog.entity.extension.Comment;
 import com.linn.blog.entity.system.Result;
@@ -21,6 +24,8 @@ import com.linn.blog.service.CommentServiceImpl;
 public class CommentServlet extends HttpServlet {
 
 	private CommentServiceImpl commentService = null;
+	private static Logger logger = LoggerFactory.getLogger(CommentServlet.class);
+	
 	@Override
 	public void init() throws ServletException {
 		super.init();
@@ -32,6 +37,7 @@ public class CommentServlet extends HttpServlet {
 		
 		request.setCharacterEncoding("utf-8");
 		String oper = request.getParameter("operation");
+		logger.info("operation",oper);
 		if (oper.equals("getComments")){
 			getComments(request,response);
 		} else if(oper.equals("addComent")){
@@ -66,7 +72,7 @@ public class CommentServlet extends HttpServlet {
 		} catch (Exception e) {
 			result.setMsg("系统内部错误");
 			result.setSuccess(false);
-			e.printStackTrace();
+			logger.error("编辑评论出错",e);
 		}finally{
 			response.setContentType("text/html;charset=utf-8");
 			PrintWriter out = response.getWriter();
@@ -92,7 +98,7 @@ public class CommentServlet extends HttpServlet {
 			resultMap.put("rows", comments);
 			resultMap.put("total",comments.size());
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("查找回复",e);
 		} finally {
 			response.setContentType("text/html;charset=utf-8");
 			PrintWriter out = response.getWriter();
@@ -148,7 +154,7 @@ public class CommentServlet extends HttpServlet {
 		try {
 			int count = commentService.addComment(comment);
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("添加评论",e);
 			result.setMsg("添加失败，系统错误");
 			result.setSuccess(false);
 		}finally{
@@ -181,7 +187,7 @@ public class CommentServlet extends HttpServlet {
 			jsonMsg = gson.toJson(comments);
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("查找文章评论",e);
 		} finally {
 			response.setContentType("text/html;charset=utf-8");
 			PrintWriter out = response.getWriter();
@@ -216,7 +222,7 @@ public class CommentServlet extends HttpServlet {
 			resultMap.put("rows", comments);
 			resultMap.put("total",comments.size());
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("后台评论列表",e);
 		} finally {
 			response.setContentType("text/html;charset=utf-8");
 			PrintWriter out = response.getWriter();

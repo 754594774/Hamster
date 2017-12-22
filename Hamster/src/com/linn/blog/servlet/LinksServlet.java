@@ -1,6 +1,5 @@
 package com.linn.blog.servlet;
 
-
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -13,6 +12,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.google.gson.Gson;
 import com.linn.blog.entity.extension.Category;
 import com.linn.blog.entity.extension.Comment;
@@ -23,6 +25,7 @@ import com.linn.blog.service.LinksServiceImpl;
 public class LinksServlet extends HttpServlet {
 
 	private LinksServiceImpl linksService = null;
+	private static Logger logger = LoggerFactory.getLogger(LinksServlet.class);
 	
 	@Override
 	public void init() throws ServletException {
@@ -36,6 +39,7 @@ public class LinksServlet extends HttpServlet {
 
 		request.setCharacterEncoding("utf-8");
 		String oper = request.getParameter("operation");
+		logger.info("operation",oper);
 		if (oper.equals("getLinks")){
 			getLinks(request,response);
 		} else if (oper.equals("linksList")){
@@ -70,7 +74,7 @@ public class LinksServlet extends HttpServlet {
 		} catch (Exception e) {
 			result.setMsg("系统内部错误");
 			result.setSuccess(false);
-			e.printStackTrace();
+			logger.error("删除友链",e);
 		}finally{
 			response.setContentType("text/html;charset=utf-8");
 			PrintWriter out = response.getWriter();
@@ -109,7 +113,7 @@ public class LinksServlet extends HttpServlet {
 		} catch (Exception e) {
 			result.setMsg("系统内部错误");
 			result.setSuccess(false);
-			e.printStackTrace();
+			logger.error("修改友链",e);
 		}finally{
 			response.setContentType("text/html;charset=utf-8");
 			PrintWriter out = response.getWriter();
@@ -148,7 +152,7 @@ public class LinksServlet extends HttpServlet {
 		} catch (Exception e) {
 			result.setSuccess(false);
 			result.setMsg("系统内部错误");
-			e.printStackTrace();
+			logger.error("添加友链",e);
 		}finally{
 			response.setContentType("text/html;charset=utf-8");
 			PrintWriter out = response.getWriter();
@@ -186,7 +190,7 @@ public class LinksServlet extends HttpServlet {
 			resultMap.put("rows", linksList);
 			resultMap.put("total",linksList.size());
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("友链列表",e);
 		} finally {
 			response.setContentType("text/html;charset=utf-8");
 			PrintWriter out = response.getWriter();
@@ -210,7 +214,7 @@ public class LinksServlet extends HttpServlet {
 		try {
 			linksList = linksService.findLinks();
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("查看所有友链",e);
 		}
 		request.setAttribute("linksList", linksList);	
 		request.getRequestDispatcher("/links.jsp").forward(request, response);

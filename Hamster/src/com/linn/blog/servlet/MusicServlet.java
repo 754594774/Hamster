@@ -14,6 +14,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.google.gson.Gson;
 import com.linn.blog.entity.extension.Music;
 import com.linn.blog.entity.system.Result;
@@ -22,6 +25,7 @@ import com.linn.blog.service.MusicServiceImpl;
 public class MusicServlet extends HttpServlet {
 
 	private MusicServiceImpl musicService = null;
+	private static Logger logger = LoggerFactory.getLogger(LinksServlet.class);
 	
 	@Override
 	public void init() throws ServletException {
@@ -34,6 +38,7 @@ public class MusicServlet extends HttpServlet {
 			throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 		String oper = request.getParameter("operation");
+		logger.info("operation",oper);
 		
 		if (oper.equals("toMusicList")){
 			toMusicList(request,response);
@@ -59,7 +64,7 @@ public class MusicServlet extends HttpServlet {
 			List<Music> musics = musicService.findMusicListAll();
 			request.setAttribute("musics", musics);
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("跳转到前端音乐界面",e);
 		}
 		ServletContext sc = getServletContext(); 
 		RequestDispatcher rd = sc.getRequestDispatcher("/music.jsp"); 
@@ -77,11 +82,9 @@ public class MusicServlet extends HttpServlet {
 		RequestDispatcher rd = sc.getRequestDispatcher("/admin/musicManager/musicList.jsp"); 
 		try {
 			rd.forward(request, response);
-		} catch (ServletException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		} catch (Exception e) {
+			logger.error("跳转到音乐管理界面",e);
+		} 
 	}
 
 	/**
@@ -104,7 +107,7 @@ public class MusicServlet extends HttpServlet {
 		} catch (Exception e) {
 			result.setMsg("系统内部错误");
 			result.setSuccess(false);
-			e.printStackTrace();
+			logger.error("删除音乐链接",e);
 		}finally{
 			response.setContentType("text/html;charset=utf-8");
 			PrintWriter out = response.getWriter();
@@ -137,19 +140,16 @@ public class MusicServlet extends HttpServlet {
 		result.setSuccess(true);
 		result.setMsg("OK");
 		try {
-			
 			if (id == null){
-
 				int count = musicService.addMusic(music);
 			} else {
 				music.setId(Integer.parseInt(id));
 				int count = musicService.editMusic(music);
 			}
-
 		} catch (Exception e) {
 			result.setSuccess(false);
 			result.setMsg("系统内部错误");
-			e.printStackTrace();
+			logger.error("添加音乐链接",e);
 		}finally{
 			response.setContentType("text/html;charset=utf-8");
 			PrintWriter out = response.getWriter();
@@ -177,7 +177,7 @@ public class MusicServlet extends HttpServlet {
 			resultMap.put("total",musics.size());
 	
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("跳转到后台音乐管理",e);
 		}finally{
 			response.setContentType("text/html;charset=utf-8");
 			PrintWriter out = response.getWriter();
